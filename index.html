@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOUND — Soundproof Pods for the Modern Workspace</title>
+  <meta name="description" content="ZOUND designs soundproof office pods — a room within the room. Engineered acoustics, premium materials, 45-minute install. Your space. Your innovation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="ZOUND"><img class="brand-logo" src="assets/img/zound-logo.png" alt="ZOUND" /></a>
+    <div class="nav-links">
+      <a href="#spec" data-i18n="nav_pods">Pods</a>
+      <a href="#smart" data-i18n="nav_smart">Smart</a>
+      <a href="#sustainability" data-i18n="nav_sus">Sustainable</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language">
+        <span data-lang="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><span data-lang="th">ไทย</span>
+      </div>
+      <a href="#contact" class="btn btn-sm" data-i18n="nav_talk">Talk to Sales</a>
+    </div>
+  </nav>
+
+  <span id="top"></span>
+
+  <!-- ============ HERO (scrub: fly-through) ============ -->
+  <section class="cinematic hero" id="hero">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="scrim"></div>
+
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow-light reveal-line" data-in="-0.30" data-out="0.30">ZOUND POD · zoundpod.com</p>
+        <h1 class="reveal-line display" data-in="-0.30" data-out="0.30" data-i18n="hero1">Silence,<br/>engineered.</h1>
+        <h1 class="reveal-line display" data-in="0.34" data-out="0.66" data-i18n="hero2">Focus,<br/>elevated.</h1>
+        <h1 class="reveal-line display" data-in="0.70" data-out="1.30" data-i18n="hero3">Your space.<br/>Your innovation.</h1>
+      </div>
+
+      <div class="scroll-hint" id="scroll-hint"><span data-i18n="scroll">Scroll</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- ============ MANIFESTO ============ -->
+  <section class="manifesto" id="manifesto">
+    <p class="eyebrow reveal" data-i18n="mani_eyebrow">— A room within the room</p>
+    <h2 class="reveal lead" data-i18n="mani_lead">
+      ZOUND pods carve calm out of the open office — <em>soundproofed, ventilated, and finished like fine furniture.</em>
+      Built for the companies that treat focus as a competitive advantage.
+    </h2>
+    <p class="reveal sub" data-i18n="mani_sub">Discover a new way to connect and focus.</p>
+  </section>
+
+  <!-- ============ RANGE INTRO ============ -->
+  <section class="range-intro" id="range">
+    <div class="range-head">
+      <p class="eyebrow reveal" data-i18n="range_eyebrow">The VOGUE Series</p>
+      <h2 class="reveal display-2" data-i18n="range_title">Four sizes.<br/>One standard of quiet.</h2>
+    </div>
+  </section>
+
+  <!-- ============ POD S PLUS (scrub: turntable) ============ -->
+  <section class="cinematic pod" id="pod-s">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="pod-copy left">
+        <span class="pod-index">01</span>
+        <p class="eyebrow" data-i18n="pod_s_size">Size S Plus</p>
+        <h3 class="display-3" data-i18n="pod_s_title">The private line.</h3>
+        <p class="pod-desc" data-i18n="pod_s_desc">A personal booth for calls and video meetings — a pocket of quiet wherever the day takes you.</p>
+        <ul class="spec">
+          <li><span class="spec-k" data-i18n="sp_cap_k">Capacity</span><span class="spec-v" data-i18n="sp_cap_v">1 person</span></li>
+          <li><span class="spec-k" data-i18n="sp_aco_k">Acoustics</span><span class="spec-v" data-i18n="sp_aco_v">up to &minus;30&nbsp;dB</span></li>
+          <li><span class="spec-k" data-i18n="sp_ins_k">Install</span><span class="spec-v" data-i18n="sp_ins_v">45&nbsp;minutes</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POD M (scrub: turntable) ============ -->
+  <section class="cinematic pod" id="pod-m">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="pod-copy right">
+        <span class="pod-index">02</span>
+        <p class="eyebrow" data-i18n="pod_m_size">Size M</p>
+        <h3 class="display-3" data-i18n="pod_m_title">The focus room.</h3>
+        <p class="pod-desc" data-i18n="pod_m_desc">An individual pod for deep work and online meetings, sealed from the noise of the floor.</p>
+        <ul class="spec">
+          <li><span class="spec-k" data-i18n="sm_cap_k">Capacity</span><span class="spec-v" data-i18n="sm_cap_v">1 person</span></li>
+          <li><span class="spec-k" data-i18n="sm_set_k">Setup</span><span class="spec-v" data-i18n="sm_set_v">desk + designer chair</span></li>
+          <li><span class="spec-k" data-i18n="sm_air_k">Air</span><span class="spec-v" data-i18n="sm_air_v">active ventilation</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POD L / L PLUS (scrub: turntable) ============ -->
+  <section class="cinematic pod" id="pod-l">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="pod-copy left">
+        <span class="pod-index">03</span>
+        <p class="eyebrow" data-i18n="pod_l_size">Size L · L Plus</p>
+        <h3 class="display-3" data-i18n="pod_l_title">The meeting pod.</h3>
+        <p class="pod-desc" data-i18n="pod_l_desc">Room for 2&ndash;6 to gather, present and decide — with a display, lounge seating and acoustic calm.</p>
+        <ul class="spec">
+          <li><span class="spec-k" data-i18n="sl_cap_k">Capacity</span><span class="spec-v" data-i18n="sl_cap_v">2&ndash;6 people</span></li>
+          <li><span class="spec-k" data-i18n="sl_dis_k">Display</span><span class="spec-v" data-i18n="sl_dis_v">screen ready</span></li>
+          <li><span class="spec-k" data-i18n="sl_com_k">Comfort</span><span class="spec-v" data-i18n="sl_com_v">lounge seating</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOGUE SPECIFICATION ============ -->
+  <section class="spec-sec" id="spec">
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-i18n="spec_eyebrow">VOGUE Series · Specification</p>
+      <h2 class="display-2" data-i18n="spec_title">Five sizes.<br/>One standard of quiet.</h2>
+      <p class="sec-sub" data-i18n="spec_sub">Every VOGUE pod isolates up to 32&nbsp;dB, refreshes its own air, and arrives ready to work. Choose the footprint your team needs.</p>
+    </div>
+
+    <div class="finishes reveal">
+      <span class="finishes-label" data-i18n="spec_finishes">Seven finishes</span>
+      <span class="sw" style="background:#f1ece3" title="White"></span>
+      <span class="sw" style="background:#3a3a3c" title="Charcoal"></span>
+      <span class="sw" style="background:#b9a892" title="Taupe"></span>
+      <span class="sw" style="background:#6e2f33" title="Burgundy"></span>
+      <span class="sw" style="background:#c98a3c" title="Amber"></span>
+      <span class="sw" style="background:#9aa284" title="Sage"></span>
+      <span class="sw" style="background:#6c6f52" title="Olive"></span>
+    </div>
+
+    <div class="spec-grid">
+      <article class="spec-card reveal">
+        <div class="spec-card-top"><h3>Model&nbsp;S</h3><span class="cap" data-i18n="cap_1">1 person</span></div>
+        <ul class="spec-rows">
+          <li><span data-i18n="r_dim">Dimensions</span><b>1.00 × 0.94 × 2.10 m</b></li>
+          <li><span data-i18n="r_wt">Weight</span><b>216 kg</b></li>
+          <li><span data-i18n="r_iso">Isolation</span><b>&minus;32 dB</b></li>
+          <li><span data-i18n="r_pwr">Power</span><b>55 W · 1 fan</b></li>
+          <li><span data-i18n="r_air">Airflow</span><b>93 m³/h</b></li>
+          <li><span data-i18n="r_fur">Furniture</span><b data-i18n="fur_chair">Table + chair</b></li>
+        </ul>
+      </article>
+      <article class="spec-card reveal">
+        <div class="spec-card-top"><h3>Model&nbsp;S&nbsp;Plus</h3><span class="cap" data-i18n="cap_1">1 person</span></div>
+        <ul class="spec-rows">
+          <li><span data-i18n="r_dim">Dimensions</span><b>1.10 × 1.04 × 2.10 m</b></li>
+          <li><span data-i18n="r_wt">Weight</span><b>245 kg</b></li>
+          <li><span data-i18n="r_iso">Isolation</span><b>&minus;32 dB</b></li>
+          <li><span data-i18n="r_pwr">Power</span><b>57 W · 1 fan</b></li>
+          <li><span data-i18n="r_air">Airflow</span><b>91 m³/h</b></li>
+          <li><span data-i18n="r_fur">Furniture</span><b data-i18n="fur_sofa">Table + sofa</b></li>
+        </ul>
+      </article>
+      <article class="spec-card reveal">
+        <div class="spec-card-top"><h3>Model&nbsp;M</h3><span class="cap" data-i18n="cap_12">1–2 people</span></div>
+        <ul class="spec-rows">
+          <li><span data-i18n="r_dim">Dimensions</span><b>1.55 × 1.24 × 2.10 m</b></li>
+          <li><span data-i18n="r_wt">Weight</span><b>345 kg</b></li>
+          <li><span data-i18n="r_iso">Isolation</span><b>&minus;32 dB</b></li>
+          <li><span data-i18n="r_pwr">Power</span><b>66 W · 2 fans</b></li>
+          <li><span data-i18n="r_air">Airflow</span><b>123.66 m³/h</b></li>
+          <li><span data-i18n="r_fur">Furniture</span><b data-i18n="fur_chair">Table + chair</b></li>
+        </ul>
+      </article>
+      <article class="spec-card reveal">
+        <div class="spec-card-top"><h3>Model&nbsp;L</h3><span class="cap" data-i18n="cap_24">2–4 people</span></div>
+        <ul class="spec-rows">
+          <li><span data-i18n="r_dim">Dimensions</span><b>2.20 × 1.24 × 2.10 m</b></li>
+          <li><span data-i18n="r_wt">Weight</span><b>485 kg</b></li>
+          <li><span data-i18n="r_iso">Isolation</span><b>&minus;32 dB</b></li>
+          <li><span data-i18n="r_pwr">Power</span><b>99 W · 2 fans</b></li>
+          <li><span data-i18n="r_air">Airflow</span><b>158 m³/h</b></li>
+          <li><span data-i18n="r_fur">Furniture</span><b data-i18n="fur_sofas">Table + sofas</b></li>
+        </ul>
+      </article>
+      <article class="spec-card reveal">
+        <div class="spec-card-top"><h3>Model&nbsp;L&nbsp;Plus</h3><span class="cap" data-i18n="cap_4">4 people</span></div>
+        <ul class="spec-rows">
+          <li><span data-i18n="r_dim">Dimensions</span><b>2.20 × 1.64 × 2.10 m</b></li>
+          <li><span data-i18n="r_wt">Weight</span><b>669 kg</b></li>
+          <li><span data-i18n="r_iso">Isolation</span><b>&minus;32 dB</b></li>
+          <li><span data-i18n="r_pwr">Power</span><b>127 W · 2 fans</b></li>
+          <li><span data-i18n="r_air">Airflow</span><b>182.3 m³/h</b></li>
+          <li><span data-i18n="r_fur">Furniture</span><b data-i18n="fur_sofas">Table + sofas</b></li>
+        </ul>
+      </article>
+    </div>
+    <p class="spec-foot reveal" data-i18n="spec_foot">Every model includes USB 3.0, USB-C and a power socket, with LED downlight, dimmer and ambient lighting.</p>
+  </section>
+
+  <!-- ============ SMART & CONNECTED ============ -->
+  <section class="smart-sec" id="smart">
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-i18n="smart_eyebrow">Smart &amp; Connected</p>
+      <h2 class="display-2" data-i18n="smart_title">A pod with a brain.</h2>
+    </div>
+    <div class="smart-wrap">
+      <figure class="smart-figure reveal">
+        <img src="assets/img/control-panel.jpg" alt="ZOUND in-pod smart control panel" loading="lazy" />
+        <figcaption class="chips">
+          <span>USB-C PD100W</span><span>QC3.0</span><span data-i18n="chip_sock">Universal socket</span><span>Ethernet</span><span>NFC</span><span data-i18n="chip_radar">Radar sensor</span><span data-i18n="chip_occ">Occupancy light</span><span data-i18n="chip_air">Temp · Humidity · PM2.5</span>
+        </figcaption>
+      </figure>
+      <div class="smart-feats">
+        <div class="feat reveal"><h4 data-i18n="sf1_h">Smart Control</h4><p data-i18n="sf1_p">Tune airflow, lighting and climate to taste.</p></div>
+        <div class="feat reveal"><h4 data-i18n="sf2_h">Advanced Acoustic Privacy</h4><p data-i18n="sf2_p">Up to 32&nbsp;dB of isolation for absolute focus.</p></div>
+        <div class="feat reveal"><h4 data-i18n="sf3_h">Room Booking</h4><p data-i18n="sf3_p">Check availability and reserve at a glance.</p></div>
+        <div class="feat reveal"><h4 data-i18n="sf4_h">3D Acoustic Surface</h4><p data-i18n="sf4_p">Precision-fluted panels engineered to absorb.</p></div>
+        <div class="feat reveal"><h4 data-i18n="sf5_h">AI Intelligent Systems</h4><p data-i18n="sf5_p">Predictive maintenance, before anything fails.</p></div>
+        <div class="feat reveal"><h4 data-i18n="sf6_h">Cloud Management</h4><p data-i18n="sf6_p">Control power and climate from your phone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventilation lives as a 3D fan-turntable scroll section just before the finale -->
+
+  <!-- ============ WHY ZOUND ============ -->
+  <section class="why" id="why">
+    <div class="why-head">
+      <p class="eyebrow reveal" data-i18n="why_eyebrow">Why ZOUND</p>
+      <h2 class="reveal display-2" data-i18n="why_title">Engineered to the<br/>last decibel.</h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <span class="card-k">&minus;30 dB</span>
+        <h4 data-i18n="card1_h">Soundproof to the core</h4>
+        <p data-i18n="card1_p">Engineered acoustics reduce ambient noise by up to thirty decibels — a true island of quiet.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card-k">45 min</span>
+        <h4 data-i18n="card2_h">No construction, no mess</h4>
+        <p data-i18n="card2_p">Assembled on site in under an hour. No building works, no permits, no downtime.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card-k" data-i18n="card3_k">Modular</span>
+        <h4 data-i18n="card3_h">Moves with you</h4>
+        <p data-i18n="card3_p">Relocate and reconfigure as teams change. A company asset, not a renovation.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card-k">0 VOC</span>
+        <h4 data-i18n="card4_h">Pure, non-toxic materials</h4>
+        <p data-i18n="card4_p">No nails, adhesives, VOCs or paint odour. Recyclable and safe for indoor air.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card-k" data-i18n="card5_k">Air + Light</span>
+        <h4 data-i18n="card5_h">Comfort as standard</h4>
+        <p data-i18n="card5_p">Built-in ventilation, motion sensing and soft lighting keep every session fresh.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card-k" data-i18n="card6_k">Design</span>
+        <h4 data-i18n="card6_h">Designed to perform</h4>
+        <p data-i18n="card6_p">Premium, contemporary aesthetics that lift the room — and the people working in it.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats" id="stats">
+    <div class="stat"><span class="stat-num" data-count="30" data-suffix="">0</span><span class="stat-unit">dB&nbsp;STC</span><p data-i18n="nst1">sound reduction</p></div>
+    <div class="stat"><span class="stat-fixed">0.25</span><span class="stat-unit">s&nbsp;·&nbsp;RT</span><p data-i18n="nst2">reverberation</p></div>
+    <div class="stat"><span class="stat-num" data-count="32" data-suffix="">0</span><span class="stat-unit">dB</span><p data-i18n="nst3">VOGUE isolation</p></div>
+    <div class="stat"><span class="stat-num" data-count="56" data-suffix="">0</span><span class="stat-unit">CFM</span><p data-i18n="nst4">fresh airflow</p></div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="benefits" id="benefits">
+    <p class="eyebrow reveal" data-i18n="ben_eyebrow">Small change, big impact</p>
+    <div class="ben-grid">
+      <div class="ben reveal"><span class="ben-sign">+</span><span class="stat-num" data-count="48" data-suffix="%">0</span><p data-i18n="ben1">more focus</p></div>
+      <div class="ben reveal"><span class="ben-sign">+</span><span class="stat-num" data-count="23" data-suffix="%">0</span><p data-i18n="ben2">more efficiency</p></div>
+      <div class="ben reveal"><span class="ben-sign">&minus;</span><span class="stat-num" data-count="10" data-suffix="%">0</span><p data-i18n="ben3">fewer errors</p></div>
+      <div class="ben reveal"><span class="ben-sign">&minus;</span><span class="stat-num" data-count="27" data-suffix="%">0</span><p data-i18n="ben4">less stress</p></div>
+      <div class="ben reveal"><span class="ben-sign">&minus;</span><span class="stat-num" data-count="21" data-suffix="%">0</span><p data-i18n="ben5">less fatigue</p></div>
+    </div>
+  </section>
+
+  <!-- ============ SUSTAINABILITY ============ -->
+  <section class="sustain-sec" id="sustainability">
+    <div class="sustain-scrim"></div>
+    <div class="sustain-inner">
+      <div class="sustain-head reveal">
+        <img class="gg" src="assets/img/greenguard.png" alt="GREENGUARD Gold certified" loading="lazy" />
+        <p class="eyebrow eyebrow-light" data-i18n="sus_eyebrow">Sustainable</p>
+      </div>
+      <h2 class="display-2 sus-title reveal" data-i18n="sus_title">Low carbon,<br/>by design.</h2>
+      <p class="sec-sub reveal" data-i18n="sus_sub">ZOUND is the first silence-booth maker to build with recycled carbon fiber. GREENGUARD Gold certified for low chemical emissions — no wood, no glue, formaldehyde-free, and fully recyclable.</p>
+      <ul class="sus-lows reveal">
+        <li data-i18n="sus_l1">Low energy consumption</li>
+        <li data-i18n="sus_l2">Low carbon footprint</li>
+        <li data-i18n="sus_l3">Low air acidification</li>
+        <li data-i18n="sus_l4">Low eutrophication</li>
+      </ul>
+      <figure class="sus-certs reveal"><img class="certrow" src="assets/img/certs.png" alt="ISO · SGS · CNAS · ASTM certified" loading="lazy" /></figure>
+    </div>
+  </section>
+
+  <!-- ============ VENTILATION (3D fan turntable scroll) ============ -->
+  <section class="cinematic fan-sec" id="air">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="pod-copy left">
+        <p class="eyebrow" data-i18n="air_eyebrow">Ventilation · with Panasonic</p>
+        <h3 class="display-3" data-i18n="air_title">Breathe fresh.<br/>Work sharp.</h3>
+        <p class="pod-desc" data-i18n="air_sub">A high-performance centrifugal fan, developed with Panasonic, moves up to 95&nbsp;m³/h (56&nbsp;CFM) at 1,700&nbsp;rpm — and stays below 40&nbsp;dB for a calm, comfortable space.</p>
+        <ul class="spec">
+          <li><span class="spec-k" data-i18n="air_k1">Airflow</span><span class="spec-v">95 m³/h · 56 CFM</span></li>
+          <li><span class="spec-k" data-i18n="air_k2">Fan speed</span><span class="spec-v">1,700 rpm</span></li>
+          <li><span class="spec-k" data-i18n="air_k3">Noise</span><span class="spec-v">&lt; 40 dB</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AIR CIRCULATION (animated diagram, below the fan turntable) ============ -->
+  <section class="airflow-sec" id="air-flow">
+    <div class="airflow-wrap">
+      <div class="airflow-copy reveal">
+        <p class="eyebrow" data-i18n="af_eyebrow">Air in motion · with Panasonic</p>
+        <h2 class="display-3" data-i18n="af_title">In at the top.<br/>Out at the floor.</h2>
+        <p class="sec-sub" data-i18n="af_sub">Fresh air is drawn in through the ceiling vent, circulated through the whole pod, and exhausted at the base — a continuous loop powered by a high-performance centrifugal fan co-developed with <strong>Panasonic</strong>.</p>
+        <div class="airflow-legend">
+          <span><i class="afdot afdot-in"></i><span data-i18n="af_in">Fresh air in</span></span>
+          <span><i class="afdot afdot-mid"></i><span data-i18n="af_circ">Circulating</span></span>
+          <span><i class="afdot afdot-out"></i><span data-i18n="af_out">Exhaust out</span></span>
+        </div>
+        <p class="airflow-tag" data-i18n="af_tag">Centrifugal fan · 95 m³/h · 1,700 rpm · &lt; 40 dB · Panasonic</p>
+      </div>
+
+      <figure class="airflow-fig reveal">
+        <img src="assets/img/pod-front.jpg" alt="ZOUND pod, front view" class="airflow-pod" loading="lazy" />
+        <svg viewBox="0 0 848 1264" xmlns="http://www.w3.org/2000/svg" class="airflow-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Air circulation through a ZOUND pod: fresh air enters at the top vent, circulates, and exhausts at the base">
+          <defs>
+            <linearGradient id="afFlow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2bb6c4"/>
+              <stop offset="50%" stop-color="#74bd72"/>
+              <stop offset="100%" stop-color="#e0883a"/>
+            </linearGradient>
+          </defs>
+
+          <!-- intake: fresh air drawn into the top vent (fanned, flowing) -->
+          <g class="af-in" fill="none" stroke="#2bb6c4" stroke-linecap="round" stroke-linejoin="round">
+            <g class="af-in-flow" stroke-width="5" stroke-dasharray="9 13">
+              <path d="M356,44 C 380,80 396,106 405,124"/>
+              <path d="M392,36 C 404,74 410,100 415,124"/>
+              <path d="M424,32 L424,124"/>
+              <path d="M456,36 C 444,74 438,100 433,124"/>
+              <path d="M492,44 C 468,80 452,106 443,124"/>
+            </g>
+            <g class="af-in-head" stroke-width="5">
+              <path d="M398,115 L405,126 L412,115"/>
+              <path d="M408,115 L415,126 L422,115"/>
+              <path d="M417,116 L424,127 L431,116"/>
+              <path d="M426,115 L433,126 L440,115"/>
+              <path d="M436,115 L443,126 L450,115"/>
+            </g>
+          </g>
+
+          <!-- circulating flow (teal -> green -> orange), marching dashes -->
+          <g fill="none" stroke="url(#afFlow)" stroke-width="5" stroke-linecap="round" stroke-dasharray="12 24" class="af-flow">
+            <path d="M424,182 C 344,372 318,602 398,744 C 462,852 380,978 424,1004"/>
+            <path d="M424,182 C 504,372 530,602 450,744 C 386,852 468,978 424,1004"/>
+            <path d="M424,258 C 364,418 348,636 418,790 C 458,872 406,958 424,998"/>
+            <path d="M424,258 C 484,418 500,636 430,790 C 390,872 442,958 424,998"/>
+            <path d="M424,210 C 422,500 422,818 424,998"/>
+          </g>
+
+          <!-- mid spread arrows -->
+          <g class="af-cross" stroke="#74bd72" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M376,560 L336,560 M348,552 L336,560 L348,568 M472,560 L512,560 M500,552 L512,560 L500,568"/>
+            <path d="M380,708 L342,708 M354,700 L342,708 L354,716 M468,708 L506,708 M494,700 L506,708 L494,716"/>
+            <path d="M384,852 L346,852 M358,844 L346,852 L358,860 M464,852 L502,852 M490,844 L502,852 L490,860"/>
+          </g>
+
+          <!-- exhaust slot + converging arrows (air out) -->
+          <rect x="368" y="996" width="112" height="18" rx="9" fill="#2a2622" opacity="0.8"/>
+          <g class="af-out" stroke="#e0883a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M356,948 L398,994 M384,982 L398,994 L400,972"/>
+            <path d="M492,948 L450,994 M464,982 L450,994 L448,972"/>
+          </g>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ RANGE REVEAL (shatter-to-assemble) ============ -->
+  <!-- shatter.js injects the .range-tile fragments into .range-grid on load.
+       Self-contained: own rAF, rect-based progress, no second Lenis. -->
+  <section id="range-reveal" aria-label="The full ZOUND range">
+    <div class="range-sticky">
+      <div class="range-grid" aria-hidden="true"></div>
+
+      <div class="range-overlay">
+        <p class="eyebrow range-eyebrow" data-i18n="rr_eyebrow">The Full Range</p>
+        <h2 class="display range-title" data-i18n="rr_title">Find your size.</h2>
+        <div class="range-sizes" role="list">
+          <span role="listitem">S&nbsp;Plus</span>
+          <span class="range-div" aria-hidden="true"></span>
+          <span role="listitem">M</span>
+          <span class="range-div" aria-hidden="true"></span>
+          <span role="listitem">L</span>
+          <span class="range-div" aria-hidden="true"></span>
+          <span role="listitem">L&nbsp;Plus</span>
+        </div>
+        <a href="#contact" class="btn btn-lg range-cta" data-i18n="rr_cta">Talk to Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLOR EXPLOSION (scrub: 7 finishes) ============ -->
+  <!-- canvas scrubs a master video that cycles the pod through all 7 VOGUE
+       finishes, each with a matching colored-powder explosion. The swatch row
+       + colour name track scroll progress (self-contained rAF, no 2nd Lenis). -->
+  <section class="cinematic colors-sec" id="colors" aria-label="Seven VOGUE finishes">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="colors-scrim" aria-hidden="true"></div>
+      <div class="colors-head">
+        <p class="eyebrow" data-i18n="col_eyebrow">VOGUE Series · Seven Finishes</p>
+        <h2 class="display-3" data-i18n="col_title">Your color.<br/>Your statement.</h2>
+      </div>
+      <div class="colors-foot">
+        <div class="colors-name" id="colorName" aria-live="polite">Cream White</div>
+        <ul class="colors-swatches" id="colorSwatches" aria-hidden="true">
+          <li class="active" style="--sw:#efe9dd"></li>
+          <li style="--sw:#b3a89b"></li>
+          <li style="--sw:#3b3f3e"></li>
+          <li style="--sw:#6f2a37"></li>
+          <li style="--sw:#c6772f"></li>
+          <li style="--sw:#a9c178"></li>
+          <li style="--sw:#5f6b3e"></li>
+        </ul>
+        <p class="colors-sub" data-i18n="col_sub">Seven curated finishes — from quiet neutrals to statement colour. Choose the one that belongs in your space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCE CASES ============ -->
+  <section class="ref-sec" id="references">
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-i18n="ref_eyebrow">Reference Cases</p>
+      <h2 class="display-2" data-i18n="ref_title">Trusted by leading<br/>brands worldwide.</h2>
+    </div>
+    <p class="ref-lead reveal" data-i18n="ref_lead">From global headquarters to airports, universities and government — ZOUND pods are trusted across the world's most demanding workspaces.</p>
+    <ul class="logo-grid reveal" aria-label="Brands that trust ZOUND — ByteDance, TikTok, United Nations, Philips, Asics, Red Bull, Michelin, BMW, AirAsia, Bangchak, SCB, Cartier, Brother, HOYA, Tiffany & Co., Pandora, Generali, Phyathai, Honda, BYD, Ajinomoto, Daikin, Gaysorn Village, Amazing Thailand, Central Pattana, King Power, BBN Airlines, Singha Estate, SLC, trueID, modernform and more">
+      <li class="logo-cell"><img src="assets/img/logos/logo-01.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-02.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-03.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-04.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-05.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-06.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-07.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-08.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-09.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-10.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-11.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-12.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-13.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-14.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-15.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-16.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-17.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-18.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-19.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-20.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-21.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-22.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-23.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-24.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-25.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-26.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-27.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-28.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-29.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-30.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-31.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-32.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-33.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-34.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-35.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+      <li class="logo-cell"><img src="assets/img/logos/logo-36.png?v=1" alt="" loading="lazy" decoding="async" /></li>
+    </ul>
+  </section>
+
+  <!-- ============ CONTACT / CTA ============ -->
+  <section class="contact" id="contact">
+    <p class="eyebrow reveal" data-i18n="con_eyebrow">Bring the quiet to your floor</p>
+    <h2 class="reveal display" data-i18n="con_title">Your space.<br/>Your innovation.</h2>
+    <div class="cta-row reveal">
+      <a href="mailto:hello@zoundpod.com" class="btn btn-lg" data-i18n="con_talk">Talk to Sales</a>
+      <a href="mailto:hello@zoundpod.com" class="btn btn-lg btn-ghost" data-i18n="con_free">Get a Free Consultation</a>
+    </div>
+    <ul class="channels reveal">
+      <li><span data-i18n="ch_call">Call</span><a href="tel:+6626903626">1605 · 02-690-3626</a></li>
+      <li><span>LINE</span><a href="https://line.me/R/ti/p/@zound" target="_blank" rel="noopener">@zound</a></li>
+      <li><span>Facebook</span><a href="https://facebook.com/zound.acoustic" target="_blank" rel="noopener">zound.acoustic</a></li>
+      <li><span data-i18n="ch_web">Web</span><a href="https://www.zound.me" target="_blank" rel="noopener">www.zound.me</a></li>
+    </ul>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <a href="#top" class="foot-brand" aria-label="ZOUND"><img class="brand-logo" src="assets/img/zound-logo.png" alt="ZOUND" /></a>
+    <div class="foot-meta">
+      <span>www.zound.me · 1605 / 02-690-3626</span>
+      <span data-i18n="foot_series">The VOGUE Series · Soundproof Office Pods</span>
+      <span data-i18n="foot_by">© 2026 ZOUND · by 1toAll</span>
+    </div>
+  </footer>
+
+  <!-- ============ SCRUB CONFIG ============ -->
+  <script>
+    window.SCRUB_SECTIONS = [
+      { section:"#hero",  frameCount:179, bg:"#b6a68d", framePath:(i)=>`frames/hero/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#pod-s", frameCount:179, bg:"#c7b8a3", framePath:(i)=>`frames/pod-s/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#pod-m", frameCount:179, bg:"#c7b8a3", framePath:(i)=>`frames/pod-m/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#pod-l", frameCount:179, bg:"#c7b8a3", framePath:(i)=>`frames/pod-l/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#air",   frameCount:179, bg:"#efe9df", framePath:(i)=>`frames/fan/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#colors",frameCount:179, bg:"#0e0e0e", framePath:(i)=>`frames/colors/frame_${String(i).padStart(4,"0")}.jpg` },
+    ];
+  </script>
+
+  <!-- Lenis smooth scroll + engine -->
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <script src="scroll-cinematic.js"></script>
+  <script src="shatter.js"></script>
+  <script src="i18n.js"></script>
+  <script>
+    // nav goes solid after leaving hero
+    const nav = document.getElementById('nav');
+    const io2 = new IntersectionObserver(([e]) => {
+      nav.classList.toggle('nav-solid', !e.isIntersecting);
+    }, { rootMargin: '-72px 0px 0px 0px' });
+    io2.observe(document.getElementById('hero'));
+  </script>
+
+  <!-- Colour-explosion: drive the active swatch + colour name from scroll -->
+  <script>
+    (function () {
+      var sec = document.getElementById('colors');
+      if (!sec) return;
+      var nameEl = document.getElementById('colorName');
+      var swatches = [].slice.call(document.querySelectorAll('#colorSwatches li'));
+      var NAMES = {
+        en: ['Cream White','Pale Grey','Meteoric Black','Scarlet','Orange','Fresh Green','Olive Green'],
+        th: ['ครีมขาว','เทาอ่อน','ดำเมทิออริก','แดงสการ์เลต','ส้ม','เขียวสด','เขียวมะกอก']
+      };
+      var N = swatches.length || 7;
+      var lastIdx = -1, lastLang = '';
+      function raf(cb){ (window.requestAnimationFrame||function(f){setTimeout(function(){f(Date.now());},16);})(cb); }
+      function tick() {
+        var rect = sec.getBoundingClientRect();
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.bottom < -vh || rect.top > vh) { raf(tick); return; }
+        var scrollable = rect.height - vh;
+        var p = scrollable > 0 ? Math.min(Math.max(-rect.top / scrollable, 0), 1) : 0;
+        var idx = Math.min(N - 1, Math.floor(p * N));
+        var lang = (document.documentElement.lang === 'th') ? 'th' : 'en';
+        if (idx !== lastIdx || lang !== lastLang) {
+          lastIdx = idx; lastLang = lang;
+          for (var i = 0; i < swatches.length; i++) swatches[i].classList.toggle('active', i === idx);
+          if (nameEl) nameEl.textContent = (NAMES[lang] || NAMES.en)[idx];
+        }
+        raf(tick);
+      }
+      raf(tick);
+    })();
+  </script>
+</body>
+</html>
