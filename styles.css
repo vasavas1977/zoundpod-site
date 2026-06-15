@@ -652,15 +652,11 @@ html[lang="th"] .ben-sign { font-family: "Noto Serif Thai", "Fraunces", Georgia,
 @keyframes af-breathe { 0%,100% { opacity: .42; } 50% { opacity: .62; } }
 
 /* a bright glint glides down each stream, staggered per stream */
-.af-stream-pulse path { opacity: .9; animation: af-travel 3.6s linear infinite; }
+.af-stream-pulse path { opacity: .92; animation: af-travel 3s linear infinite; }
 .af-stream-pulse path:nth-child(1) { animation-delay: 0s; }
-.af-stream-pulse path:nth-child(2) { animation-delay: -2.05s; }
-.af-stream-pulse path:nth-child(3) { animation-delay: -.9s; }
-.af-stream-pulse path:nth-child(4) { animation-delay: -2.7s; }
-.af-stream-pulse path:nth-child(5) { animation-delay: -1.35s; }
-.af-stream-pulse path:nth-child(6) { animation-delay: -3.15s; }
-.af-stream-pulse path:nth-child(7) { animation-delay: -.45s; }
-@keyframes af-travel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -600; } }
+.af-stream-pulse path:nth-child(2) { animation-delay: -1.05s; }
+.af-stream-pulse path:nth-child(3) { animation-delay: -2.0s; }
+@keyframes af-travel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -380; } }
 
 /* arrowheads breathe gently, in -> circulate -> out cascade */
 .af-head-in  { animation: af-pulse 2.4s ease-in-out infinite; }
