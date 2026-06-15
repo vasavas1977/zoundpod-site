@@ -339,18 +339,19 @@
 
       <figure class="airflow-fig reveal">
         <img src="assets/img/pod-front.jpg" alt="ZOUND pod, front view" class="airflow-pod" loading="lazy" />
-        <svg viewBox="0 0 848 1264" xmlns="http://www.w3.org/2000/svg" class="airflow-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Air circulation through a ZOUND pod: fresh air enters at the top vent, circulates through the cabin, and exhausts at the base">
+        <svg viewBox="0 0 848 1264" xmlns="http://www.w3.org/2000/svg" class="airflow-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Air circulation through a ZOUND pod: fresh air enters at the top vent, circulates in crossing currents through the cabin, and exhausts at the floor">
           <defs>
-            <linearGradient id="afStream" gradientUnits="userSpaceOnUse" x1="424" y1="120" x2="424" y2="1000">
+            <linearGradient id="afStream" gradientUnits="userSpaceOnUse" x1="424" y1="140" x2="424" y2="940">
               <stop offset="0" stop-color="#25aede"/>
-              <stop offset="0.30" stop-color="#33b7cb"/>
-              <stop offset="0.50" stop-color="#5cbf73"/>
-              <stop offset="0.74" stop-color="#9bb95a"/>
+              <stop offset="0.28" stop-color="#33b7cb"/>
+              <stop offset="0.44" stop-color="#5cbf73"/>
+              <stop offset="0.64" stop-color="#5cbf73"/>
+              <stop offset="0.82" stop-color="#e0883a"/>
               <stop offset="1" stop-color="#e0883a"/>
             </linearGradient>
-            <linearGradient id="afFade" gradientUnits="userSpaceOnUse" x1="424" y1="78" x2="424" y2="1020">
-              <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-              <stop offset="0.11" stop-color="#fff" stop-opacity="1"/>
+            <linearGradient id="afFade" gradientUnits="userSpaceOnUse" x1="424" y1="140" x2="424" y2="1020">
+              <stop offset="0" stop-color="#fff" stop-opacity="0.15"/>
+              <stop offset="0.10" stop-color="#fff" stop-opacity="1"/>
               <stop offset="0.93" stop-color="#fff" stop-opacity="1"/>
               <stop offset="1" stop-color="#fff" stop-opacity="0.12"/>
             </linearGradient>
@@ -360,74 +361,78 @@
           </defs>
 
           <g mask="url(#afMask)">
-            <!-- volumetric air haze (wide, very soft) -->
-            <g class="af-haze" filter="url(#afSoft)" fill="none" stroke="url(#afStream)" stroke-width="44" stroke-linecap="round" opacity="0.2">
-              <path d="M385.0,78.0 C384.0,90.0 389.0,69.7 379.0,150.0 C369.0,230.3 325.0,418.3 325.0,560.0 C325.0,701.7 370.0,926.7 379.0,1000.0"/>
-              <path d="M398.0,78.0 C397.3,90.0 400.7,69.7 394.0,150.0 C387.3,230.3 358.0,418.3 358.0,560.0 C358.0,701.7 388.0,926.7 394.0,1000.0"/>
-              <path d="M411.0,78.0 C410.7,90.0 412.3,69.7 409.0,150.0 C405.7,230.3 391.0,418.3 391.0,560.0 C391.0,701.7 406.0,926.7 409.0,1000.0"/>
-              <path d="M424.0,78.0 C424.0,90.0 424.0,69.7 424.0,150.0 C424.0,230.3 424.0,418.3 424.0,560.0 C424.0,701.7 424.0,926.7 424.0,1000.0"/>
-              <path d="M437.0,78.0 C437.3,90.0 435.7,69.7 439.0,150.0 C442.3,230.3 457.0,418.3 457.0,560.0 C457.0,701.7 442.0,926.7 439.0,1000.0"/>
-              <path d="M450.0,78.0 C450.7,90.0 447.3,69.7 454.0,150.0 C460.7,230.3 490.0,418.3 490.0,560.0 C490.0,701.7 460.0,926.7 454.0,1000.0"/>
-              <path d="M463.0,78.0 C464.0,90.0 459.0,69.7 469.0,150.0 C479.0,230.3 523.0,418.3 523.0,560.0 C523.0,701.7 478.0,926.7 469.0,1000.0"/>
+            <!-- volumetric air haze -->
+            <g class="af-haze" filter="url(#afSoft)" fill="none" stroke="url(#afStream)" stroke-width="30" stroke-linecap="round" opacity="0.18">
+              <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
+              <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
+              <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
+              <path d="M314.0,315.0 Q424.0,845.0 534.0,315.0"/>
+              <path d="M322.0,430.0 Q424.0,946.0 526.0,430.0"/>
+              <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
+              <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
             <!-- glow trail -->
-            <g class="af-glow" filter="url(#afGlow)" fill="none" stroke="url(#afStream)" stroke-width="15" stroke-linecap="round" opacity="0.52">
-              <path d="M385.0,78.0 C384.0,90.0 389.0,69.7 379.0,150.0 C369.0,230.3 325.0,418.3 325.0,560.0 C325.0,701.7 370.0,926.7 379.0,1000.0"/>
-              <path d="M398.0,78.0 C397.3,90.0 400.7,69.7 394.0,150.0 C387.3,230.3 358.0,418.3 358.0,560.0 C358.0,701.7 388.0,926.7 394.0,1000.0"/>
-              <path d="M411.0,78.0 C410.7,90.0 412.3,69.7 409.0,150.0 C405.7,230.3 391.0,418.3 391.0,560.0 C391.0,701.7 406.0,926.7 409.0,1000.0"/>
-              <path d="M424.0,78.0 C424.0,90.0 424.0,69.7 424.0,150.0 C424.0,230.3 424.0,418.3 424.0,560.0 C424.0,701.7 424.0,926.7 424.0,1000.0"/>
-              <path d="M437.0,78.0 C437.3,90.0 435.7,69.7 439.0,150.0 C442.3,230.3 457.0,418.3 457.0,560.0 C457.0,701.7 442.0,926.7 439.0,1000.0"/>
-              <path d="M450.0,78.0 C450.7,90.0 447.3,69.7 454.0,150.0 C460.7,230.3 490.0,418.3 490.0,560.0 C490.0,701.7 460.0,926.7 454.0,1000.0"/>
-              <path d="M463.0,78.0 C464.0,90.0 459.0,69.7 469.0,150.0 C479.0,230.3 523.0,418.3 523.0,560.0 C523.0,701.7 478.0,926.7 469.0,1000.0"/>
+            <g class="af-glow" filter="url(#afGlow)" fill="none" stroke="url(#afStream)" stroke-width="13" stroke-linecap="round" opacity="0.5">
+              <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
+              <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
+              <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
+              <path d="M314.0,315.0 Q424.0,845.0 534.0,315.0"/>
+              <path d="M322.0,430.0 Q424.0,946.0 526.0,430.0"/>
+              <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
+              <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
             <!-- crisp core line -->
-            <g class="af-core" fill="none" stroke="url(#afStream)" stroke-width="2.5" stroke-linecap="round" opacity="0.82">
-              <path d="M385.0,78.0 C384.0,90.0 389.0,69.7 379.0,150.0 C369.0,230.3 325.0,418.3 325.0,560.0 C325.0,701.7 370.0,926.7 379.0,1000.0"/>
-              <path d="M398.0,78.0 C397.3,90.0 400.7,69.7 394.0,150.0 C387.3,230.3 358.0,418.3 358.0,560.0 C358.0,701.7 388.0,926.7 394.0,1000.0"/>
-              <path d="M411.0,78.0 C410.7,90.0 412.3,69.7 409.0,150.0 C405.7,230.3 391.0,418.3 391.0,560.0 C391.0,701.7 406.0,926.7 409.0,1000.0"/>
-              <path d="M424.0,78.0 C424.0,90.0 424.0,69.7 424.0,150.0 C424.0,230.3 424.0,418.3 424.0,560.0 C424.0,701.7 424.0,926.7 424.0,1000.0"/>
-              <path d="M437.0,78.0 C437.3,90.0 435.7,69.7 439.0,150.0 C442.3,230.3 457.0,418.3 457.0,560.0 C457.0,701.7 442.0,926.7 439.0,1000.0"/>
-              <path d="M450.0,78.0 C450.7,90.0 447.3,69.7 454.0,150.0 C460.7,230.3 490.0,418.3 490.0,560.0 C490.0,701.7 460.0,926.7 454.0,1000.0"/>
-              <path d="M463.0,78.0 C464.0,90.0 459.0,69.7 469.0,150.0 C479.0,230.3 523.0,418.3 523.0,560.0 C523.0,701.7 478.0,926.7 469.0,1000.0"/>
+            <g class="af-core" fill="none" stroke="url(#afStream)" stroke-width="2.6" stroke-linecap="round" opacity="0.85">
+              <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
+              <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
+              <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
+              <path d="M314.0,315.0 Q424.0,845.0 534.0,315.0"/>
+              <path d="M322.0,430.0 Q424.0,946.0 526.0,430.0"/>
+              <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
+              <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
-            <!-- traveling pulse (bright glint gliding down each stream) -->
-            <g class="af-stream-pulse" fill="none" stroke="url(#afStream)" stroke-width="4.2" stroke-linecap="round" stroke-dasharray="40 560">
-              <path d="M385.0,78.0 C384.0,90.0 389.0,69.7 379.0,150.0 C369.0,230.3 325.0,418.3 325.0,560.0 C325.0,701.7 370.0,926.7 379.0,1000.0"/>
-              <path d="M398.0,78.0 C397.3,90.0 400.7,69.7 394.0,150.0 C387.3,230.3 358.0,418.3 358.0,560.0 C358.0,701.7 388.0,926.7 394.0,1000.0"/>
-              <path d="M411.0,78.0 C410.7,90.0 412.3,69.7 409.0,150.0 C405.7,230.3 391.0,418.3 391.0,560.0 C391.0,701.7 406.0,926.7 409.0,1000.0"/>
-              <path d="M424.0,78.0 C424.0,90.0 424.0,69.7 424.0,150.0 C424.0,230.3 424.0,418.3 424.0,560.0 C424.0,701.7 424.0,926.7 424.0,1000.0"/>
-              <path d="M437.0,78.0 C437.3,90.0 435.7,69.7 439.0,150.0 C442.3,230.3 457.0,418.3 457.0,560.0 C457.0,701.7 442.0,926.7 439.0,1000.0"/>
-              <path d="M450.0,78.0 C450.7,90.0 447.3,69.7 454.0,150.0 C460.7,230.3 490.0,418.3 490.0,560.0 C490.0,701.7 460.0,926.7 454.0,1000.0"/>
-              <path d="M463.0,78.0 C464.0,90.0 459.0,69.7 469.0,150.0 C479.0,230.3 523.0,418.3 523.0,560.0 C523.0,701.7 478.0,926.7 469.0,1000.0"/>
+            <!-- travelling glints (circulating motion along each current) -->
+            <g class="af-stream-pulse" fill="none" stroke="url(#afStream)" stroke-width="4" stroke-linecap="round" stroke-dasharray="38 520">
+              <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
+              <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
+              <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
+              <path d="M314.0,315.0 Q424.0,845.0 534.0,315.0"/>
+              <path d="M322.0,430.0 Q424.0,946.0 526.0,430.0"/>
+              <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
+              <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
           </g>
 
-          <!-- fresh-air intake arrowheads (cyan) -->
+          <!-- intake burst at the ceiling vent -->
+          <g class="af-burst" fill="none" stroke="#25aede" stroke-width="3" stroke-linecap="round" opacity="0.85">
+            <path d="M413.4,88.0 L393.7,65.4"/>
+            <path d="M418.4,85.0 L407.8,56.9"/>
+            <path d="M424.0,84.0 L424.0,54.0"/>
+            <path d="M429.6,85.0 L440.2,56.9"/>
+            <path d="M434.6,88.0 L454.3,65.4"/>
+          </g>
+          <!-- fresh-air intake heads (cyan, flowing down & inward) -->
           <g class="af-head af-head-in" fill="#25aede">
-            <path d="M346.5,308.9 L348.3,332.0 L357.4,310.7 Z"/>
-            <path d="M370.5,309.1 L373.5,332.1 L381.4,310.3 Z"/>
-            <path d="M394.5,309.4 L398.7,332.1 L405.5,310.0 Z"/>
-            <path d="M418.5,309.7 L424.0,332.2 L429.5,309.7 Z"/>
-            <path d="M442.5,310.0 L449.3,332.1 L453.5,309.4 Z"/>
-            <path d="M466.6,310.3 L474.5,332.1 L477.5,309.1 Z"/>
-            <path d="M490.6,310.7 L499.7,332.0 L501.5,308.9 Z"/>
+            <path d="M393.4,281.9 L409.8,296.0 L401.5,276.0 Z"/>
+            <path d="M446.5,276.0 L438.2,296.0 L454.6,281.9 Z"/>
+            <path d="M386.4,361.1 L402.6,375.5 L394.6,355.4 Z"/>
+            <path d="M453.4,355.4 L445.4,375.5 L461.6,361.1 Z"/>
+            <path d="M382.0,446.7 L397.9,461.3 L390.3,441.1 Z"/>
+            <path d="M457.7,441.1 L450.1,461.3 L466.0,446.7 Z"/>
           </g>
-          <!-- circulating cues (green, spreading outward) -->
-          <g class="af-head af-head-circ" fill="#5cbf73" opacity="0.92">
-            <path d="M331.0,555.5 L313.0,560.0 L331.0,564.5 Z"/>
-            <path d="M517.0,564.5 L535.0,560.0 L517.0,555.5 Z"/>
-            <path d="M368.2,665.3 L350.2,669.8 L368.2,674.3 Z"/>
-            <path d="M479.8,674.3 L497.8,669.8 L479.8,665.3 Z"/>
+          <!-- circulating spread (green, outward) -->
+          <g class="af-head af-head-circ" fill="#5cbf73" opacity="0.95">
+            <path d="M326.5,575.0 L307.0,580.0 L326.5,585.0 Z"/>
+            <path d="M521.5,585.0 L541.0,580.0 L521.5,575.0 Z"/>
+            <path d="M334.5,683.0 L315.0,688.0 L334.5,693.0 Z"/>
+            <path d="M513.5,693.0 L533.0,688.0 L513.5,683.0 Z"/>
           </g>
-          <!-- exhaust arrowheads (orange) -->
+          <!-- exhaust heads (orange, converging into the floor vent) -->
           <g class="af-head af-head-out" fill="#e0883a">
-            <path d="M364.7,944.8 L374.4,967.6 L376.6,942.9 Z"/>
-            <path d="M382.4,944.5 L390.9,967.7 L394.4,943.2 Z"/>
-            <path d="M400.2,944.1 L407.5,967.8 L412.2,943.5 Z"/>
-            <path d="M418.0,943.8 L424.0,967.8 L430.0,943.8 Z"/>
-            <path d="M435.8,943.5 L440.5,967.8 L447.8,944.1 Z"/>
-            <path d="M453.6,943.2 L457.1,967.7 L465.6,944.5 Z"/>
-            <path d="M471.4,942.9 L473.6,967.6 L483.3,944.8 Z"/>
+            <path d="M385.1,943.3 L387.8,967.9 L397.0,944.9 Z"/>
+            <path d="M406.4,943.7 L411.2,968.0 L418.4,944.3 Z"/>
+            <path d="M429.6,944.3 L436.8,968.0 L441.6,943.7 Z"/>
+            <path d="M451.0,944.9 L460.2,967.9 L462.9,943.3 Z"/>
           </g>
 
           <!-- floor exhaust slot -->

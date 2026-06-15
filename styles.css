@@ -666,6 +666,7 @@ html[lang="th"] .ben-sign { font-family: "Noto Serif Thai", "Fraunces", Georgia,
 .af-head-in  { animation: af-pulse 2.4s ease-in-out infinite; }
 .af-head-circ{ animation: af-pulse 2.4s ease-in-out infinite .5s; }
 .af-head-out { animation: af-pulse 2.4s ease-in-out infinite 1s; }
+.af-burst { animation: af-pulse 2.2s ease-in-out infinite; }
 @keyframes af-pulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
 
 @media (max-width: 760px) {
@@ -673,6 +674,6 @@ html[lang="th"] .ben-sign { font-family: "Noto Serif Thai", "Fraunces", Georgia,
   .airflow-fig { order: -1; max-width: 300px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .af-glow, .af-stream-pulse path, .af-head-in, .af-head-circ, .af-head-out { animation: none; }
+  .af-glow, .af-stream-pulse path, .af-head-in, .af-head-circ, .af-head-out, .af-burst { animation: none; }
   .af-stream-pulse { display: none; }
 }
