@@ -642,27 +642,37 @@ html[lang="th"] .ben-sign { font-family: "Noto Serif Thai", "Fraunces", Georgia,
 .airflow-legend { display: flex; flex-wrap: wrap; gap: 18px 26px; margin-top: 30px; }
 .airflow-legend > span { display: inline-flex; align-items: center; gap: 9px; font-size: 0.9rem; color: var(--stone); }
 .afdot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
-.afdot-in { background: #2bb6c4; } .afdot-mid { background: #74bd72; } .afdot-out { background: #e0883a; }
+.afdot-in { background: #25aede; } .afdot-mid { background: #5cbf73; } .afdot-out { background: #e0883a; }
 .airflow-tag { margin-top: 26px; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--stone); }
 .airflow-fig { position: relative; width: 100%; max-width: 392px; margin: 0 auto; }
 .airflow-pod { width: 100%; display: block; border-radius: 18px; box-shadow: 0 30px 70px rgba(28,24,19,0.16); }
 .airflow-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.af-cross { animation: af-pulse 2.2s ease-in-out infinite; }
-.af-in-flow path { animation: af-in-march 1.5s linear infinite; }
-.af-in-head { animation: af-pulse 1.6s ease-in-out infinite; }
-@keyframes af-in-march { to { stroke-dashoffset: -44; } }
+/* --- air-shower flow: soft volumetric streams + travelling glints --- */
+.af-glow { animation: af-breathe 5.5s ease-in-out infinite; }
+@keyframes af-breathe { 0%,100% { opacity: .42; } 50% { opacity: .62; } }
 
-/* flowing-air animation */
-.af-flow path { animation: af-march 1.7s linear infinite; }
-@keyframes af-march { to { stroke-dashoffset: -36; } }
-.af-in, .af-out { animation: af-pulse 1.9s ease-in-out infinite; transform-box: fill-box; }
-.af-out { animation-delay: .5s; }
-@keyframes af-pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+/* a bright glint glides down each stream, staggered per stream */
+.af-stream-pulse path { opacity: .9; animation: af-travel 3.6s linear infinite; }
+.af-stream-pulse path:nth-child(1) { animation-delay: 0s; }
+.af-stream-pulse path:nth-child(2) { animation-delay: -2.05s; }
+.af-stream-pulse path:nth-child(3) { animation-delay: -.9s; }
+.af-stream-pulse path:nth-child(4) { animation-delay: -2.7s; }
+.af-stream-pulse path:nth-child(5) { animation-delay: -1.35s; }
+.af-stream-pulse path:nth-child(6) { animation-delay: -3.15s; }
+.af-stream-pulse path:nth-child(7) { animation-delay: -.45s; }
+@keyframes af-travel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -600; } }
+
+/* arrowheads breathe gently, in -> circulate -> out cascade */
+.af-head-in  { animation: af-pulse 2.4s ease-in-out infinite; }
+.af-head-circ{ animation: af-pulse 2.4s ease-in-out infinite .5s; }
+.af-head-out { animation: af-pulse 2.4s ease-in-out infinite 1s; }
+@keyframes af-pulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
 
 @media (max-width: 760px) {
   .airflow-wrap { grid-template-columns: 1fr; }
   .airflow-fig { order: -1; max-width: 300px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .af-flow path, .af-in, .af-in-flow path, .af-in-head, .af-cross, .af-out { animation: none; }
+  .af-glow, .af-stream-pulse path, .af-head-in, .af-head-circ, .af-head-out { animation: none; }
+  .af-stream-pulse { display: none; }
 }
