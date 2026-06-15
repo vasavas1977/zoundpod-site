@@ -342,13 +342,18 @@
         <svg viewBox="0 0 848 1264" xmlns="http://www.w3.org/2000/svg" class="airflow-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Air circulation through a ZOUND pod: fresh air enters at the top vent, circulates in crossing currents through the cabin, and exhausts at the floor">
           <defs>
             <linearGradient id="afStream" gradientUnits="userSpaceOnUse" x1="424" y1="140" x2="424" y2="940">
-              <stop offset="0" stop-color="#25aede"/>
-              <stop offset="0.28" stop-color="#33b7cb"/>
-              <stop offset="0.44" stop-color="#5cbf73"/>
-              <stop offset="0.64" stop-color="#5cbf73"/>
-              <stop offset="0.82" stop-color="#e0883a"/>
-              <stop offset="1" stop-color="#e0883a"/>
+              <stop offset="0" stop-color="#18b6ee"/>
+              <stop offset="0.28" stop-color="#23bad2"/>
+              <stop offset="0.44" stop-color="#4fc85f"/>
+              <stop offset="0.64" stop-color="#4fc85f"/>
+              <stop offset="0.82" stop-color="#f0902f"/>
+              <stop offset="1" stop-color="#f0902f"/>
             </linearGradient>
+            <radialGradient id="afScrim" gradientUnits="userSpaceOnUse" cx="424" cy="560" r="120" gradientTransform="matrix(1,0,0,3.4,0,-1344)">
+              <stop offset="0" stop-color="#0a130f" stop-opacity="0.5"/>
+              <stop offset="0.6" stop-color="#0a130f" stop-opacity="0.4"/>
+              <stop offset="1" stop-color="#0a130f" stop-opacity="0"/>
+            </radialGradient>
             <linearGradient id="afFade" gradientUnits="userSpaceOnUse" x1="424" y1="140" x2="424" y2="1020">
               <stop offset="0" stop-color="#fff" stop-opacity="0.15"/>
               <stop offset="0.10" stop-color="#fff" stop-opacity="1"/>
@@ -356,13 +361,17 @@
               <stop offset="1" stop-color="#fff" stop-opacity="0.12"/>
             </linearGradient>
             <mask id="afMask"><rect x="0" y="0" width="848" height="1264" fill="url(#afFade)"/></mask>
-            <filter id="afGlow" x="-60%" y="-25%" width="220%" height="150%"><feGaussianBlur stdDeviation="11"/></filter>
+            <filter id="afGlow" x="-60%" y="-25%" width="220%" height="150%"><feGaussianBlur stdDeviation="10"/></filter>
             <filter id="afSoft" x="-90%" y="-40%" width="280%" height="180%"><feGaussianBlur stdDeviation="24"/></filter>
+            <filter id="afHeadGlow" x="-90%" y="-90%" width="280%" height="280%"><feGaussianBlur stdDeviation="4.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           </defs>
+
+          <!-- premium spotlight: soft dark glow confined to the cabin so the flow pops -->
+          <rect x="0" y="0" width="848" height="1264" fill="url(#afScrim)"/>
 
           <g mask="url(#afMask)">
             <!-- volumetric air haze -->
-            <g class="af-haze" filter="url(#afSoft)" fill="none" stroke="url(#afStream)" stroke-width="30" stroke-linecap="round" opacity="0.18">
+            <g class="af-haze" filter="url(#afSoft)" fill="none" stroke="url(#afStream)" stroke-width="32" stroke-linecap="round" opacity="0.22">
               <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
               <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
               <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
@@ -372,7 +381,7 @@
               <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
             <!-- glow trail -->
-            <g class="af-glow" filter="url(#afGlow)" fill="none" stroke="url(#afStream)" stroke-width="13" stroke-linecap="round" opacity="0.5">
+            <g class="af-glow" filter="url(#afGlow)" fill="none" stroke="url(#afStream)" stroke-width="14" stroke-linecap="round" opacity="0.62">
               <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
               <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
               <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
@@ -381,8 +390,8 @@
               <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
               <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
-            <!-- crisp core line -->
-            <g class="af-core" fill="none" stroke="url(#afStream)" stroke-width="2.6" stroke-linecap="round" opacity="0.85">
+            <!-- crisp core line (bold + bright) -->
+            <g class="af-core" fill="none" stroke="url(#afStream)" stroke-width="3.4" stroke-linecap="round" opacity="1">
               <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
               <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
               <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
@@ -391,8 +400,8 @@
               <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
               <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
-            <!-- travelling glints (circulating motion along each current) -->
-            <g class="af-stream-pulse" fill="none" stroke="url(#afStream)" stroke-width="4" stroke-linecap="round" stroke-dasharray="38 520">
+            <!-- travelling glints (bright, circulating) -->
+            <g class="af-stream-pulse" fill="none" stroke="#ffffff" stroke-width="4.6" stroke-linecap="round" stroke-dasharray="30 480" opacity="0.85">
               <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
               <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
               <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
@@ -404,39 +413,39 @@
           </g>
 
           <!-- intake burst at the ceiling vent -->
-          <g class="af-burst" fill="none" stroke="#25aede" stroke-width="3" stroke-linecap="round" opacity="0.85">
+          <g class="af-burst" filter="url(#afHeadGlow)" fill="none" stroke="#3ec6f5" stroke-width="3.4" stroke-linecap="round">
             <path d="M413.4,88.0 L393.7,65.4"/>
             <path d="M418.4,85.0 L407.8,56.9"/>
             <path d="M424.0,84.0 L424.0,54.0"/>
             <path d="M429.6,85.0 L440.2,56.9"/>
             <path d="M434.6,88.0 L454.3,65.4"/>
           </g>
-          <!-- fresh-air intake heads (cyan, flowing down & inward) -->
-          <g class="af-head af-head-in" fill="#25aede">
-            <path d="M393.4,281.9 L409.8,296.0 L401.5,276.0 Z"/>
-            <path d="M446.5,276.0 L438.2,296.0 L454.6,281.9 Z"/>
-            <path d="M386.4,361.1 L402.6,375.5 L394.6,355.4 Z"/>
-            <path d="M453.4,355.4 L445.4,375.5 L461.6,361.1 Z"/>
-            <path d="M382.0,446.7 L397.9,461.3 L390.3,441.1 Z"/>
-            <path d="M457.7,441.1 L450.1,461.3 L466.0,446.7 Z"/>
+          <!-- fresh-air intake heads (cyan, bold + glowing, flowing down & inward) -->
+          <g class="af-head af-head-in" filter="url(#afHeadGlow)" fill="#2bc0f5">
+            <path d="M390.3,281.1 L412.8,300.0 L401.7,272.8 Z"/>
+            <path d="M446.3,272.8 L435.2,300.0 L457.7,281.1 Z"/>
+            <path d="M383.4,360.2 L405.5,379.6 L394.8,352.2 Z"/>
+            <path d="M453.2,352.2 L442.5,379.6 L464.6,360.2 Z"/>
+            <path d="M379.0,445.7 L400.7,465.5 L390.6,437.9 Z"/>
+            <path d="M457.4,437.9 L447.3,465.5 L469.0,445.7 Z"/>
           </g>
           <!-- circulating spread (green, outward) -->
-          <g class="af-head af-head-circ" fill="#5cbf73" opacity="0.95">
-            <path d="M326.5,575.0 L307.0,580.0 L326.5,585.0 Z"/>
-            <path d="M521.5,585.0 L541.0,580.0 L521.5,575.0 Z"/>
-            <path d="M334.5,683.0 L315.0,688.0 L334.5,693.0 Z"/>
-            <path d="M513.5,693.0 L533.0,688.0 L513.5,683.0 Z"/>
+          <g class="af-head af-head-circ" filter="url(#afHeadGlow)" fill="#5fd06a">
+            <path d="M328.0,574.0 L304.0,580.0 L328.0,586.0 Z"/>
+            <path d="M520.0,586.0 L544.0,580.0 L520.0,574.0 Z"/>
+            <path d="M336.0,682.0 L312.0,688.0 L336.0,694.0 Z"/>
+            <path d="M512.0,694.0 L536.0,688.0 L512.0,682.0 Z"/>
           </g>
           <!-- exhaust heads (orange, converging into the floor vent) -->
-          <g class="af-head af-head-out" fill="#e0883a">
-            <path d="M385.1,943.3 L387.8,967.9 L397.0,944.9 Z"/>
-            <path d="M406.4,943.7 L411.2,968.0 L418.4,944.3 Z"/>
-            <path d="M429.6,944.3 L436.8,968.0 L441.6,943.7 Z"/>
-            <path d="M451.0,944.9 L460.2,967.9 L462.9,943.3 Z"/>
+          <g class="af-head af-head-out" filter="url(#afHeadGlow)" fill="#f5952f">
+            <path d="M382.4,941.6 L385.3,970.8 L396.3,943.6 Z"/>
+            <path d="M405.5,942.2 L411.1,971.0 L419.4,942.8 Z"/>
+            <path d="M428.6,942.8 L436.9,971.0 L442.5,942.2 Z"/>
+            <path d="M451.7,943.6 L462.7,970.8 L465.6,941.6 Z"/>
           </g>
 
           <!-- floor exhaust slot -->
-          <rect x="368" y="998" width="112" height="15" rx="7.5" fill="#241f1a" opacity="0.5"/>
+          <rect x="368" y="998" width="112" height="15" rx="7.5" fill="#241f1a" opacity="0.55"/>
         </svg>
       </figure>
     </div>
