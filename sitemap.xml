@@ -4,16 +4,16 @@
   <url>
     <loc>https://zoundpod.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://zoundpod.com/"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://zoundpod.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://zoundpod.com/th"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://zoundpod.com/"/>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zoundpod.com/th.html</loc>
+    <loc>https://zoundpod.com/th</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://zoundpod.com/"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://zoundpod.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://zoundpod.com/th"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://zoundpod.com/"/>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
