@@ -224,9 +224,18 @@
 
   function init() {
     cache();
-    var stored = null;
-    try { stored = localStorage.getItem("zound-lang"); } catch (e) {}
-    apply(stored === "th" ? "th" : "en");
+    // Initial language: /th/ path or ?lang=th forces Thai (for SEO + shared links);
+    // otherwise fall back to the visitor's saved choice, else English.
+    var initial = "en";
+    try {
+      var p = location.pathname.toLowerCase(), q = location.search.toLowerCase();
+      if (/(^|\/)th(\/|\.html|$)/.test(p) || /[?&]lang=th/.test(q)) {
+        initial = "th";
+      } else if (localStorage.getItem("zound-lang") === "th") {
+        initial = "th";
+      }
+    } catch (e) {}
+    apply(initial);
 
     var t = document.getElementById("lang-toggle");
     if (t) {
