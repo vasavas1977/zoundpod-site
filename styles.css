@@ -563,6 +563,42 @@ html[lang="th"] .ben-sign { font-family: "Noto Serif Thai", "Fraunces", Georgia,
   .logo-grid { grid-template-columns: repeat(3, 1fr); gap: 30px 18px; }
 }
 
+/* ---------- FAQ ---------- */
+.faq-sec { max-width: 880px; margin: 0 auto; padding: clamp(80px,13vh,150px) clamp(24px,6vw,80px); }
+.faq-sec .sec-head { text-align: center; margin-bottom: clamp(40px,6vh,64px); }
+.faq-list { border-top: 1px solid rgba(28,24,19,0.12); }
+.faq-item { border-bottom: 1px solid rgba(28,24,19,0.12); }
+.faq-item > summary {
+  display: block; list-style: none; cursor: pointer; position: relative;
+  padding: clamp(20px,3vh,30px) 52px clamp(20px,3vh,30px) 0;
+  font-family: "Fraunces", Georgia, serif; font-weight: 400;
+  font-size: clamp(1.12rem,2vw,1.42rem); line-height: 1.35; color: var(--ink);
+  transition: color .35s ease;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary:hover { color: var(--terra); }
+.faq-item > summary::after {
+  content: ""; position: absolute; right: 8px; top: 50%;
+  width: 13px; height: 13px; margin-top: -7px;
+  background:
+    linear-gradient(var(--stone),var(--stone)) center/13px 1.5px no-repeat,
+    linear-gradient(var(--stone),var(--stone)) center/1.5px 13px no-repeat;
+  transition: transform .4s cubic-bezier(.2,.8,.2,1), opacity .3s;
+}
+.faq-item[open] > summary::after { transform: rotate(135deg); }
+.faq-item[open] > summary { color: var(--terra); }
+.faq-a { overflow: hidden; padding: 0 60px 6px 0; }
+.faq-a p {
+  margin: 0 0 clamp(20px,3vh,28px);
+  color: var(--stone); font-size: clamp(1rem,1.4vw,1.1rem); line-height: 1.68; max-width: 68ch;
+}
+.faq-item[open] .faq-a { animation: faq-reveal .5s cubic-bezier(.2,.8,.2,1); }
+@keyframes faq-reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .faq-item > summary::after, .faq-item[open] .faq-a { transition: none; animation: none; }
+}
+html[lang="th"] .faq-item > summary { font-family: "Noto Serif Thai", "Fraunces", serif; }
+
 /* ---------- Contact channels ---------- */
 .channels { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px 40px; margin-top: clamp(40px,6vh,60px); }
 .channels li { display: flex; flex-direction: column; gap: 4px; }
