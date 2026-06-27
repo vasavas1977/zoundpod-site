@@ -98,7 +98,7 @@ body {
 /* ---------- Cinematic scrub sections ---------- */
 .cinematic { position: relative; }
 .hero { height: 480vh; }
-.pod  { height: 400vh; }
+.pod  { height: 320vh; }
 .sticky {
   position: sticky; top: 0;
   height: 100vh; width: 100%;
@@ -369,7 +369,7 @@ body {
   body { font-size: 16px; }
   .nav-links { display: none; }
   .hero { height: 420vh; }
-  .pod { height: 360vh; }
+  .pod { height: 280vh; }
   .grid { grid-template-columns: 1fr; }
   .pod-copy { width: 86%; text-align: left; }
   .pod-copy.right { text-align: left; left: 0; right: auto; }
