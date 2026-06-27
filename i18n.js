@@ -107,6 +107,7 @@
     // nav (catalog rebuild)
     nav_smart: "อัจฉริยะ",
     nav_sus: "ความยั่งยืน",
+    nav_faq: "คำถาม",
 
     // VOGUE specification
     spec_eyebrow: "VOGUE ซีรีส์ · สเปก",
