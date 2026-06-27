@@ -126,6 +126,7 @@
       <a href="#spec" data-i18n="nav_pods">Pods</a>
       <a href="#smart" data-i18n="nav_smart">Smart</a>
       <a href="#sustainability" data-i18n="nav_sus">Sustainable</a>
+      <a href="/showroom" data-i18n="nav_showroom">Showroom</a>
       <a href="#faq" data-i18n="nav_faq">FAQ</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
@@ -728,6 +729,80 @@
     </ul>
   </section>
 
+  <!-- ============ MASTERPIECE · PRESTIGE + COMPARISON ============ -->
+  <section class="masterpiece" id="masterpiece" aria-label="Why ZOUND is in a different league">
+    <!-- Act 1 — prestige statement -->
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-i18n="mp_eyebrow">Your masterpiece</p>
+      <h2 class="display-2" data-i18n="mp_title">A masterpiece,<br/>not a meeting box.</h2>
+      <p class="sec-sub" data-i18n="mp_sub">A ZOUND pod is one of a kind — finished like fine furniture, impossible to copy, and something you are proud to own. Drop one onto your floor and the whole room moves upmarket.</p>
+    </div>
+    <div class="mp-stat reveal">
+      <span class="mp-stat-sign">+</span><span class="stat-num" data-count="50" data-suffix="%">0</span>
+      <p data-i18n="mp_stat">more upscale &mdash; the moment it lands on your floor</p>
+    </div>
+
+    <!-- Act 2 — before / after -->
+    <figure class="compare-slider reveal" id="compareSlider">
+      <img class="compare-img compare-after" src="assets/img/compare/office-zound.jpg" alt="The same office with a ZOUND pod — elevated and elegant" loading="lazy" />
+      <img class="compare-img compare-before" src="assets/img/compare/office-typical.jpg" alt="An upscale office with a typical economy pod" loading="lazy" />
+      <span class="compare-label compare-label-l" data-i18n="cmp_typical">Typical pod</span>
+      <span class="compare-label compare-label-r" data-i18n="cmp_zound">ZOUND</span>
+      <span class="compare-handle" aria-hidden="true"></span>
+      <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare a typical pod with a ZOUND pod" />
+      <figcaption class="compare-cap" data-i18n="cmp_cap">Same space. Same footprint. A different league.</figcaption>
+    </figure>
+
+    <!-- Act 3 — price tiers -->
+    <div class="tier-head reveal">
+      <h3 class="display-3" data-i18n="tier_title">See why &#3647;500,000 buys<br/>what &#3647;100,000 never will.</h3>
+      <p class="sec-sub" data-i18n="tier_sub">Compare all three, side by side &mdash; in our showroom.</p>
+    </div>
+    <ul class="tier-grid">
+      <li class="tier-card reveal">
+        <span class="tier-price" data-i18n="tier1_price">Under &#3647;100,000</span>
+        <span class="tier-name" data-i18n="tier1_name">Economy booth</span>
+        <ul class="tier-feats">
+          <li data-i18n="tier1_f1">Laminate shell</li>
+          <li data-i18n="tier1_f2">~20&ndash;25 dB isolation</li>
+          <li data-i18n="tier1_f3">Basic fan</li>
+          <li data-i18n="tier1_f4">Off-the-shelf, everywhere</li>
+        </ul>
+      </li>
+      <li class="tier-card reveal" style="transition-delay:80ms">
+        <span class="tier-price" data-i18n="tier2_price">&#3647;200,000</span>
+        <span class="tier-name" data-i18n="tier2_name">Mid-range pod</span>
+        <ul class="tier-feats">
+          <li data-i18n="tier2_f1">Nicer materials</li>
+          <li data-i18n="tier2_f2">Still mass-produced</li>
+          <li data-i18n="tier2_f3">No green certification</li>
+          <li data-i18n="tier2_f4">Seen in every office</li>
+        </ul>
+      </li>
+      <li class="tier-card tier-card-zound reveal" style="transition-delay:160ms">
+        <span class="tier-badge" data-i18n="tier3_badge">The masterpiece</span>
+        <span class="tier-price" data-i18n="tier3_price">ZOUND &middot; from &#3647;500,000++</span>
+        <span class="tier-name" data-i18n="tier3_name">One of a kind</span>
+        <ul class="tier-feats">
+          <li data-i18n="tier3_f1">Recycled carbon-fibre structure</li>
+          <li data-i18n="tier3_f2">True &minus;32 dB isolation</li>
+          <li data-i18n="tier3_f3">Panasonic ventilation &middot; GREENGUARD Gold</li>
+          <li data-i18n="tier3_f4">Furniture-grade finish &middot; 7 colours</li>
+          <li data-i18n="tier3_f5">Smart controls &middot; impossible to copy</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Act 4 — CTA -->
+    <div class="mp-cta reveal">
+      <h3 class="display-3" data-i18n="mp_cta_title">Don&rsquo;t choose a pod<br/>until you&rsquo;ve seen ZOUND.</h3>
+      <div class="cta-row">
+        <a href="/showroom" class="btn btn-lg" data-i18n="mp_cta_visit">Visit our Showroom</a>
+        <a href="#contact" class="btn btn-lg btn-ghost" data-i18n="mp_cta_talk">Talk to Sales</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FAQ (SEO + AI answers) ============ -->
   <section class="faq-sec" id="faq">
     <div class="sec-head reveal">
@@ -807,6 +882,7 @@
   <script src="scroll-cinematic.js"></script>
   <script src="shatter.js"></script>
   <script src="i18n.js"></script>
+  <script src="compare.js"></script>
   <script>
     // nav goes solid after leaving hero
     const nav = document.getElementById('nav');
