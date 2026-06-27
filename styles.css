@@ -467,6 +467,26 @@ html[lang="th"] .ben-sign { font-family: "Noto Serif Thai", "Fraunces", Georgia,
 .spec-rows li b { font-weight: 500; text-align: right; }
 .spec-foot { max-width: 1280px; margin: clamp(28px,4vh,40px) auto 0; padding: 0 clamp(24px,6vw,80px); color: var(--stone); font-size: 0.95rem; }
 
+/* ---------- The VRT difference ---------- */
+.vrt-sec { padding: clamp(80px,12vh,140px) clamp(24px,6vw,80px); max-width: 1200px; margin: 0 auto; }
+.vrt-sec .sec-head { text-align: center; margin-bottom: clamp(44px,6vh,72px); }
+.vrt-grid { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(38px,4vw,64px) clamp(32px,4vw,56px); padding: 0; margin: 0; }
+.vrt-item { max-width: 34ch; }
+.vrt-ic { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; color: var(--terra); margin-bottom: 18px; transition: transform .4s cubic-bezier(.23,1,.32,1); }
+.vrt-ic svg { width: 30px; height: 30px; }
+.vrt-item h3 { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: clamp(1.12rem,1.7vw,1.32rem); line-height: 1.25; color: var(--ink); margin: 0 0 8px; }
+.vrt-item p { color: var(--stone); font-size: clamp(0.96rem,1.3vw,1.04rem); line-height: 1.6; margin: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .vrt-item:hover .vrt-ic { transform: translateY(-3px) scale(1.05); }
+}
+@media (max-width: 860px) { .vrt-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .vrt-grid { grid-template-columns: 1fr; gap: 34px; } }
+@media (prefers-reduced-motion: reduce) {
+  .vrt-item { transition-delay: 0ms !important; }
+  .vrt-ic { transition: none; }
+}
+html[lang="th"] .vrt-item h3 { font-family: "Noto Serif Thai", "Fraunces", serif; }
+
 /* ---------- Smart & Connected ---------- */
 .smart-sec { padding: clamp(90px,14vh,160px) 0; background: var(--sand); }
 .smart-wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,6vw,80px); display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(36px,5vw,72px); align-items: center; }
