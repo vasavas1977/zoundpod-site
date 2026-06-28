@@ -252,8 +252,10 @@ body {
   padding: clamp(110px,18vh,220px) clamp(24px,6vw,80px);
   background: radial-gradient(80% 120% at 50% 0%, var(--sand), var(--cream) 70%);
 }
-.contact .eyebrow { margin-bottom: 28px; }
-.contact .display { margin-bottom: 46px; }
+.contact-rule { display: block; width: 48px; height: 1px; background: var(--line); margin: 0 auto 30px; }
+.contact .eyebrow { margin-bottom: 22px; }
+.contact .display { margin-bottom: 22px; }
+.contact-sub { max-width: 480px; margin: 0 auto 44px; color: var(--stone); font-size: 1.05rem; line-height: 1.5; }
 .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ---------- Footer ---------- */
