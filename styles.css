@@ -377,7 +377,7 @@ body {
   .pod-copy { width: min(60%, 420px); }
 }
 /* mobile / tablet: collapse the desktop nav into a hamburger dropdown */
-@media (max-width: 880px) {
+@media (max-width: 1000px) {
   .nav-toggle { display: flex; }
   .nav-right .btn { display: none; }
   .nav.nav-open { background: rgba(244,239,231,0.98); border-bottom: 1px solid var(--line); }
