@@ -363,6 +363,25 @@
         s.addEventListener("click", function () { apply(s.getAttribute("data-lang")); });
       });
     }
+
+    // mobile nav: hamburger opens/closes the dropdown menu
+    var navEl = document.getElementById("nav");
+    var navToggle = navEl && navEl.querySelector(".nav-toggle");
+    if (navEl && navToggle) {
+      navToggle.addEventListener("click", function () {
+        var open = navEl.classList.toggle("nav-open");
+        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      [].slice.call(navEl.querySelectorAll(".nav-links a")).forEach(function (a) {
+        a.addEventListener("click", function () {
+          navEl.classList.remove("nav-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { navEl.classList.remove("nav-open"); navToggle.setAttribute("aria-expanded", "false"); }
+      });
+    }
   }
 
   if (document.readyState === "loading") {
