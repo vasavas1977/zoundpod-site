@@ -21,6 +21,18 @@
   var AC = window.AudioContext || window.webkitAudioContext;
   var playing = false;
 
+  // Web Audio gives a truly gapless loop, but on mobile — especially iOS — it is
+  // silenced by the hardware mute switch and unlocks less reliably on a tap. So on
+  // mobile we play through an <audio> element instead: it uses the media channel,
+  // which ignores the mute switch. (Desktop keeps the gapless Web Audio path.)
+  var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+              (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isMobile = isIOS || /Android/i.test(navigator.userAgent) ||
+                 (window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
+  var useWA = !!AC && !isMobile;
+  // let iOS Safari 16.4+ route audio through the media channel even with mute on
+  try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
+
   /* ---- Web Audio path: gapless loop ---- */
   var ctx = null, gain = null, srcNode = null, buffer = null, loading = null;
 
@@ -101,20 +113,22 @@
   function markOn()  { playing = true;  render(); try { localStorage.setItem(KEY, "on");  } catch (e) {} }
   function markOff() { playing = false; render(); try { localStorage.setItem(KEY, "off"); } catch (e) {} }
 
+  // <audio> element playback — the mobile-safe path (media channel, ignores mute)
+  function elementPlay() {
+    var a = ensureAudio();
+    a.volume = 0;                       // fade target where supported (iOS ignores → device volume)
+    var p = a.play();
+    if (p && p.then) p.then(function () { fade(TARGET, 1800); markOn(); }).catch(function () { /* blocked */ });
+    else { markOn(); }
+  }
+
   function start() {
-    if (AC) {
-      waStart().then(markOn).catch(function () {
-        var p = ensureAudio().play();
-        if (p && p.then) p.then(function () { fade(TARGET, 1800); markOn(); }).catch(function () {});
-      });
-    } else {
-      var p = ensureAudio().play();
-      if (p && p.then) p.then(function () { fade(TARGET, 1800); markOn(); }).catch(function () {});
-    }
+    if (useWA) waStart().then(markOn).catch(elementPlay);   // desktop: gapless, fall back to element
+    else elementPlay();                                     // mobile: element straight away
   }
 
   function stop() {
-    if (AC && ctx) waStop(); else fade(0, 600, function () { ensureAudio().pause(); });
+    if (useWA && ctx) waStop(); else fade(0, 600, function () { ensureAudio().pause(); });
     markOff();
   }
 
