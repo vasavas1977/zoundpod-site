@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=hdrmusic2" />
 </head>
 <body>
 
@@ -61,6 +61,11 @@
       <a href="/#contact" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-right">
+      <button class="snd-head" id="sndToggleHead" type="button" aria-pressed="false" aria-label="Play music"
+              data-play-en="Play music" data-stop-en="Pause music" data-play-th="เปิดเพลง" data-stop-th="หยุดเพลง">
+        <span class="snd-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="snd-head-txt">Play music</span>
+      </button>
       <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language">
         <span data-lang="en" tabindex="0" role="button">EN</span><span class="lang-sep" aria-hidden="true">/</span><span data-lang="th" tabindex="0" role="button">ไทย</span>
       </div>
@@ -227,6 +232,7 @@
   <script src="scroll-cinematic.js"></script>
   <script src="i18n.js"></script>
   <script src="compare.js"></script>
+  <script src="sound.js?v=hdrmusic2"></script>
   <script>
     // nav stays solid on the showroom page (no full-bleed scrub hero)
     document.getElementById('nav').classList.add('nav-solid');

@@ -1,8 +1,9 @@
 /* ============================================================
-   ZOUND — ambient sound toggle
-   A discreet luxury sound control: off by default (browsers
-   block autoplay with audio), fades in/out gently, remembers
-   the visitor's choice. Playback uses Web Audio for a truly
+   ZOUND — ambient music control
+   A clearly-labeled "Play music" button in the header. Off by
+   default (browsers block autoplay with audio), fades in/out
+   gently, remembers the visitor's choice, and shows a live
+   equalizer while playing. Playback uses Web Audio for a truly
    gapless loop (an <audio loop> mp3 restarts with an audible
    gap); falls back to <audio> where Web Audio is unavailable.
    ============================================================ */
@@ -12,10 +13,13 @@
   var KEY = "zound-snd";
   var SRC = "assets/audio/ambient.mp3";
   var TARGET = 0.32;            // background level — present, never pushy
-  var btn = document.getElementById("sndToggle");
-  if (!btn) return;
+
+  // every control on the page (header button, and any legacy corner button)
+  var triggers = [].slice.call(document.querySelectorAll(".snd-head, .snd-toggle"));
+  if (!triggers.length) return;
 
   var AC = window.AudioContext || window.webkitAudioContext;
+  var playing = false;
 
   /* ---- Web Audio path: gapless loop ---- */
   var ctx = null, gain = null, srcNode = null, buffer = null, loading = null;
@@ -79,20 +83,27 @@
     }, 50);
   }
 
-  function label(on) {
+  /* ---- UI: label + state, in the current language ---- */
+  function render() {
     var th = document.documentElement.lang === "th";
-    btn.setAttribute("aria-label", on ? (th ? "ปิดเสียงบรรยากาศ" : "Turn ambient sound off")
-                                      : (th ? "เปิดเสียงบรรยากาศ" : "Turn ambient sound on"));
-    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    triggers.forEach(function (el) {
+      el.classList.toggle("playing", playing);
+      el.setAttribute("aria-pressed", playing ? "true" : "false");
+      var lbl = playing
+        ? (th ? (el.getAttribute("data-stop-th") || "หยุดเพลง") : (el.getAttribute("data-stop-en") || "Pause music"))
+        : (th ? (el.getAttribute("data-play-th") || "เปิดเพลง") : (el.getAttribute("data-play-en") || "Play music"));
+      el.setAttribute("aria-label", lbl);
+      var txt = el.querySelector(".snd-head-txt");
+      if (txt) txt.textContent = lbl;
+    });
   }
 
-  function markOn()  { btn.classList.add("playing");    label(true);  try { localStorage.setItem(KEY, "on");  } catch (e) {} }
-  function markOff() { btn.classList.remove("playing"); label(false); try { localStorage.setItem(KEY, "off"); } catch (e) {} }
+  function markOn()  { playing = true;  render(); try { localStorage.setItem(KEY, "on");  } catch (e) {} }
+  function markOff() { playing = false; render(); try { localStorage.setItem(KEY, "off"); } catch (e) {} }
 
   function start() {
     if (AC) {
       waStart().then(markOn).catch(function () {
-        // decode/HTTP failed — fall back to the <audio> element
         var p = ensureAudio().play();
         if (p && p.then) p.then(function () { fade(TARGET, 1800); markOn(); }).catch(function () {});
       });
@@ -107,19 +118,25 @@
     markOff();
   }
 
-  btn.addEventListener("click", function () {
-    if (btn.classList.contains("playing")) stop(); else start();
+  triggers.forEach(function (el) {
+    el.addEventListener("click", function () { if (playing) stop(); else start(); });
   });
-  label(false);
+  render();
 
-  // returning visitor with sound on: resume on first interaction anywhere
+  // keep the label in the right language when the visitor switches EN/ไทย
+  if (window.MutationObserver) {
+    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
+
+  // returning visitor with music on: resume on the first interaction anywhere
   var pref = null;
   try { pref = localStorage.getItem(KEY); } catch (e) {}
   if (pref === "on") {
     var arm = function (e) {
       document.removeEventListener("pointerdown", arm);
       document.removeEventListener("keydown", arm);
-      if (e && e.target && btn.contains(e.target)) return; // let the button's own click handle it
+      // if they clicked a control, let its own handler run instead
+      if (e && e.target && triggers.some(function (tr) { return tr.contains(e.target); })) return;
       start();
     };
     document.addEventListener("pointerdown", arm);

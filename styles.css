@@ -421,6 +421,35 @@ body {
 /* the Thai label always renders in a Thai face, even in EN mode */
 .lang-toggle [data-lang="th"] { font-family: "Noto Sans Thai", "Inter", sans-serif; }
 
+/* header "Play music" control */
+.snd-head {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 15px 7px 12px; border-radius: 999px;
+  background: transparent; border: 1px solid var(--line);
+  color: var(--ink); cursor: pointer;
+  font-family: "Inter", sans-serif; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.05em; line-height: 1; white-space: nowrap;
+  -webkit-appearance: none; appearance: none;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.snd-head:hover,
+.snd-head[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+html[lang="th"] .snd-head-txt { font-family: "Noto Sans Thai", "Inter", sans-serif; }
+.snd-eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 13px; }
+.snd-eq i { display: block; width: 2px; height: 5px; border-radius: 2px; background: currentColor; transition: height .3s ease; }
+.snd-eq i:nth-child(2) { height: 12px; }
+.snd-eq i:nth-child(3) { height: 8px; }
+.snd-head[aria-pressed="true"] .snd-eq i { animation: snd-eq 1.7s ease-in-out infinite; }
+.snd-head[aria-pressed="true"] .snd-eq i:nth-child(2) { animation-delay: .28s; }
+.snd-head[aria-pressed="true"] .snd-eq i:nth-child(3) { animation-delay: .55s; }
+@media (prefers-reduced-motion: reduce) {
+  .snd-head[aria-pressed="true"] .snd-eq i { animation: none; height: 10px; }
+}
+@media (max-width: 520px) {
+  .snd-head { padding: 8px; gap: 0; }
+  .snd-head-txt { display: none; }   /* icon-only where the header is tight */
+}
+
 /* spec value (split from label so each can be translated) */
 .spec-v { color: var(--ink); font-weight: 500; }
 

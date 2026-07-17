@@ -103,7 +103,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=hdrmusic2" />
 </head>
 <body>
 
@@ -119,6 +119,11 @@
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-right">
+      <button class="snd-head" id="sndToggleHead" type="button" aria-pressed="false" aria-label="เปิดเพลง"
+              data-play-en="Play music" data-stop-en="Pause music" data-play-th="เปิดเพลง" data-stop-th="หยุดเพลง">
+        <span class="snd-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="snd-head-txt">เปิดเพลง</span>
+      </button>
       <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language">
         <span data-lang="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><span data-lang="th">ไทย</span>
       </div>
@@ -886,8 +891,9 @@
   <script src="compare.js"></script>
 
   <!-- ambient sound: discreet luxury toggle (off by default) -->
-  <button class="snd-toggle" id="sndToggle" aria-label="เปิดเสียงบรรยากาศ" aria-pressed="false"><span></span><span></span><span></span></button>
-  <script src="sound.js"></script>
+  <!-- ambient sound: controlled from the labeled button in the header -->
+
+  <script src="sound.js?v=hdrmusic2"></script>
   <script>
     // nav goes solid after leaving hero
     const nav = document.getElementById('nav');
