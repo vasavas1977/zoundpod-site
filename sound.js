@@ -12,7 +12,6 @@
 
   var KEY = "zound-snd";
   var SRC = "assets/audio/ambient.mp3";
-  var TARGET = 0.32;            // background level — present, never pushy
 
   // every control on the page (header button, and any legacy corner button)
   var triggers = [].slice.call(document.querySelectorAll(".snd-head, .snd-toggle"));
@@ -32,6 +31,12 @@
   var useWA = !!AC && !isMobile;
   // let iOS Safari 16.4+ route audio through the media channel even with mute on
   try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
+
+  // Loudness: the track file is already mastered quiet for background use, so on
+  // desktop we sit it further back (0.32). Phone speakers are far weaker — attenuating
+  // the already-quiet file again made it effectively inaudible, so mobile plays the
+  // file at its own level. (iOS ignores element volume anyway and uses device volume.)
+  var TARGET = isMobile ? 1.0 : 0.32;
 
   /* ---- Web Audio path: gapless loop ---- */
   var ctx = null, gain = null, srcNode = null, buffer = null, loading = null;
@@ -116,10 +121,26 @@
   // <audio> element playback — the mobile-safe path (media channel, ignores mute)
   function elementPlay() {
     var a = ensureAudio();
+    a.muted = false;
     a.volume = 0;                       // fade target where supported (iOS ignores → device volume)
     var p = a.play();
-    if (p && p.then) p.then(function () { fade(TARGET, 1800); markOn(); }).catch(function () { /* blocked */ });
-    else { markOn(); }
+    if (p && p.then) {
+      p.then(function () { fade(TARGET, 1800); markOn(); })
+       .catch(function (err) {
+          // blocked: don't fail silently — retry on the very next touch/click anywhere
+          try { console.warn("ZOUND music: play() blocked", err && err.name); } catch (e2) {}
+          var retry = function () {
+            document.removeEventListener("pointerdown", retry);
+            document.removeEventListener("touchend", retry);
+            var a2 = ensureAudio();
+            a2.muted = false; a2.volume = 0;
+            var q = a2.play();
+            if (q && q.then) q.then(function () { fade(TARGET, 1800); markOn(); }).catch(function () {});
+          };
+          document.addEventListener("pointerdown", retry);
+          document.addEventListener("touchend", retry);
+       });
+    } else { fade(TARGET, 1800); markOn(); }
   }
 
   function start() {
