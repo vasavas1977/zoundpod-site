@@ -132,6 +132,7 @@
           var retry = function () {
             document.removeEventListener("pointerdown", retry);
             document.removeEventListener("touchend", retry);
+            if (playing) return;
             var a2 = ensureAudio();
             a2.muted = false; a2.volume = 0;
             var q = a2.play();
@@ -144,6 +145,7 @@
   }
 
   function start() {
+    if (playing) return;
     if (useWA) waStart().then(markOn).catch(elementPlay);   // desktop: gapless, fall back to element
     else elementPlay();                                     // mobile: element straight away
   }
@@ -163,18 +165,30 @@
     new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
   }
 
-  // returning visitor with music on: resume on the first interaction anywhere
+  // ---- music is ON by default ----
+  // Browsers block un-muted autoplay before the first interaction, so: respect an
+  // explicit "off" choice; otherwise try to start right away (some browsers allow
+  // it), and if blocked, start on the very first touch / click / keypress anywhere.
   var pref = null;
   try { pref = localStorage.getItem(KEY); } catch (e) {}
-  if (pref === "on") {
-    var arm = function (e) {
+  if (pref !== "off") {
+    var disarm = function () {
       document.removeEventListener("pointerdown", arm);
+      document.removeEventListener("touchend", arm);
       document.removeEventListener("keydown", arm);
-      // if they clicked a control, let its own handler run instead
-      if (e && e.target && triggers.some(function (tr) { return tr.contains(e.target); })) return;
+    };
+    var arm = function (e) {
+      if (playing) { disarm(); return; }
+      // if they tapped the music control itself, let its own handler run
+      if (e && e.target && triggers.some(function (tr) { return tr.contains(e.target); })) { disarm(); return; }
       start();
+      // keep listeners armed until playback actually sticks (a blocked attempt
+      // may need the next, "cleaner" gesture — e.g. a tap after a scroll)
+      if (playing) disarm();
     };
     document.addEventListener("pointerdown", arm);
+    document.addEventListener("touchend", arm);
     document.addEventListener("keydown", arm);
+    start();   // optimistic autoplay — works where policy allows, harmless where not
   }
 })();
