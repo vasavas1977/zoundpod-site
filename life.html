@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=blog1" />
+  <link rel="stylesheet" href="styles.css?v=nav3" />
 </head>
 <body>
 
@@ -53,9 +53,14 @@
   <nav class="nav nav-solid" id="nav">
     <a href="/" class="brand" aria-label="ZOUND"><img class="brand-logo" src="assets/img/zound-logo.png" alt="ZOUND" /></a>
     <div class="nav-links" id="nav-menu">
-      <a href="/#spec" data-i18n="nav_vogue">VOGUE</a>
-      <a href="/sr" data-i18n="nav_sr">SR</a>
-      <a href="/life" class="active" aria-current="page" data-i18n="nav_life">Life</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn active" type="button" aria-expanded="false" aria-controls="nav-pods"><span data-i18n="nav_pods">Pods</span><svg class="nav-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="nav-drop-panel" id="nav-pods">
+          <a href="/#spec"><span data-i18n="nav_vogue">VOGUE</span><em data-i18n="nav_vogue_sub">Flagship &middot; five sizes</em></a>
+          <a href="/sr"><span data-i18n="nav_sr">SR</span><em data-i18n="nav_sr_sub">Professional &middot; four sizes</em></a>
+          <a href="/life" class="active" aria-current="page"><span data-i18n="nav_life">Life</span><em data-i18n="nav_life_sub">For the home &middot; three sizes</em></a>
+        </div>
+      </div>
       <a href="/sustainable" data-i18n="nav_sus">Sustainable</a>
       <a href="/showroom" data-i18n="nav_showroom">Showroom</a>
       <a href="/blog" data-i18n="nav_blog">Blog</a>
@@ -79,19 +84,19 @@
   <span id="top"></span>
 
   <!-- ============ HERO ============ -->
-  <header class="ser-hero" id="life-hero">
-    <div class="ser-hero-copy">
-      <p class="eyebrow reveal" data-i18n="lfs_eyebrow">Life Series · For the home</p>
-      <h1 class="display-2 reveal" data-i18n="lfs_title">A quiet room,<br/>inside your house.</h1>
-      <p class="lead reveal" data-i18n="lfs_lead">The Life Series puts a genuinely quiet room where you live — a home office that closes, a practice room, a place to take the call without the household in it. It arrives on wheels and goes up in about three hours. No building work, no permits, and it moves when you do.</p>
-      <div class="ser-hero-cta reveal">
+  <header class="sr-hero ser-hero-shot" id="life-hero">
+    <img class="sr-hero-img" src="assets/img/life/hero.webp?v=h1" width="2560" height="1500" fetchpriority="high"
+         alt="A ZOUND Life Series pod standing in a calm, cream-toned living room" />
+    <div class="sr-hero-scrim"></div>
+    <div class="sr-hero-copy">
+      <p class="eyebrow eyebrow-light" data-i18n="lfs_eyebrow">Life Series · For the home</p>
+      <h1 class="display" data-i18n="lfs_title">A quiet room,<br/>inside your house.</h1>
+      <p class="sec-sub" data-i18n="lfs_lead">The Life Series puts a genuinely quiet room where you live — a home office that closes, a practice room, a place to take the call without the household in it. It arrives on wheels and goes up in about three hours. No building work, no permits, and it moves when you do.</p>
+      <div class="ser-hero-cta">
         <a href="#life-models" class="btn btn-lg" data-i18n="lfs_cta_models">See the three sizes</a>
         <a href="/showroom" class="btn btn-lg btn-ghost" data-i18n="srs_cta_showroom">Visit the showroom</a>
       </div>
     </div>
-    <figure class="ser-hero-fig reveal">
-      <img src="assets/img/life/pro-l-cloud.webp?v=r2" alt="ZOUND Life Series Pro L soundproof room in Cloud" width="900" height="900" fetchpriority="high" />
-    </figure>
   </header>
 
   <!-- ============ MODELS ============ -->
@@ -280,7 +285,7 @@
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js?v=lazy1"></script>
-  <script src="i18n.js?v=blog1"></script>
+  <script src="i18n.js?v=nav1"></script>
   <script src="sound.js?v=hdrmusic5"></script>
   <script src="series.js?v=r2"></script>
 </body>

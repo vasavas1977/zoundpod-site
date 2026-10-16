@@ -296,8 +296,8 @@
     sr_visit_eyebrow: "เยี่ยมชมโชว์รูม",
     sr_visit_title: "นัดหมายเข้าชมแบบส่วนตัว",
     /* --- SR Series page (srs_*) · Life Series page (lfs_*) · shared spec keys --- */
-    nav_sr: "ซีรีส์ SR",
-    nav_life: "ซีรีส์ Life",
+    nav_sr: "SR",
+    nav_life: "Life",
     k_dim: "ขนาด",
     k_weight: "น้ำหนัก",
     k_acoustic: "อะคูสติก",
@@ -352,6 +352,9 @@
     cat_cta: "ดาวน์โหลดแคตตาล็อก 2026",
     cat_meta: "PDF · 18 MB · 33 หน้า · EN และ TH",
     nav_vogue: "VOGUE",
+    nav_vogue_sub: "รุ่นเรือธง &middot; 5 ขนาด",
+    nav_sr_sub: "สำหรับมืออาชีพ &middot; 4 ขนาด",
+    nav_life_sub: "สำหรับบ้าน &middot; 3 ขนาด",
     susp_lead: "ใน ZOUND พ็อด ไม่มีอะไรระเหยออกมา เพราะไม่มีวัสดุที่ระเหยสารอยู่ข้างใน ไร้ไม้ ไร้กาว ไร้สกรู ไร้น็อต แต่เลือกใช้คาร์บอนไฟเบอร์รีไซเคิลแทน — รายแรกในกลุ่มพ็อดอะคูสติก — และได้รับการรับรอง GREENGUARD Gold ด้านการปล่อยสารเคมีต่ำ",
     susp_cta_numbers: "ดูตัวเลขจริง",
     susp_num_eyebrow: "วัดได้ ไม่ใช่แค่กล่าวอ้าง",
@@ -545,6 +548,32 @@
       });
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") { navEl.classList.remove("nav-open"); navToggle.setAttribute("aria-expanded", "false"); }
+      });
+    }
+
+    // desktop nav: the Pods menu. Below 1100px the panel is static and always
+    // open inside the drawer, so toggling data-open there is simply inert.
+    var drop = navEl && navEl.querySelector(".nav-drop");
+    var dropBtn = drop && drop.querySelector(".nav-drop-btn");
+    if (drop && dropBtn) {
+      var openDrop = function (on) {
+        if (on) { drop.setAttribute("data-open", ""); } else { drop.removeAttribute("data-open"); }
+        dropBtn.setAttribute("aria-expanded", on ? "true" : "false");
+      };
+      dropBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openDrop(!drop.hasAttribute("data-open"));
+      });
+      drop.addEventListener("mouseenter", function () { openDrop(true); });
+      drop.addEventListener("mouseleave", function () { openDrop(false); });
+      drop.addEventListener("focusout", function (e) {
+        if (!drop.contains(e.relatedTarget)) openDrop(false);
+      });
+      document.addEventListener("click", function (e) {
+        if (!drop.contains(e.target)) openDrop(false);
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") openDrop(false);
       });
     }
   }
