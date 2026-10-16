@@ -297,10 +297,16 @@ body {
 /* the seam-free tile grid container — 16:9, centered */
 .range-grid {
   position: relative;
-  width: 92vw; max-width: 1500px;
-  aspect-ratio: 16 / 9;
-  /* never push past the viewport on tall/narrow screens */
-  max-height: 86vh;
+  /* The copy sits in row 1 and the plate in row 2 of the 100vh sticky, which
+     clips its overflow — so the plate's width is capped by the height LEFT
+     OVER after the copy. Capping height instead would clamp height while
+     leaving width at 92vw, breaking 16/9 and stretching the lineup. */
+  --range-copy: 360px;
+  /* 2.4:1 — four pods in a row span ~3.2x their own height, so a 16/9 plate
+     can never show them larger than about half its height. The cinematic
+     ratio lets the pods fill ~70% of the frame instead. */
+  width: min(92vw, 1500px, calc((100vh - var(--range-copy)) * 12 / 5));
+  aspect-ratio: 12 / 5;
   /* contain paint/layout so 40 animating tiles can't trigger outside work */
   contain: layout paint style;
 }
@@ -360,9 +366,18 @@ body {
 }
 .range-cta { pointer-events: auto; }   /* the button stays clickable */
 
+/* Short windows: the overlay copy is tall enough to squeeze the plate, so
+   scale the copy off viewport HEIGHT and reclaim the reserve for the plate. */
+@media (min-width: 641px) and (max-height: 860px) {
+  .range-grid { --range-copy: 250px; }
+  .range-eyebrow { margin-bottom: 10px; }
+  .range-title { font-size: clamp(1.8rem, 5.2vh, 3.4rem); margin-bottom: 14px; }
+  .range-sizes { margin-bottom: 18px; gap: 14px; font-size: clamp(1rem, 2.2vh, 1.4rem); }
+}
+
 @media (max-width: 640px) {
   #range-reveal { height: 320vh; }
-  .range-grid { width: 94vw; max-height: 70vh; }
+  .range-grid { --range-copy: 300px; width: min(94vw, calc((100vh - var(--range-copy)) * 12 / 5)); }
   .range-sizes { gap: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
