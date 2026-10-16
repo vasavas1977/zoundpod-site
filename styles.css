@@ -1368,8 +1368,8 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 /* the stage runs the full width of the section — the pod is the point */
 .pswitch-stage {
   position: relative; border-radius: 22px; overflow: hidden;
-  aspect-ratio: 1800 / 1018;
-  background: #D8CBBA;
+  aspect-ratio: 1800 / 1184;
+  background: #B4603E;
   border: 1px solid var(--line);
   box-shadow: 0 40px 90px -56px rgba(28,24,19,0.55);
 }
