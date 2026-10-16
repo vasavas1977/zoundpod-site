@@ -105,7 +105,7 @@
           { "@type": "Question", "name": "What sizes are available?", "acceptedAnswer": { "@type": "Answer", "text": "Five sizes — S, S Plus, M, L and L Plus — from a single-person focus booth to a four-person meeting room. One standard of quiet across the range; you choose the footprint." } },
           { "@type": "Question", "name": "Does the pod have ventilation and fresh air?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every pod runs a Panasonic-developed centrifugal fan that draws fresh air in at the ceiling and exhausts it at the floor — up to 95 m3/h and under 40 dB, so the air stays fresh while the pod stays calm and quiet." } },
           { "@type": "Question", "name": "Are ZOUND pods sustainable and certified?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pods are built with GREENGUARD Gold (UL 2818) certified materials and recycled carbon fibre, tested to ISO, SGS and ASTM standards — low-emission and built to last." } },
-          { "@type": "Question", "name": "Where can I buy a ZOUND pod?", "acceptedAnswer": { "@type": "Answer", "text": "ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 / 02-690-3626 or email hello@zoundpod.com." } },
+          { "@type": "Question", "name": "Where can I buy a ZOUND pod?", "acceptedAnswer": { "@type": "Answer", "text": "ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 or email hello@zoundpod.com." } },
           { "@type": "Question", "name": "Is a ZOUND pod completely silent inside?", "acceptedAnswer": { "@type": "Answer", "text": "No — and that's deliberate. A ZOUND pod isn't built for dead silence, which actually feels uncomfortable and even unsafe. It brings the office down to a calm 30 dB — the level research links to deep focus — while you can still hear an alarm, an announcement, or someone at the door. You get real privacy and concentration without being cut off from what keeps you safe." } }
         ]
       }
@@ -116,7 +116,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=hdrmusic5" />
+  <link rel="stylesheet" href="styles.css?v=lineup21" />
 </head>
 <body>
 
@@ -260,11 +260,11 @@
       <canvas></canvas>
       <div class="pod-copy left">
         <span class="pod-index">05</span>
-        <p class="eyebrow" data-i18n="pod_lplus_size">Model L Plus · 4&ndash;6 people</p>
+        <p class="eyebrow" data-i18n="pod_lplus_size">Model L Plus · 4 people</p>
         <h3 class="display-3" data-i18n="pod_lplus_title">The boardroom.</h3>
         <p class="pod-desc" data-i18n="pod_lplus_desc">The flagship meeting suite — generous sofas, a full table and a display, in complete acoustic calm.</p>
         <ul class="spec">
-          <li><span class="spec-k" data-i18n="nv_cap">Capacity</span><span class="spec-v" data-i18n="cap_46">4&ndash;6 people</span></li>
+          <li><span class="spec-k" data-i18n="nv_cap">Capacity</span><span class="spec-v" data-i18n="cap_46">4 people</span></li>
           <li><span class="spec-k" data-i18n="nv_foot">Footprint</span><span class="spec-v">2.20 &times; 1.64&nbsp;m</span></li>
           <li><span class="spec-k" data-i18n="nv_disp">Display</span><span class="spec-v" data-i18n="val_screen">screen-ready</span></li>
         </ul>
@@ -399,7 +399,8 @@
     </div>
     <div class="smart-wrap">
       <figure class="smart-figure reveal">
-        <img src="assets/img/control-panel.jpg" alt="ZOUND in-pod smart control panel" loading="lazy" />
+        <!-- scroll-driven push-in onto the control plate (frames/control, 121 frames) -->
+        <canvas class="sm-canvas" width="1440" height="810"></canvas>
         <figcaption class="chips">
           <span>USB-C PD100W</span><span>QC3.0</span><span data-i18n="chip_sock">Universal socket</span><span>Ethernet</span><span>NFC</span><span data-i18n="chip_radar">Radar sensor</span><span data-i18n="chip_occ">Occupancy light</span><span data-i18n="chip_air">Temp · Humidity · PM2.5</span>
         </figcaption>
@@ -477,6 +478,115 @@
     </div>
   </section>
 
+  <!-- ============ MASTERPIECE · PRESTIGE + COMPARISON ============ -->
+  <section class="masterpiece" id="masterpiece" aria-label="Why ZOUND is in a different league">
+    <!-- Act 1 — prestige statement -->
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-i18n="mp_eyebrow">Your masterpiece</p>
+      <h2 class="display-2" data-i18n="mp_title">Formed,<br/>not fastened.</h2>
+      <p class="sec-sub" data-i18n="mp_sub">A ZOUND pod has no screws, no bolts, no wood and no glue. The shell is formed as one piece — which is why the fan runs quieter at the same airflow, why the surfaces reveal themselves the moment you touch them, and why nobody can copy it. A competitor can copy a shape. They cannot copy a shell they have no tooling to make. Anyone can build a box. This is not a box. Put one on your floor and the room moves upmarket, inside and out — and everyone who walks past can tell it is the original.</p>
+    </div>
+    <!-- Act 1b — scroll-driven push-in that proves the claim above.
+         Scrubs frames/interior (121 frames) from the cabin wide shot down to the
+         weave of the acoustic textile. Own rAF driver, like #assembly. -->
+    <figure class="mp-detail reveal" aria-label="Inside a ZOUND pod — the view moves in until the quilted acoustic textile and its stitching fill the frame">
+      <canvas class="mp-canvas" width="1440" height="810"></canvas>
+      <figcaption data-i18n="mp_detail_cap">Quilted acoustic textile, stitched panel by panel. No veneer. No grain. Nothing to off-gas.</figcaption>
+    </figure>
+
+    <div class="mp-stat reveal">
+      <span class="mp-stat-sign">+</span><span class="stat-num" data-count="50" data-suffix="%">0</span>
+      <p data-i18n="mp_stat">more upscale &mdash; the moment it lands on your floor</p>
+    </div>
+
+    <!-- Act 2 — before / after -->
+    <figure class="compare-slider reveal" id="compareSlider">
+      <img class="compare-img compare-after" src="assets/img/compare/office-zound.jpg" alt="The same office with a ZOUND pod — elevated and elegant" loading="lazy" />
+      <img class="compare-img compare-before" src="assets/img/compare/office-diy.jpg" alt="The same office with a basic DIY pod" loading="lazy" />
+      <span class="compare-label compare-label-l" data-i18n="cmp_typical">DIY pod</span>
+      <span class="compare-label compare-label-r" data-i18n="cmp_zound">ZOUND</span>
+      <span class="compare-handle" aria-hidden="true"></span>
+      <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare a typical pod with a ZOUND pod" />
+      <figcaption class="compare-cap" data-i18n="cmp_cap">Same space. Same footprint. A different league.</figcaption>
+    </figure>
+
+    <!-- Act 3 — price tiers -->
+    <div class="tier-head reveal">
+      <h3 class="display-3" data-i18n="tier_title">See why &#3647;360,xxx buys<br/>what &#3647;100,000 never will.</h3>
+      <p class="sec-sub" data-i18n="tier_sub">Compare all three, side by side &mdash; in our showroom.</p>
+    </div>
+    <ul class="tier-grid">
+      <li class="tier-card reveal">
+        <img class="tier-img" src="assets/img/compare/office-diy.jpg" alt="A basic DIY booth in the same office" loading="lazy" />
+        <span class="tier-price" data-i18n="tier1_price">Under &#3647;100,000</span>
+        <span class="tier-name" data-i18n="tier1_name">DIY flat-pack booth</span>
+        <ul class="tier-feats">
+          <li data-i18n="tier1_f1">Self-assembled, flat-pack</li>
+          <li data-i18n="tier1_f2">Thin laminate panels</li>
+          <li data-i18n="tier1_f3">~20&ndash;25 dB isolation</li>
+          <li data-i18n="tier1_f4">Basic or no ventilation</li>
+        </ul>
+      </li>
+      <li class="tier-card reveal" style="transition-delay:80ms">
+        <img class="tier-img" src="assets/img/compare/office-mid.jpg" alt="A mid-range pod in the same office" loading="lazy" />
+        <span class="tier-price" data-i18n="tier2_price">&#3647;200,000</span>
+        <span class="tier-name" data-i18n="tier2_name">Mid-range pod</span>
+        <ul class="tier-feats">
+          <li data-i18n="tier2_f1">Nicer materials</li>
+          <li data-i18n="tier2_f2">Still mass-produced</li>
+          <li data-i18n="tier2_f3">No green certification</li>
+          <li data-i18n="tier2_f4">Seen in every office</li>
+        </ul>
+      </li>
+      <li class="tier-card tier-card-zound reveal" style="transition-delay:160ms">
+        <img class="tier-img" src="assets/img/compare/office-zound.jpg" alt="The ZOUND pod in the same office" loading="lazy" />
+        <span class="tier-badge" data-i18n="tier3_badge">The masterpiece</span>
+        <span class="tier-price" data-i18n="tier3_price">ZOUND &middot; from &#3647;360,xxx</span>
+        <span class="tier-name" data-i18n="tier3_name">One of a kind</span>
+        <ul class="tier-feats">
+          <li data-i18n="tier3_f1">Recycled carbon-fibre structure</li>
+          <li data-i18n="tier3_f2">True &minus;32 dB isolation</li>
+          <li data-i18n="tier3_f3">Panasonic ventilation &middot; GREENGUARD Gold</li>
+          <li data-i18n="tier3_f4">Furniture-grade finish &middot; 7 colours</li>
+          <li data-i18n="tier3_f5">Smart controls &middot; impossible to copy</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Act 4 — CTA -->
+    <div class="mp-cta reveal">
+      <span class="mp-cta-rule" aria-hidden="true"></span>
+      <p class="eyebrow" data-i18n="mp_cta_eyebrow">Before you decide</p>
+      <h3 class="display-2" data-i18n="mp_cta_title">See it. Touch it.<br/>Then you&rsquo;ll understand.</h3>
+      <p class="mp-cta-sub" data-i18n="mp_cta_sub">The difference never shows on a screen &mdash; you have to feel it.</p>
+      <div class="cta-row">
+        <a href="/showroom" class="btn btn-lg" data-i18n="mp_cta_visit">Book a private viewing</a>
+        <a href="#contact" class="btn btn-lg btn-ghost" data-i18n="mp_cta_talk">Talk to Sales</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- ============ ASSEMBLY (panels click together) ============ -->
+  <section class="asm-sec" id="assembly">
+    <div class="asm-wrap">
+      <div class="asm-copy reveal">
+        <p class="eyebrow" data-i18n="asm_eyebrow">Assembly</p>
+        <h2 class="display-3" data-i18n="asm_title">Forty-five minutes.<br/>No tools you&rsquo;d recognise.</h2>
+        <p class="sec-sub" data-i18n="asm_sub">It arrives flat and leaves as one piece. Because nothing is screwed or glued, the panels simply click together &mdash; a ZOUND pod goes up in about 45 minutes, with no building works, no permits and no downtime. And it comes apart just as cleanly when you move.</p>
+        <ul class="spec asm-spec">
+          <li><span class="spec-k" data-i18n="asm_k1">Install time</span><span class="spec-v">45 minutes</span></li>
+          <li><span class="spec-k" data-i18n="asm_k2">Screws &amp; bolts</span><span class="spec-v" data-i18n="asm_v2">None</span></li>
+          <li><span class="spec-k" data-i18n="asm_k3">Relocatable</span><span class="spec-v" data-i18n="asm_v3">Yes, without tools</span></li>
+        </ul>
+      </div>
+
+      <figure class="asm-fig reveal" aria-label="A ZOUND pod assembling from flat panels into one finished shell">
+        <canvas class="asm-canvas" width="900" height="506"></canvas>
+        <figcaption class="asm-cap" data-i18n="asm_cap">Scroll to assemble</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- ============ SUSTAINABILITY ============ -->
   <section class="sustain-sec" id="sustainability">
     <div class="sustain-scrim"></div>
@@ -485,8 +595,8 @@
         <img class="gg" src="assets/img/greenguard.png" alt="GREENGUARD Gold certified" loading="lazy" />
         <p class="eyebrow eyebrow-light" data-i18n="sus_eyebrow">Sustainable</p>
       </div>
-      <h2 class="display-2 sus-title reveal" data-i18n="sus_title">Low carbon,<br/>by design.</h2>
-      <p class="sec-sub reveal" data-i18n="sus_sub">ZOUND is the first acoustic-pod maker to build with recycled carbon fiber. GREENGUARD Gold certified for low chemical emissions — no wood, no glue, formaldehyde-free, and fully recyclable.</p>
+      <h2 class="display-2 sus-title reveal" data-i18n="sus_title">Nothing<br/>to off-gas.</h2>
+      <p class="sec-sub reveal" data-i18n="sus_sub">There is nothing in a ZOUND pod to off-gas, because there is nothing in it that off-gasses. No wood. No glue. No screws, no bolts. Built instead from recycled carbon fiber — a first for acoustic pods — and GREENGUARD Gold certified for low chemical emissions. Formaldehyde-free. Fully recyclable. 100% healthy, comfortable and safe to sit inside all day, every day.</p>
       <ul class="sus-lows reveal">
         <li data-i18n="sus_l1">Low energy consumption</li>
         <li data-i18n="sus_l2">Low carbon footprint</li>
@@ -593,10 +703,25 @@
               <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
             </g>
             <!-- travelling glints (bright, circulating) -->
-            <g class="af-stream-pulse" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-dasharray="20 360" opacity="0.92">
-              <path d="M424,140 C424,420 424,720 424,1004"/>
-              <path d="M398,168 C386,440 404,742 418,1004"/>
-              <path d="M450,168 C462,440 446,742 430,1004"/>
+            <g class="af-stream-stack">
+            <g class="af-stream-pulse" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.92">
+              <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
+              <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
+              <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
+              <path d="M314.0,315.0 Q424.0,845.0 534.0,315.0"/>
+              <path d="M322.0,430.0 Q424.0,946.0 526.0,430.0"/>
+              <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
+              <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
+            </g>
+            <g class="af-stream-pulse af-stream-fast" fill="none" stroke="#ffffff" stroke-linecap="round">
+              <path d="M354.0,150.0 Q424.0,450.0 494.0,150.0"/>
+              <path d="M332.0,180.0 Q424.0,590.0 516.0,180.0"/>
+              <path d="M318.0,228.0 Q424.0,722.0 530.0,228.0"/>
+              <path d="M314.0,315.0 Q424.0,845.0 534.0,315.0"/>
+              <path d="M322.0,430.0 Q424.0,946.0 526.0,430.0"/>
+              <path d="M340.0,560.0 Q424.0,1030.0 508.0,560.0"/>
+              <path d="M362.0,690.0 Q424.0,1100.0 486.0,690.0"/>
+            </g>
             </g>
           </g>
 
@@ -648,13 +773,13 @@
         <p class="eyebrow range-eyebrow" data-i18n="rr_eyebrow">The Full Range</p>
         <h2 class="display range-title" data-i18n="rr_title">Find your size.</h2>
         <div class="range-sizes" role="list">
+          <span role="listitem">S</span>
+          <span class="range-div" aria-hidden="true"></span>
           <span role="listitem">S&nbsp;Plus</span>
           <span class="range-div" aria-hidden="true"></span>
           <span role="listitem">M</span>
           <span class="range-div" aria-hidden="true"></span>
           <span role="listitem">L</span>
-          <span class="range-div" aria-hidden="true"></span>
-          <span role="listitem">L&nbsp;Plus</span>
         </div>
         <a href="#contact" class="btn btn-lg range-cta" data-i18n="rr_cta">Talk to Sales</a>
       </div>
@@ -736,85 +861,7 @@
     </ul>
   </section>
 
-  <!-- ============ MASTERPIECE · PRESTIGE + COMPARISON ============ -->
-  <section class="masterpiece" id="masterpiece" aria-label="Why ZOUND is in a different league">
-    <!-- Act 1 — prestige statement -->
-    <div class="sec-head reveal">
-      <p class="eyebrow" data-i18n="mp_eyebrow">Your masterpiece</p>
-      <h2 class="display-2" data-i18n="mp_title">A masterpiece,<br/>not a meeting box.</h2>
-      <p class="sec-sub" data-i18n="mp_sub">A ZOUND pod is one of a kind. The fan runs quieter at the same airflow; the materials and finish reveal themselves the moment you touch them; the details are impossible to copy. Drop one onto your floor and the whole room moves upmarket — something you&rsquo;re proud to own.</p>
-    </div>
-    <div class="mp-stat reveal">
-      <span class="mp-stat-sign">+</span><span class="stat-num" data-count="50" data-suffix="%">0</span>
-      <p data-i18n="mp_stat">more upscale &mdash; the moment it lands on your floor</p>
-    </div>
-
-    <!-- Act 2 — before / after -->
-    <figure class="compare-slider reveal" id="compareSlider">
-      <img class="compare-img compare-after" src="assets/img/compare/office-zound.jpg" alt="The same office with a ZOUND pod — elevated and elegant" loading="lazy" />
-      <img class="compare-img compare-before" src="assets/img/compare/office-diy.jpg" alt="The same office with a basic DIY pod" loading="lazy" />
-      <span class="compare-label compare-label-l" data-i18n="cmp_typical">DIY pod</span>
-      <span class="compare-label compare-label-r" data-i18n="cmp_zound">ZOUND</span>
-      <span class="compare-handle" aria-hidden="true"></span>
-      <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare a typical pod with a ZOUND pod" />
-      <figcaption class="compare-cap" data-i18n="cmp_cap">Same space. Same footprint. A different league.</figcaption>
-    </figure>
-
-    <!-- Act 3 — price tiers -->
-    <div class="tier-head reveal">
-      <h3 class="display-3" data-i18n="tier_title">See why &#3647;500,000 buys<br/>what &#3647;100,000 never will.</h3>
-      <p class="sec-sub" data-i18n="tier_sub">Compare all three, side by side &mdash; in our showroom.</p>
-    </div>
-    <ul class="tier-grid">
-      <li class="tier-card reveal">
-        <img class="tier-img" src="assets/img/compare/office-diy.jpg" alt="A basic DIY booth in the same office" loading="lazy" />
-        <span class="tier-price" data-i18n="tier1_price">Under &#3647;100,000</span>
-        <span class="tier-name" data-i18n="tier1_name">DIY flat-pack booth</span>
-        <ul class="tier-feats">
-          <li data-i18n="tier1_f1">Self-assembled, flat-pack</li>
-          <li data-i18n="tier1_f2">Thin laminate panels</li>
-          <li data-i18n="tier1_f3">~20&ndash;25 dB isolation</li>
-          <li data-i18n="tier1_f4">Basic or no ventilation</li>
-        </ul>
-      </li>
-      <li class="tier-card reveal" style="transition-delay:80ms">
-        <img class="tier-img" src="assets/img/compare/office-mid.jpg" alt="A mid-range pod in the same office" loading="lazy" />
-        <span class="tier-price" data-i18n="tier2_price">&#3647;200,000</span>
-        <span class="tier-name" data-i18n="tier2_name">Mid-range pod</span>
-        <ul class="tier-feats">
-          <li data-i18n="tier2_f1">Nicer materials</li>
-          <li data-i18n="tier2_f2">Still mass-produced</li>
-          <li data-i18n="tier2_f3">No green certification</li>
-          <li data-i18n="tier2_f4">Seen in every office</li>
-        </ul>
-      </li>
-      <li class="tier-card tier-card-zound reveal" style="transition-delay:160ms">
-        <img class="tier-img" src="assets/img/compare/office-zound.jpg" alt="The ZOUND pod in the same office" loading="lazy" />
-        <span class="tier-badge" data-i18n="tier3_badge">The masterpiece</span>
-        <span class="tier-price" data-i18n="tier3_price">ZOUND &middot; from &#3647;500,000++</span>
-        <span class="tier-name" data-i18n="tier3_name">One of a kind</span>
-        <ul class="tier-feats">
-          <li data-i18n="tier3_f1">Recycled carbon-fibre structure</li>
-          <li data-i18n="tier3_f2">True &minus;32 dB isolation</li>
-          <li data-i18n="tier3_f3">Panasonic ventilation &middot; GREENGUARD Gold</li>
-          <li data-i18n="tier3_f4">Furniture-grade finish &middot; 7 colours</li>
-          <li data-i18n="tier3_f5">Smart controls &middot; impossible to copy</li>
-        </ul>
-      </li>
-    </ul>
-
-    <!-- Act 4 — CTA -->
-    <div class="mp-cta reveal">
-      <span class="mp-cta-rule" aria-hidden="true"></span>
-      <p class="eyebrow" data-i18n="mp_cta_eyebrow">Before you decide</p>
-      <h3 class="display-2" data-i18n="mp_cta_title">See it. Touch it.<br/>Then you&rsquo;ll understand.</h3>
-      <p class="mp-cta-sub" data-i18n="mp_cta_sub">The difference never shows on a screen &mdash; you have to feel it.</p>
-      <div class="cta-row">
-        <a href="/showroom" class="btn btn-lg" data-i18n="mp_cta_visit">Book a private viewing</a>
-        <a href="#contact" class="btn btn-lg btn-ghost" data-i18n="mp_cta_talk">Talk to Sales</a>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- ============ FAQ (SEO + AI answers) ============ -->
   <section class="faq-sec" id="faq">
@@ -845,7 +892,7 @@
       </details>
       <details class="faq-item">
         <summary data-i18n="faq_q6">Where can I buy a ZOUND pod?</summary>
-        <div class="faq-a"><p data-i18n="faq_a6">ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 / 02-690-3626 or email hello@zoundpod.com.</p></div>
+        <div class="faq-a"><p data-i18n="faq_a6">ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 or email hello@zoundpod.com.</p></div>
       </details>
       <details class="faq-item">
         <summary data-i18n="faq_q7">Is a ZOUND pod completely silent inside?</summary>
@@ -865,7 +912,7 @@
       <a href="mailto:hello@zoundpod.com" class="btn btn-lg btn-ghost" data-i18n="con_free">Get a Free Consultation</a>
     </div>
     <ul class="channels reveal">
-      <li><span data-i18n="ch_call">Call</span><a href="tel:+6626903626">1605 · 02-690-3626</a></li>
+      <li><span data-i18n="ch_call">Call</span><a href="tel:+6626903626">1605</a></li>
       <li><span>LINE</span><a href="https://line.me/R/ti/p/@zound" target="_blank" rel="noopener">@zound</a></li>
       <li><span>Facebook</span><a href="https://facebook.com/zound.acoustic" target="_blank" rel="noopener">zound.acoustic</a></li>
       <li><span data-i18n="ch_web">Web</span><a href="https://www.zound.me" target="_blank" rel="noopener">www.zound.me</a></li>
@@ -876,7 +923,7 @@
   <footer class="footer">
     <a href="#top" class="foot-brand" aria-label="ZOUND"><img class="brand-logo" src="assets/img/zound-logo.png" alt="ZOUND" /></a>
     <div class="foot-meta">
-      <span>www.zound.me · 1605 / 02-690-3626</span>
+      <span>www.zound.me · 1605</span>
       <span data-i18n="foot_series">VOGUE — our flagship soundproof pod series</span>
       <span data-i18n="foot_by">© 2026 ZOUND · by 1toAll</span>
     </div>
@@ -885,12 +932,12 @@
   <!-- ============ SCRUB CONFIG ============ -->
   <script>
     window.SCRUB_SECTIONS = [
-      { section:"#hero",  frameCount:179, bg:"#b6a68d", framePath:(i)=>`frames/hero/frame_${String(i).padStart(4,"0")}.jpg` },
-      { section:"#pod-s",    frameCount:150, bg:"#d6c6ae", framePath:(i)=>`frames/pod-s/frame_${String(i).padStart(4,"0")}.jpg` },
-      { section:"#pod-splus",frameCount:150, bg:"#d6c6ae", framePath:(i)=>`frames/pod-splus/frame_${String(i).padStart(4,"0")}.jpg` },
-      { section:"#pod-m",    frameCount:150, bg:"#d6c6ae", framePath:(i)=>`frames/pod-m/frame_${String(i).padStart(4,"0")}.jpg` },
-      { section:"#pod-l",    frameCount:150, bg:"#d6c6ae", framePath:(i)=>`frames/pod-l/frame_${String(i).padStart(4,"0")}.jpg` },
-      { section:"#pod-lplus",frameCount:150, bg:"#d6c6ae", framePath:(i)=>`frames/pod-lplus/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#hero",  frameCount:96, bg:"#b9aaa0", framePath:(i)=>`frames/hero/frame_${String(i).padStart(4,"0")}.jpg?v=hero1080` },
+      { section:"#pod-s",    frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-s/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
+      { section:"#pod-splus",frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-splus/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
+      { section:"#pod-m",    frameCount:50, bg:"#b5b1b2", framePath:(i)=>`frames/pod-m/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
+      { section:"#pod-l",    frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-l/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
+      { section:"#pod-lplus",frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-lplus/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
       { section:"#air",   frameCount:179, bg:"#efe9df", framePath:(i)=>`frames/fan/frame_${String(i).padStart(4,"0")}.jpg` },
       { section:"#colors",frameCount:179, bg:"#0e0e0e", framePath:(i)=>`frames/colors/frame_${String(i).padStart(4,"0")}.jpg` },
     ];
@@ -898,10 +945,10 @@
 
   <!-- Lenis smooth scroll + engine -->
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
-  <script src="scroll-cinematic.js"></script>
-  <script src="shatter.js"></script>
-  <script src="i18n.js"></script>
-  <script src="compare.js"></script>
+  <script src="scroll-cinematic.js?v=lineup20"></script>
+  <script src="shatter.js?v=lineup21"></script>
+  <script src="i18n.js?v=lineup21"></script>
+  <script src="compare.js?v=lineup20"></script>
 
   <!-- ambient sound: controlled from the labeled "Play music" button in the header -->
   <script src="sound.js?v=hdrmusic5"></script>
@@ -946,5 +993,176 @@
       raf(tick);
     })();
   </script>
+
+  <!-- Assembly: scrub the frame sequence from the section's position in the viewport -->
+  <!-- CONTROL-PLATE PUSH-IN (#smart) — scrubs frames/control as the plate crosses the viewport. -->
+  <script>
+    (function () {
+      var sec = document.getElementById('smart');
+      if (!sec) return;
+      var cv = sec.querySelector('.sm-canvas');
+      if (!cv) return;
+      var ctx = cv.getContext('2d', { alpha: false });
+      var COUNT = 121, BG = '#cfc8c1';
+      var imgs = [], firstDrawn = false;
+      function path(i) { return 'frames/control/frame_' + String(i).padStart(4, '0') + '.jpg?v=ctl1'; }
+      for (var i = 1; i <= COUNT; i++) {
+        var im = new Image();
+        im.src = path(i);
+        im.onload = function () { if (!firstDrawn) { firstDrawn = true; draw(0); } };
+        imgs[i - 1] = im;
+      }
+      var current = -1;
+      function draw(idx) {
+        var img = imgs[idx];
+        if (!img || !img.complete || !img.naturalWidth) return false;
+        var cw = cv.clientWidth, ch = cv.clientHeight;
+        if (!cw || !ch) return false;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        if (cv.width !== Math.round(cw * dpr)) {
+          cv.width = Math.round(cw * dpr); cv.height = Math.round(ch * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        ctx.fillStyle = BG; ctx.fillRect(0, 0, cw, ch);
+        ctx.drawImage(img, 0, 0, cw, ch);
+        return true;
+      }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function frame() {
+        var r = cv.getBoundingClientRect();
+        if (r.bottom > -200 && r.top < window.innerHeight + 200) {
+          var p;
+          if (reduce) { p = 1; }
+          else {
+            var centre = r.top + r.height / 2;
+            var span = window.innerHeight * 0.55;
+            p = 1 - (centre - window.innerHeight * 0.38) / span;
+            p = p < 0 ? 0 : p > 1 ? 1 : p;
+            p = p * p * (3 - 2 * p);
+          }
+          var idx = Math.min(COUNT - 1, Math.round(p * (COUNT - 1)));
+          if (idx !== current && draw(idx)) { current = idx; }
+        }
+        requestAnimationFrame(frame);
+      }
+      window.addEventListener('resize', function () { current = -1; });
+      requestAnimationFrame(frame);
+    })();
+  </script>
+
+  <!-- INTERIOR PUSH-IN (#masterpiece) — scrubs frames/interior as the plate
+       crosses the viewport, ending on the weave of the acoustic textile. -->
+  <script>
+    (function () {
+      var sec = document.getElementById('masterpiece');
+      if (!sec) return;
+      var cv = sec.querySelector('.mp-canvas');
+      if (!cv) return;
+      var ctx = cv.getContext('2d', { alpha: false });
+      var COUNT = 121, BG = '#cfc8c1';
+      var imgs = [], firstDrawn = false;
+      function path(i) { return 'frames/interior/frame_' + String(i).padStart(4, '0') + '.jpg?v=int2'; }
+      for (var i = 1; i <= COUNT; i++) {
+        var im = new Image();
+        im.src = path(i);
+        im.onload = function () { if (!firstDrawn) { firstDrawn = true; draw(0); } };
+        imgs[i - 1] = im;
+      }
+      var current = -1;
+      function draw(idx) {
+        var img = imgs[idx];
+        if (!img || !img.complete || !img.naturalWidth) return false;
+        var cw = cv.clientWidth, ch = cv.clientHeight;
+        if (!cw || !ch) return false;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        if (cv.width !== Math.round(cw * dpr)) {
+          cv.width = Math.round(cw * dpr); cv.height = Math.round(ch * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        ctx.fillStyle = BG; ctx.fillRect(0, 0, cw, ch);
+        ctx.drawImage(img, 0, 0, cw, ch);
+        return true;
+      }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function frame() {
+        var r = cv.getBoundingClientRect();
+        if (r.bottom > -200 && r.top < window.innerHeight + 200) {
+          var p;
+          if (reduce) { p = 1; }
+          else {
+            // same timing as #assembly: key off the plate crossing the viewport
+            var centre = r.top + r.height / 2;
+            var span = window.innerHeight * 0.55;
+            p = 1 - (centre - window.innerHeight * 0.38) / span;
+            p = p < 0 ? 0 : p > 1 ? 1 : p;
+            p = p * p * (3 - 2 * p);
+          }
+          var idx = Math.min(COUNT - 1, Math.round(p * (COUNT - 1)));
+          if (idx !== current && draw(idx)) { current = idx; }
+        }
+        requestAnimationFrame(frame);
+      }
+      window.addEventListener('resize', function () { current = -1; });
+      requestAnimationFrame(frame);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var sec = document.getElementById('assembly');
+      if (!sec) return;
+      var cv = sec.querySelector('.asm-canvas');
+      if (!cv) return;
+      var ctx = cv.getContext('2d', { alpha: false });
+      var COUNT = 108, BG = '#b5b1b2';
+      var imgs = [], firstDrawn = false;
+      function path(i) { return 'frames/assembly/frame_' + String(i).padStart(4, '0') + '.jpg?v=lineup21'; }
+      for (var i = 1; i <= COUNT; i++) {
+        var im = new Image();
+        im.src = path(i);
+        im.onload = function () { if (!firstDrawn) { firstDrawn = true; draw(0); } };
+        imgs[i - 1] = im;
+      }
+      var current = -1;
+      function draw(idx) {
+        var img = imgs[idx];
+        if (!img || !img.complete || !img.naturalWidth) return false;
+        var cw = cv.clientWidth, ch = cv.clientHeight;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        if (cv.width !== Math.round(cw * dpr)) {
+          cv.width = Math.round(cw * dpr); cv.height = Math.round(ch * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        ctx.fillStyle = BG; ctx.fillRect(0, 0, cw, ch);
+        ctx.drawImage(img, 0, 0, cw, ch);
+        return true;
+      }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function frame() {
+        var r = sec.getBoundingClientRect();
+        if (r.bottom > -200 && r.top < window.innerHeight + 200) {
+          var p;
+          if (reduce) { p = 1; }
+          else {
+            // key off the FIGURE crossing the viewport, not the section arriving:
+            // p=0 while the plate is still entering from the bottom, p=1 only once
+            // it has risen just above centre, so the whole build happens in view
+            var f = cv.getBoundingClientRect();
+            var centre = f.top + f.height / 2;
+            var span = window.innerHeight * 0.55;
+            p = 1 - (centre - window.innerHeight * 0.38) / span;
+            p = p < 0 ? 0 : p > 1 ? 1 : p;
+            p = p * p * (3 - 2 * p);
+          }
+          var idx = Math.min(COUNT - 1, Math.round(p * (COUNT - 1)));
+          if (idx !== current && draw(idx)) { current = idx; }
+        }
+        requestAnimationFrame(frame);
+      }
+      window.addEventListener('resize', function () { current = -1; });
+      requestAnimationFrame(frame);
+    })();
+  </script>
+
 </body>
 </html>

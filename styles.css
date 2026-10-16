@@ -547,7 +547,10 @@ html[lang="th"] .vrt-item h3 { font-family: "Noto Serif Thai", "Fraunces", serif
 /* ---------- Smart & Connected ---------- */
 .smart-sec { padding: clamp(90px,14vh,160px) 0; background: var(--sand); }
 .smart-wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,6vw,80px); display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(36px,5vw,72px); align-items: center; }
-.smart-figure img { width: 100%; border-radius: 18px; display: block; box-shadow: 0 30px 70px rgba(28,24,19,0.16); }
+.smart-figure img,
+.smart-figure .sm-canvas { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9;
+  border-radius: 18px; box-shadow: 0 30px 70px rgba(28,24,19,0.16);
+  background: #cfc8c1 center/cover no-repeat url("frames/control/frame_0001.jpg?v=ctl1"); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .chips span { font-size: 0.72rem; font-weight: 500; color: var(--stone); background: var(--shell); border: 1px solid var(--line); border-radius: 100px; padding: 6px 12px; }
 .smart-feats { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,2.4vw,32px) clamp(24px,3vw,40px); }
@@ -765,11 +768,27 @@ html[lang="th"] .faq-item > summary { font-family: "Noto Serif Thai", "Fraunces"
 @keyframes af-breathe { 0%,100% { opacity: .42; } 50% { opacity: .62; } }
 
 /* a bright glint glides down each stream, staggered per stream */
-.af-stream-pulse path { opacity: .92; animation: af-travel 3s linear infinite; }
-.af-stream-pulse path:nth-child(1) { animation-delay: 0s; }
-.af-stream-pulse path:nth-child(2) { animation-delay: -1.05s; }
-.af-stream-pulse path:nth-child(3) { animation-delay: -2.0s; }
-@keyframes af-travel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -380; } }
+/* glints ride the real circulation curves; staggered + varied so the flow
+   reads as moving volume rather than a metronome */
+.af-stream-pulse path { opacity: .92; stroke-dasharray: 26 674;
+  animation: af-travel 1.9s linear infinite; }
+.af-stream-pulse path:nth-child(1) { animation-delay: -0.00s; animation-duration: 1.70s; }
+.af-stream-pulse path:nth-child(2) { animation-delay: -0.27s; animation-duration: 1.84s; }
+.af-stream-pulse path:nth-child(3) { animation-delay: -0.54s; animation-duration: 1.98s; }
+.af-stream-pulse path:nth-child(4) { animation-delay: -0.81s; animation-duration: 2.12s; }
+.af-stream-pulse path:nth-child(5) { animation-delay: -1.08s; animation-duration: 2.26s; }
+.af-stream-pulse path:nth-child(6) { animation-delay: -1.35s; animation-duration: 2.40s; }
+.af-stream-pulse path:nth-child(7) { animation-delay: -1.62s; animation-duration: 2.54s; }
+@keyframes af-travel { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
+
+/* second, faster layer of finer glints = higher apparent air volume */
+.af-stream-pulse.af-stream-fast path { stroke-width: 2.6; opacity: .7; stroke-dasharray: 14 686; }
+.af-stream-pulse.af-stream-fast path:nth-child(odd)  { animation-duration: 1.25s; }
+.af-stream-pulse.af-stream-fast path:nth-child(even) { animation-duration: 1.45s; }
+
+/* the whole stream stack breathes with fan pressure */
+.af-stream-stack { animation: af-pressure 4.2s ease-in-out infinite; }
+@keyframes af-pressure { 0%,100% { opacity: .85; } 50% { opacity: 1; } }
 
 /* arrowheads breathe gently, in -> circulate -> out cascade */
 .af-head-in  { animation: af-pulse 2.4s ease-in-out infinite; }
@@ -783,7 +802,7 @@ html[lang="th"] .faq-item > summary { font-family: "Noto Serif Thai", "Fraunces"
   .airflow-fig { order: -1; max-width: 300px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .af-glow, .af-stream-pulse path, .af-head-in, .af-head-circ, .af-head-out, .af-burst { animation: none; }
+  .af-glow, .af-stream-pulse path, .af-head-in, .af-head-circ, .af-head-out, .af-burst, .af-stream-stack { animation: none; }
   .af-stream-pulse { display: none; }
 }
 
@@ -793,6 +812,24 @@ html[lang="th"] .faq-item > summary { font-family: "Noto Serif Thai", "Fraunces"
 .masterpiece { max-width: 1180px; margin: 0 auto; padding: clamp(80px, 12vh, 150px) clamp(20px, 5vw, 64px); }
 .masterpiece .sec-head { max-width: 760px; }
 .masterpiece .sec-head .display-2 { margin: 16px 0 18px; }
+
+/* interior close-up — the evidence for "formed, not fastened" */
+.mp-detail { margin: clamp(34px, 5vw, 56px) 0 0; }
+.mp-detail img,
+.mp-detail .mp-canvas {
+  width: 100%; height: auto; display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  box-shadow: 0 30px 70px rgba(28,24,19,0.16);
+  /* first frame as a poster so the plate is never blank before the rAF draw */
+  background: #cfc8c1 center/cover no-repeat url("frames/interior/frame_0001.jpg?v=int2");
+}
+.mp-detail figcaption {
+  margin-top: 16px;
+  font-size: 0.9rem; line-height: 1.5;
+  color: var(--stone);
+  max-width: 560px;
+}
 
 .mp-stat { display: flex; align-items: baseline; gap: 4px; margin: 44px 0 4px; color: var(--terra); font-family: "Fraunces", Georgia, serif; font-weight: 300; line-height: 1; }
 .mp-stat-sign { font-size: clamp(2rem, 5vw, 3.2rem); }
@@ -957,3 +994,31 @@ html[lang="th"] .faq-item > summary { font-family: "Noto Serif Thai", "Fraunces"
 /* Thai display headlines: step down the longest showroom lines to avoid 3-line wrap */
 html[lang="th"] #compare-in-person .display-2,
 html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9rem); }
+
+/* ============================================================
+   ASSEMBLY — scroll-scrubbed build sequence on a contained plate
+   ============================================================ */
+.asm-sec { background: var(--cream); padding: clamp(70px,10vh,120px) clamp(24px,6vw,80px) clamp(90px,14vh,160px); }
+.asm-wrap { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr;
+            gap: clamp(36px,5vw,72px); align-items: center; }
+.asm-copy .eyebrow { display: block; margin-bottom: 18px; }
+.asm-copy .display-3 { margin-bottom: 20px; }
+.asm-copy .sec-sub { margin-top: 0; }
+.asm-spec { margin-top: 30px; }
+
+/* the plate: same contained treatment as the airflow figure directly below */
+.asm-fig { position: relative; width: 100%; margin: 0; }
+.asm-canvas { width: 100%; aspect-ratio: 16 / 9; height: auto; display: block;
+              border-radius: 18px; background: #b5b1b2;
+              box-shadow: 0 30px 70px rgba(28,24,19,0.16); }
+.asm-cap { margin-top: 16px; text-align: center; font-size: 0.78rem; letter-spacing: 0.14em;
+           text-transform: uppercase; color: var(--stone); }
+
+@media (max-width: 860px) {
+  .asm-wrap { grid-template-columns: 1fr; }
+  .asm-fig { order: -1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .asm-cap { display: none; }
+}
+}

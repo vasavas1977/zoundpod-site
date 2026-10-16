@@ -20,7 +20,7 @@
   /* ---- config ---- */
   var COLS = 8;             // horizontal tiles
   var ROWS = 5;             // vertical tiles   (8x5 = 40 fragments)
-  var IMG_SRC = "assets/pods-lineup.jpg";
+  var IMG_SRC = "assets/pods-lineup.jpg?v=lineup21";
 
   // tuning
   var SCATTER_VW   = 55;    // max horizontal fling, in vw
