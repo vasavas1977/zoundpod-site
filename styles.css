@@ -391,8 +391,10 @@ body {
   .stats { grid-template-columns: repeat(2, 1fr); gap: 44px 30px; }
   .pod-copy { width: min(60%, 420px); }
 }
-/* mobile / tablet: collapse the desktop nav into a hamburger dropdown */
-@media (max-width: 1000px) {
+/* mobile / tablet: collapse the desktop nav into a hamburger dropdown.
+   Raised 1000 -> 1100 when Blog made it eight items: Thai labels are wider,
+   and the row wrapped to two (and at 1001px three) lines before collapsing. */
+@media (max-width: 1100px) {
   .nav-toggle { display: flex; }
   .nav-right .btn { display: none; }
   .nav.nav-open { background: rgba(244,239,231,0.98); border-bottom: 1px solid var(--line); }
