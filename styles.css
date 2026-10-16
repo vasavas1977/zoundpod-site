@@ -1048,8 +1048,17 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 }
 .ser-hero-copy .lead { margin-top: 18px; max-width: 46ch; }
 .ser-hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-.ser-hero-fig img, .ser-card-fig img, .swatch-fig img {
+.ser-hero-fig img {
   width: 100%; height: auto; display: block;
+}
+/* Source renders do not share one aspect ratio — Life Pro S is portrait while
+   the rest are square — so sizing by width alone made the portrait one tower
+   over its neighbours and pushed its spec rows out of line. Each render sits
+   in a fixed square frame and is contained within it instead. */
+.ser-card-fig, .swatch-fig { aspect-ratio: 1 / 1; }
+.ser-card-fig img, .swatch-fig img {
+  width: 100%; height: 100%; display: block;
+  object-fit: contain; object-position: center bottom;
 }
 
 .ser-sec { max-width: 1180px; margin: 0 auto; padding: clamp(60px, 10vh, 130px) clamp(20px, 5vw, 64px); }
@@ -1063,6 +1072,8 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
   display: grid; gap: clamp(20px, 3vw, 34px); margin-top: clamp(32px, 5vw, 56px);
   grid-template-columns: repeat(4, 1fr);
 }
+/* Life has three models, not four */
+.ser-grid-3 { grid-template-columns: repeat(3, 1fr); }
 .ser-card {
   background: var(--shell); border-radius: 18px; padding: 20px 20px 8px;
   box-shadow: 0 24px 60px rgba(28,24,19,0.10);
@@ -1133,11 +1144,11 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 @media (max-width: 1000px) {
   .ser-hero { grid-template-columns: 1fr; }
   .ser-hero-fig { order: -1; max-width: 520px; }
-  .ser-grid { grid-template-columns: repeat(2, 1fr); }
+  .ser-grid, .ser-grid-3 { grid-template-columns: repeat(2, 1fr); }
   .swatch-stage { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .ser-grid { grid-template-columns: 1fr; }
+  .ser-grid, .ser-grid-3 { grid-template-columns: 1fr; }
   .swatch { width: 40px; height: 40px; }
 }
 
