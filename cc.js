@@ -78,7 +78,8 @@
       ".cc-ov{position:fixed;inset:0;z-index:2147483000;display:none;align-items:center;justify-content:center;" +
       "background:rgba(20,16,12,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);padding:20px}" +
       ".cc-ov.open{display:flex}" +
-      ".cc-box{width:min(460px,100%);max-height:90vh;overflow:auto;background:#F6F2EA;border:1px solid rgba(28,24,19,.12);" +
+      ".cc-box{width:min(460px,100%);max-height:90vh;overflow-y:auto;-webkit-overflow-scrolling:touch;" +
+      "overscroll-behavior:contain;background:#F6F2EA;border:1px solid rgba(28,24,19,.12);" +
       "border-radius:18px;padding:clamp(22px,4vw,34px);box-shadow:0 30px 80px -30px rgba(20,16,12,.5)}" +
       ".cc-box h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.6rem;letter-spacing:-.01em;margin:0 0 6px;color:#1C1813}" +
       ".cc-box p.cc-lead{margin:0 0 18px;color:#6F6559;font-size:.92rem;line-height:1.6}" +
@@ -125,7 +126,7 @@
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
     modal.innerHTML =
-      '<div class="cc-box">' +
+      '<div class="cc-box" data-lenis-prevent tabindex="-1">' +
         '<h3 data-cc-title></h3>' +
         '<p class="cc-lead" data-cc-lead></p>' +
         '<form class="cc-f" novalidate>' +
@@ -288,14 +289,27 @@
     renderCal();
   }
 
+  function lenis(on) {
+    var l = window.__lenis;
+    if (!l) return;
+    try { on ? l.start() : l.stop(); } catch (e) {}
+  }
+
   function open(which) {
     intent = which || "sales";
     pickedHour = null;
     build(); paint();
     modal.classList.add("open");
+    modal.querySelector(".cc-box").scrollTop = 0;
+    lenis(false);
     setTimeout(function () { try { form.name.focus(); } catch (e) {} }, 40);
   }
-  function close() { if (modal) modal.classList.remove("open"); }
+
+  function close() {
+    if (!modal) return;
+    modal.classList.remove("open");
+    lenis(true);
+  }
 
   function submit(e) {
     e.preventDefault();
@@ -341,6 +355,7 @@
       status.textContent = (j && j.reply) || (slot ? d.okSlot.replace("{s}", slot) : d.ok);
       status.className = "cc-st ok";
       form.reset();
+      try { status.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (e) {}
     })["catch"](function () {
       status.textContent = d.err; status.className = "cc-st err";
     })["finally"](function () {
