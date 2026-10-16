@@ -13,6 +13,11 @@
     var img = stage.querySelector("img[data-stage-img]");
     var nameOut = stage.querySelector("[data-stage-name]");
     var prefix = stage.getAttribute("data-prefix");
+    /* Swatch paths are built at runtime, so they need the same cache token the
+       markup carries — otherwise a corrected render never reaches anyone who
+       already loaded the old one. */
+    var ver = stage.getAttribute("data-ver");
+    var q = ver ? "?v=" + ver : "";
     if (!img || !prefix) return;
 
     var swatches = [].slice.call(stage.querySelectorAll(".swatch"));
@@ -29,7 +34,7 @@
     }
 
     function render() {
-      var next = prefix + "/" + cur.size + "-" + cur.colour + ".webp";
+      var next = prefix + "/" + cur.size + "-" + cur.colour + ".webp" + q;
       /* preload before swapping so the stage never flashes empty */
       var probe = new Image();
       probe.onload = function () { img.src = next; };
