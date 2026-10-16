@@ -1177,3 +1177,33 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
   text-transform: uppercase; color: rgba(247,242,234,0.56);
 }
 @media (max-width: 560px) { .scale-marks { gap: 12px; font-size: 0.68rem; } }
+
+/* sustainable page */
+.sus-badge-fig { display: grid; place-items: center; }
+.sus-badge-fig img { width: min(100%, 380px); height: auto; }
+.sus-card { text-align: left; }
+.sus-fig {
+  font-family: "Fraunces", Georgia, serif; font-weight: 300;
+  font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1; color: var(--terra);
+  margin: 6px 0 2px;
+}
+.sus-unit {
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--stone); margin: 0 0 16px;
+}
+.sus-card h3 { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.2rem; margin: 0 0 8px; }
+.sus-card p:last-child { color: var(--stone); font-size: 0.92rem; line-height: 1.55; margin: 0 0 12px; }
+.sus-lows-page {
+  display: grid; gap: 14px; margin: clamp(26px, 4vw, 44px) 0 0; list-style: none;
+  /* padding-block only — a `padding: 0` shorthand here wipes the inline padding
+     that .ser-band > * supplies, letting the items touch the screen edge */
+  padding-block: 0;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.sus-lows-page li {
+  border-top: 1px solid var(--line); padding-top: 14px;
+  font-family: "Fraunces", Georgia, serif; font-size: 1.1rem; font-weight: 300;
+}
+.sus-certs-page { margin: clamp(26px, 4vw, 44px) 0 0; }
+.sus-certs-page .certrow { width: 100%; max-width: 900px; height: auto; display: block; }
+.sus-more { margin-top: clamp(22px, 4vw, 38px); }
