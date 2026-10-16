@@ -87,9 +87,58 @@
     });
   }
 
+
+  /* ---------- showroom: the same pod in each series ----------
+     Every panel's text is already in the HTML, so this only swaps the stage
+     render and flips which panel is shown — nothing is built from strings. */
+  function initPodSwitch(root) {
+    var img = root.querySelector(".pswitch-img");
+    var tabs = [].slice.call(root.querySelectorAll(".pswitch-tab"));
+    /* everything that belongs to one series carries data-for: the spec panel
+       and the label chip on the stage */
+    var keyed = [].slice.call(root.querySelectorAll("[data-for]"));
+    if (!img || !tabs.length) return;
+
+    /* warm the other renders so the first switch does not flash an empty stage */
+    tabs.forEach(function (t) {
+      var src = t.getAttribute("data-img");
+      if (src && src !== img.getAttribute("src")) { new Image().src = src; }
+    });
+
+    function show(tab) {
+      var key = tab.getAttribute("data-series");
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.classList.toggle("is-on", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      keyed.forEach(function (el) { el.hidden = el.getAttribute("data-for") !== key; });
+      var next = tab.getAttribute("data-img");
+      if (next && next !== img.getAttribute("src")) {
+        img.src = next;
+        img.alt = tab.getAttribute("data-alt") || img.alt;
+        /* restart the fade on the incoming render */
+        img.style.animation = "none";
+        void img.offsetWidth;
+        img.style.animation = "";
+      }
+    }
+
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function () { show(t); });
+      t.addEventListener("keydown", function (e) {
+        var i = tabs.indexOf(t), n = null;
+        if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+        if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (n) { e.preventDefault(); n.focus(); show(n); }
+      });
+    });
+  }
+
   function init() {
     [].slice.call(document.querySelectorAll("[data-prefix]")).forEach(initStage);
     [].slice.call(document.querySelectorAll(".yt[data-yt]")).forEach(initYouTube);
+    [].slice.call(document.querySelectorAll(".pswitch")).forEach(initPodSwitch);
   }
 
   if (document.readyState === "loading") {

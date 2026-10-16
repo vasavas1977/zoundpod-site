@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=nav3" />
+  <link rel="stylesheet" href="styles.css?v=psw1" />
 </head>
 <body>
 
@@ -146,6 +146,91 @@
     </ul>
   </section>
 
+  <!-- ============ THE SAME POD, EACH SERIES ============ -->
+  <section class="sr-sec" id="pod-switch">
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-i18n="psw_eyebrow">The four-person pod</p>
+      <h2 class="display-2" data-i18n="psw_title">The same room,<br/>in three hands.</h2>
+      <p class="sec-sub" data-i18n="psw_sub">A four-seat meeting pod, as each of our series builds it. Switch between them &mdash; every figure is from the 2026 ZOUND catalogue.</p>
+    </div>
+
+    <div class="pswitch reveal" id="podSwitch">
+      <div class="pswitch-tabs" role="tablist" aria-label="Series">
+        <button class="pswitch-tab is-on" type="button" role="tab" aria-selected="true" aria-controls="psw-vogue"
+                data-series="vogue" data-img="assets/img/series/vogue-l-plus.webp?v=s1"
+                data-alt="ZOUND VOGUE Model L Plus &mdash; the four-person pod">VOGUE</button>
+        <button class="pswitch-tab" type="button" role="tab" aria-selected="false" aria-controls="psw-sr"
+                data-series="sr" data-img="assets/img/series/sr-l.webp?v=s1"
+                data-alt="ZOUND SR Model L &mdash; the four-person pod">SR</button>
+        <button class="pswitch-tab" type="button" role="tab" aria-selected="false" aria-controls="psw-life"
+                data-series="life" data-img="assets/img/series/life-pro-l.webp?v=s1"
+                data-alt="ZOUND Life Pro L &mdash; the four-person room">Life</button>
+      </div>
+
+      <div class="pswitch-body">
+        <figure class="pswitch-stage">
+          <img class="pswitch-img" id="pswitchImg" src="assets/img/series/vogue-l-plus.webp?v=s1"
+               width="1800" height="1200" loading="lazy" decoding="async"
+               alt="ZOUND VOGUE Model L Plus — the four-person pod" />
+          <span class="pswitch-chip" data-for="vogue">VOGUE</span>
+          <span class="pswitch-chip" data-for="sr" hidden>SR</span>
+          <span class="pswitch-chip" data-for="life" hidden>Life</span>
+        </figure>
+
+        <div class="pswitch-infos">
+          <div class="pswitch-info is-on" id="psw-vogue" role="tabpanel" data-for="vogue">
+            <div class="pswitch-head">
+            <span class="series-badge" data-i18n="srs_vogue_tag">Flagship</span>
+            <h3 class="pswitch-model">VOGUE <span data-i18n="psw_v_model">Model L Plus</span></h3>
+            <p class="pswitch-seats" data-i18n="cap_4">4 people</p>
+            </div>
+            <ul class="spec">
+              <li><span class="spec-k" data-i18n="k_dim">Dimensions</span><b>2.20 &times; 1.64 &times; 2.10 m</b></li>
+              <li><span class="spec-k" data-i18n="k_weight">Weight</span><b>669 kg</b></li>
+              <li><span class="spec-k" data-i18n="k_acoustic">Acoustics</span><b>32 dB &plusmn;3</b></li>
+            </ul>
+            <div class="pswitch-tail">
+            <p class="pswitch-note" data-i18n="psw_v_note">Our flagship. Furniture-grade finishes, the fluted acoustic wall and the smart panel built in &mdash; the one that makes an office look expensive.</p>
+            <a class="btn btn-sm" href="/#spec" data-i18n="psw_v_cta">See all five VOGUE sizes</a>
+            </div>
+          </div>
+
+          <div class="pswitch-info" id="psw-sr" role="tabpanel" data-for="sr" hidden>
+            <div class="pswitch-head">
+            <h3 class="pswitch-model">SR <span data-i18n="psw_s_model">Model L</span></h3>
+            <p class="pswitch-seats" data-i18n="cap_4">4 people</p>
+            </div>
+            <ul class="spec">
+              <li><span class="spec-k" data-i18n="k_dim">Dimensions</span><b>2.20 &times; 1.54 &times; 2.30 m</b></li>
+              <li><span class="spec-k" data-i18n="k_weight">Weight</span><b>596 kg</b></li>
+              <li><span class="spec-k" data-i18n="k_acoustic">Acoustics</span><b class="spec-tbc" data-i18n="tbc">on request</b></li>
+            </ul>
+            <div class="pswitch-tail">
+            <p class="pswitch-note" data-i18n="psw_s_note">The professional original &mdash; the shape the market has spent years copying. Recycled carbon-polymer shell on an aerospace-grade frame.</p>
+            <a class="btn btn-sm" href="/sr" data-i18n="psw_s_cta">See the SR series</a>
+            </div>
+          </div>
+
+          <div class="pswitch-info" id="psw-life" role="tabpanel" data-for="life" hidden>
+            <div class="pswitch-head">
+            <h3 class="pswitch-model">Life <span data-i18n="psw_l_model">Pro L</span></h3>
+            <p class="pswitch-seats" data-i18n="psw_l_seats">2&ndash;4 people</p>
+            </div>
+            <ul class="spec">
+              <li><span class="spec-k" data-i18n="k_dim">Dimensions</span><b>2.20 &times; 1.22 &times; 2.20 m</b></li>
+              <li><span class="spec-k" data-i18n="k_weight">Weight</span><b>400 kg</b></li>
+              <li><span class="spec-k" data-i18n="k_acoustic">Acoustics</span><b>30 dB &plusmn;5</b></li>
+            </ul>
+            <div class="pswitch-tail">
+            <p class="pswitch-note" data-i18n="psw_l_note">The value series, on wheels. The same quiet room for a home studio or a budget-conscious floor &mdash; and it moves when you do.</p>
+            <a class="btn btn-sm" href="/life" data-i18n="psw_l_cta">See the Life series</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ COMPARE IN PERSON ============ -->
   <section class="sr-sec" id="compare-in-person">
     <div class="sec-head reveal">
@@ -237,9 +322,10 @@
   <!-- engine: smooth scroll + scroll reveals/counters + i18n + compare slider -->
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js?v=lazy1"></script>
-  <script src="i18n.js?v=nav1"></script>
+  <script src="i18n.js?v=nav2"></script>
   <script src="compare.js?v=lineup20"></script>
   <script src="sound.js?v=hdrmusic5"></script>
+  <script src="series.js?v=psw2"></script>
   <script>
     // nav stays solid on the showroom page (no full-bleed scrub hero)
     document.getElementById('nav').classList.add('nav-solid');

@@ -1341,3 +1341,78 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
     linear-gradient(to right, rgba(10,8,6,0.56), rgba(10,8,6,0.06) 56%, rgba(10,8,6,0));
 }
 .ser-hero-shot .sr-hero-copy .display { text-shadow: 0 2px 30px rgba(10,8,6,0.52); }
+
+/* ============================================================
+   SHOWROOM — the same pod, each series (#pod-switch)
+   One stage, three renders composed on a shared 1800x1200 canvas and
+   bottom-aligned, so switching reads as the pod being swapped in place.
+   ============================================================ */
+.pswitch { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px); }
+.pswitch-tabs {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 6px; margin: 0 auto clamp(22px, 3vw, 34px);
+  width: fit-content; border: 1px solid var(--line); border-radius: 100px; background: var(--shell);
+}
+.pswitch-tab {
+  font: inherit; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 11px 24px; border: 0; border-radius: 100px; cursor: pointer;
+  background: transparent; color: var(--stone);
+  transition: background .3s, color .3s;
+}
+.pswitch-tab:hover { color: var(--ink); }
+.pswitch-tab.is-on { background: var(--ink); color: var(--cream); }
+
+/* the stage runs the full width of the section — the pod is the point */
+.pswitch-stage {
+  position: relative; border-radius: 22px; overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: radial-gradient(118% 92% at 50% 6%, #FBF8F2 0%, #F1EADF 56%, #E4D9C8 100%);
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 90px -56px rgba(28,24,19,0.55);
+}
+.pswitch-chip {
+  position: absolute; top: clamp(14px, 2vw, 24px); right: clamp(14px, 2vw, 24px); z-index: 2;
+  padding: 8px 18px; border-radius: 100px;
+  background: rgba(255,255,255,0.86); border: 1px solid rgba(28,24,19,0.08);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink);
+}
+.pswitch-chip[hidden] { display: none; }
+
+/* specs sit under the stage in three columns */
+.pswitch-info {
+  display: grid; gap: clamp(20px, 3vw, 44px);
+  grid-template-columns: 0.85fr 1fr 1.15fr; align-items: start;
+  margin-top: clamp(26px, 3.4vw, 42px);
+}
+.pswitch-tail { display: flex; flex-direction: column; align-items: flex-start; }
+/* contact shadow, so the pod sits on the floor instead of floating */
+.pswitch-stage::after {
+  content: ""; position: absolute; left: 50%; bottom: 7.5%;
+  width: 62%; height: 7%; transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(28,24,19,0.26), rgba(28,24,19,0) 72%);
+  pointer-events: none;
+}
+.pswitch-img {
+  position: relative; z-index: 1;
+  display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom;
+  animation: pswFade .45s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes pswFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.pswitch-info[hidden] { display: none; }
+.pswitch-model { font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.01em; }
+.pswitch-model span { color: var(--stone); }
+.pswitch-seats { margin-top: 4px; color: var(--terra); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.pswitch-info .spec { margin-top: 0; }
+.pswitch-note { margin-top: 0; color: var(--stone); font-size: 0.95rem; line-height: 1.65; }
+.pswitch-info .btn { margin-top: 20px; }
+.pswitch-info .series-badge { display: inline-block; margin: 0 0 12px; }
+
+@media (prefers-reduced-motion: reduce) { .pswitch-img { animation: none; } }
+@media (max-width: 900px) {
+  .pswitch-info { grid-template-columns: 1fr; gap: 22px; }
+  .pswitch-stage { aspect-ratio: 4 / 3; }
+  .pswitch-tabs { width: 100%; justify-content: center; }
+  .pswitch-tab { flex: 1 1 auto; padding: 11px 14px; text-align: center; }
+}
