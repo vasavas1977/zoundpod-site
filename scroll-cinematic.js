@@ -10,12 +10,25 @@ function initScrub(cfg) {
   const bgFill  = cfg.bg || "#0a0a12";
   const images = [];
   let firstDrawn = false;
-  for (let i = 0; i < cfg.frameCount; i++) {
+  let framesRequested = false;
+  /* Load the poster frame immediately so the canvas is never blank, but hold
+     the rest until the section is within ~1.5 viewports. Requesting all of
+     them up front made a cold visit fetch every frame of every section
+     (1,338 files, ~81MB) before the visitor had scrolled anywhere. */
+  function loadFrame(i) {
+    if (images[i]) return images[i];
     const img = new Image();
     img.src = cfg.framePath(i + 1);
     img.onload = () => { if (!firstDrawn) { firstDrawn = true; draw(0); } };
     images[i] = img;
+    return img;
   }
+  function loadAllFrames() {
+    if (framesRequested) return;
+    framesRequested = true;
+    for (let i = 0; i < cfg.frameCount; i++) loadFrame(i);
+  }
+  loadFrame(0);
   let current = -1;
   function draw(index) {
     const img = images[index];
@@ -37,6 +50,12 @@ function initScrub(cfg) {
   }
   function update() {
     const rect = section.getBoundingClientRect();
+    /* pull the rest of the frames in once the section is within ~1.5 screens.
+       Driven off the rAF rect rather than IntersectionObserver so there is no
+       second code path that can silently fail and strand the poster frame. */
+    const vh = window.innerHeight || 800;
+    const near = vh * 1.5;
+    if (rect.bottom > -near && rect.top < window.innerHeight + near) loadAllFrames();
     if (rect.bottom < -window.innerHeight || rect.top > window.innerHeight) return;
     const scrollable = rect.height - window.innerHeight;
     const p = Math.min(Math.max(-rect.top / scrollable, 0), 1);

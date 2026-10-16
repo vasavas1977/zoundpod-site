@@ -61,7 +61,7 @@
         "image": "https://zoundpod.com/assets/img/og-cover.jpg",
         "description": "ZOUND crafts luxury soundproof office pods and acoustic booths for upscale workspaces.",
         "slogan": "A room within the room.",
-        "email": "hello@zoundpod.com",
+        "email": "contact@zoundpod.com",
         "telephone": "+66-2-690-3626",
         "sameAs": [
           "https://www.facebook.com/zound.acoustic",
@@ -105,7 +105,7 @@
           { "@type": "Question", "name": "What sizes are available?", "acceptedAnswer": { "@type": "Answer", "text": "Five sizes — S, S Plus, M, L and L Plus — from a single-person focus booth to a four-person meeting room. One standard of quiet across the range; you choose the footprint." } },
           { "@type": "Question", "name": "Does the pod have ventilation and fresh air?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every pod runs a Panasonic-developed centrifugal fan that draws fresh air in at the ceiling and exhausts it at the floor — up to 95 m3/h and under 40 dB, so the air stays fresh while the pod stays calm and quiet." } },
           { "@type": "Question", "name": "Are ZOUND pods sustainable and certified?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pods are built with GREENGUARD Gold (UL 2818) certified materials and recycled carbon fibre, tested to ISO, SGS and ASTM standards — low-emission and built to last." } },
-          { "@type": "Question", "name": "Where can I buy a ZOUND pod?", "acceptedAnswer": { "@type": "Answer", "text": "ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 or email hello@zoundpod.com." } },
+          { "@type": "Question", "name": "Where can I buy a ZOUND pod?", "acceptedAnswer": { "@type": "Answer", "text": "ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 or email contact@zoundpod.com." } },
           { "@type": "Question", "name": "Is a ZOUND pod completely silent inside?", "acceptedAnswer": { "@type": "Answer", "text": "No — and that's deliberate. A ZOUND pod isn't built for dead silence, which actually feels uncomfortable and even unsafe. It brings the office down to a calm 30 dB — the level research links to deep focus — while you can still hear an alarm, an announcement, or someone at the door. You get real privacy and concentration without being cut off from what keeps you safe." } }
         ]
       }
@@ -892,7 +892,7 @@
       </details>
       <details class="faq-item">
         <summary data-i18n="faq_q6">Where can I buy a ZOUND pod?</summary>
-        <div class="faq-a"><p data-i18n="faq_a6">ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 or email hello@zoundpod.com.</p></div>
+        <div class="faq-a"><p data-i18n="faq_a6">ZOUND pods are trusted by leading brands worldwide and delivered by 1toAll. Talk to sales for a consultation, pricing and lead times — call 1605 or email contact@zoundpod.com.</p></div>
       </details>
       <details class="faq-item">
         <summary data-i18n="faq_q7">Is a ZOUND pod completely silent inside?</summary>
@@ -908,8 +908,8 @@
     <h2 class="reveal display" data-i18n="con_title">Your space.<br/>Your innovation.</h2>
     <p class="contact-sub reveal" data-i18n="con_sub">Tell us about your space &mdash; we&rsquo;ll design the quiet around it.</p>
     <div class="cta-row reveal">
-      <a href="mailto:hello@zoundpod.com" class="btn btn-lg" data-i18n="con_talk">Talk to Sales</a>
-      <a href="mailto:hello@zoundpod.com" class="btn btn-lg btn-ghost" data-i18n="con_free">Get a Free Consultation</a>
+      <a href="mailto:contact@zoundpod.com" class="btn btn-lg" data-i18n="con_talk">Talk to Sales</a>
+      <a href="mailto:contact@zoundpod.com" class="btn btn-lg btn-ghost" data-i18n="con_free">Get a Free Consultation</a>
     </div>
     <ul class="channels reveal">
       <li><span data-i18n="ch_call">Call</span><a href="tel:+6626903626">1605</a></li>
@@ -945,7 +945,7 @@
 
   <!-- Lenis smooth scroll + engine -->
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
-  <script src="scroll-cinematic.js?v=lineup20"></script>
+  <script src="scroll-cinematic.js?v=lazy1"></script>
   <script src="shatter.js?v=lineup22"></script>
   <script src="i18n.js?v=lineup21"></script>
   <script src="compare.js?v=lineup20"></script>
@@ -1004,14 +1004,23 @@
       if (!cv) return;
       var ctx = cv.getContext('2d', { alpha: false });
       var COUNT = 121, BG = '#cfc8c1';
-      var imgs = [], firstDrawn = false;
+      var imgs = [], firstDrawn = false, framesRequested = false;
       function path(i) { return 'frames/control/frame_' + String(i).padStart(4, '0') + '.jpg?v=ctl1'; }
-      for (var i = 1; i <= COUNT; i++) {
+      /* poster frame now; the rest only once the plate is near the viewport,
+         so a cold visit doesn't fetch all 121 frames before any scrolling */
+      function loadFrame(i) {
+        if (imgs[i - 1]) return;
         var im = new Image();
         im.src = path(i);
         im.onload = function () { if (!firstDrawn) { firstDrawn = true; draw(0); } };
         imgs[i - 1] = im;
       }
+      function loadAllFrames() {
+        if (framesRequested) return;
+        framesRequested = true;
+        for (var i = 1; i <= COUNT; i++) loadFrame(i);
+      }
+      loadFrame(1);
       var current = -1;
       function draw(idx) {
         var img = imgs[idx];
@@ -1030,6 +1039,10 @@
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       function frame() {
         var r = cv.getBoundingClientRect();
+        /* pull in the rest once the plate is within ~1.5 screens; driven off
+           this rect so there is no observer that can fail and strand frame 1 */
+        var near = (window.innerHeight || 800) * 1.5;
+        if (r.bottom > -near && r.top < window.innerHeight + near) loadAllFrames();
         if (r.bottom > -200 && r.top < window.innerHeight + 200) {
           var p;
           if (reduce) { p = 1; }
@@ -1060,14 +1073,23 @@
       if (!cv) return;
       var ctx = cv.getContext('2d', { alpha: false });
       var COUNT = 121, BG = '#cfc8c1';
-      var imgs = [], firstDrawn = false;
+      var imgs = [], firstDrawn = false, framesRequested = false;
       function path(i) { return 'frames/interior/frame_' + String(i).padStart(4, '0') + '.jpg?v=int2'; }
-      for (var i = 1; i <= COUNT; i++) {
+      /* poster frame now; the rest only once the plate is near the viewport,
+         so a cold visit doesn't fetch all 121 frames before any scrolling */
+      function loadFrame(i) {
+        if (imgs[i - 1]) return;
         var im = new Image();
         im.src = path(i);
         im.onload = function () { if (!firstDrawn) { firstDrawn = true; draw(0); } };
         imgs[i - 1] = im;
       }
+      function loadAllFrames() {
+        if (framesRequested) return;
+        framesRequested = true;
+        for (var i = 1; i <= COUNT; i++) loadFrame(i);
+      }
+      loadFrame(1);
       var current = -1;
       function draw(idx) {
         var img = imgs[idx];
@@ -1086,6 +1108,10 @@
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       function frame() {
         var r = cv.getBoundingClientRect();
+        /* pull in the rest once the plate is within ~1.5 screens; driven off
+           this rect so there is no observer that can fail and strand frame 1 */
+        var near = (window.innerHeight || 800) * 1.5;
+        if (r.bottom > -near && r.top < window.innerHeight + near) loadAllFrames();
         if (r.bottom > -200 && r.top < window.innerHeight + 200) {
           var p;
           if (reduce) { p = 1; }
@@ -1115,14 +1141,23 @@
       if (!cv) return;
       var ctx = cv.getContext('2d', { alpha: false });
       var COUNT = 108, BG = '#b5b1b2';
-      var imgs = [], firstDrawn = false;
+      var imgs = [], firstDrawn = false, framesRequested = false;
       function path(i) { return 'frames/assembly/frame_' + String(i).padStart(4, '0') + '.jpg?v=lineup21'; }
-      for (var i = 1; i <= COUNT; i++) {
+      /* poster frame now; the rest only once the plate is near the viewport,
+         so a cold visit doesn't fetch all 108 frames before any scrolling */
+      function loadFrame(i) {
+        if (imgs[i - 1]) return;
         var im = new Image();
         im.src = path(i);
         im.onload = function () { if (!firstDrawn) { firstDrawn = true; draw(0); } };
         imgs[i - 1] = im;
       }
+      function loadAllFrames() {
+        if (framesRequested) return;
+        framesRequested = true;
+        for (var i = 1; i <= COUNT; i++) loadFrame(i);
+      }
+      loadFrame(1);
       var current = -1;
       function draw(idx) {
         var img = imgs[idx];
@@ -1140,6 +1175,8 @@
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       function frame() {
         var r = sec.getBoundingClientRect();
+        var near = (window.innerHeight || 800) * 1.5;
+        if (r.bottom > -near && r.top < window.innerHeight + near) loadAllFrames();
         if (r.bottom > -200 && r.top < window.innerHeight + 200) {
           var p;
           if (reduce) { p = 1; }
