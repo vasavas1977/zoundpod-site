@@ -14,14 +14,9 @@
   var ANON_KEY   = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImphcXl2YmpsbHNhbnJucHpseWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg5MzkwNjksImV4cCI6MjA3NDUxNTA2OX0.EVJdlMp1i1chtGKxdQ66ysmC-iAGefvr9JFLlvzaC34";
   var LINE_URL   = "https://line.me/R/ti/p/@zound";
 
-  /* Showroom viewing slots. No opening hours are published on the site, so
-     these are an assumption: Mon–Sat, one-hour slots from 10:00 to 18:00,
-     Bangkok time. Change SLOT_START/SLOT_END/CLOSED_DAYS to correct them. */
-  var SLOT_START  = 10;        /* first slot begins 10:00 */
-  var SLOT_END    = 18;        /* last slot ends 18:00 */
-  var CLOSED_DAYS = [0];       /* 0 = Sunday */
-  var DAYS_AHEAD  = 21;
-  var TZ          = "Asia/Bangkok";
+  /* Intents that book a held slot, mapped to the tenant's booking type in the
+     contact center. Hours, closed days and capacity live there, not here. */
+  var BOOKING_TYPE = { viewing: "showroom_viewing" };
 
   var live = /^pk_/.test(PUBLIC_KEY);
 
@@ -44,7 +39,16 @@
       pickDay: "Pick a day", pickTime: "Pick a time", tz: "Showroom time (Bangkok)",
       needSlot: "Please choose a day and a time for your visit.",
       needBoth: "For a viewing please leave both a phone number and an email \u2014 we call to confirm and send the confirmation by email.",
-      okSlot: "Thank you \u2014 we have your request for {s}. Someone will call you shortly to confirm, and a confirmation email is on its way."
+      loading: "Loading available times\u2026",
+      gridErr: "We couldn\u2019t load the calendar just now. Send your details anyway and we\u2019ll call to agree a time \u2014 or call 1605.",
+      noSlots: "No times are open over the next few weeks. Send your details and we\u2019ll call you.",
+      full: "Taken",
+      taken: "Sorry \u2014 that time has just been taken. Please choose another.",
+      slotGone: "That time is no longer available. Please choose another.",
+      limited: "We\u2019ve already received several requests from this connection. Please call 1605 or message LINE @zound.",
+      okBooked: "You\u2019re booked in for {s} \u2014 reference {r}. Someone will call you shortly to confirm, and a confirmation email is on its way.",
+      refLine: "Your booking reference: {r}",
+      unnotified: "If you haven\u2019t heard from us within a working day, call 1605 and quote {r}."
     },
     th: {
       sales:    { t: "ปรึกษาฝ่ายขาย", s: "สอบถามฝ่ายขาย",
@@ -63,7 +67,16 @@
       pickDay: "เลือกวัน", pickTime: "เลือกเวลา", tz: "เวลาโชว์รูม (กรุงเทพฯ)",
       needSlot: "กรุณาเลือกวันและเวลาที่สะดวกเข้าชม",
       needBoth: "สำหรับนัดชมโชว์รูม กรุณากรอกทั้งเบอร์โทรและอีเมล เพราะเราจะโทรยืนยันและส่งอีเมลยืนยันให้",
-      okSlot: "ขอบคุณครับ เราได้รับคำขอเข้าชมวันที่ {s} แล้ว เจ้าหน้าที่จะโทรยืนยันกับคุณเร็ว ๆ นี้ พร้อมส่งอีเมลยืนยันตามไปด้วย"
+      loading: "กำลังโหลดเวลาที่ว่าง\u2026",
+      gridErr: "ขออภัย ตอนนี้โหลดปฏิทินไม่ได้ ฝากรายละเอียดไว้ได้เลย แล้วเราจะโทรนัดเวลากับคุณ หรือโทร 1605",
+      noSlots: "ช่วงไม่กี่สัปดาห์ข้างหน้ายังไม่มีเวลาว่าง ฝากรายละเอียดไว้ แล้วเราจะโทรหาคุณ",
+      full: "เต็ม",
+      taken: "ขออภัย เวลานี้เพิ่งมีคนจองไปแล้ว กรุณาเลือกเวลาอื่น",
+      slotGone: "เวลานี้ไม่ว่างแล้ว กรุณาเลือกเวลาอื่น",
+      limited: "เราได้รับคำขอจากการเชื่อมต่อนี้หลายครั้งแล้ว กรุณาโทร 1605 หรือทักไลน์ @zound",
+      okBooked: "จองเรียบร้อยแล้วสำหรับ {s} รหัสการจอง {r} เจ้าหน้าที่จะโทรยืนยันกับคุณเร็ว ๆ นี้ พร้อมส่งอีเมลยืนยันตามไปด้วย",
+      refLine: "รหัสการจองของคุณ: {r}",
+      unnotified: "หากยังไม่ได้รับการติดต่อภายในหนึ่งวันทำการ กรุณาโทร 1605 แล้วแจ้งรหัส {r}"
     }
   };
   function L() { return document.documentElement.lang === "th" ? T.th : T.en; }
@@ -99,7 +112,7 @@
       ".cc-x{margin-left:auto;background:none;border:0;color:#6F6559;font:inherit;font-size:.9rem;cursor:pointer;padding:8px}" +
       ".cc-alt{margin-top:16px;padding-top:14px;border-top:1px solid rgba(28,24,19,.12);color:#6F6559;font-size:.85rem;line-height:1.7}" +
       ".cc-alt a{color:#1C1813}" +
-      ".cc-st{margin-top:12px;font-size:.9rem;line-height:1.6}" +
+      ".cc-st{margin-top:12px;font-size:.9rem;line-height:1.6;white-space:pre-line}" +
       ".cc-st.ok{color:#3F6B45}.cc-st.err{color:#9C3B2E}" +
       ".cc-cal{display:none;margin-bottom:4px}.cc-cal.on{display:block}" +
       ".cc-cal h4{margin:2px 0 8px;font:inherit;font-size:.72rem;font-weight:700;letter-spacing:.14em;" +
@@ -117,6 +130,9 @@
       "font:inherit;font-size:.86rem;transition:background .2s,border-color .2s,color .2s}" +
       ".cc-slot:hover{border-color:#B5613F}" +
       ".cc-slot.on{background:#B5613F;border-color:#B5613F;color:#fff}" +
+      ".cc-slot[disabled]{opacity:.38;cursor:not-allowed;text-decoration:line-through}" +
+      ".cc-slot[disabled]:hover{border-color:rgba(28,24,19,.16)}" +
+      ".cc-day.full{opacity:.45}" +
       ".cc-tz{color:#6F6559;font-size:.76rem;margin:0 0 10px}" +
       ".cc-none{color:#6F6559;font-size:.85rem;margin:0 0 8px}";
     document.head.appendChild(css);
@@ -158,41 +174,55 @@
   }
 
 
-  /* ---------- viewing slots ----------
-     A request, not a confirmed booking: there is no availability source, so
-     the team confirms. Days and times are computed in Bangkok time so a
-     visitor in another timezone is never offered a slot that has passed. */
-  var pickedDay = null, pickedHour = null;
+  /* ---------- appointment slots ----------
+     Served by the contact center: cc_booking_slots() returns the open grid
+     with the capacity left in each slot, and cc_book() claims one atomically,
+     so a slot one customer holds cannot be taken by another. The page renders
+     what it is given and computes no availability of its own. */
+  var REST = API_URL.replace(/\/functions\/v1\/?$/, "") + "/rest/v1/rpc/";
+  var grid = null, gridState = "idle";          /* idle | loading | ready | error */
+  var pickedDay = null, pickedSlot = null;      /* pickedSlot: { start, label, end, left } */
 
-  function bkkParts(d) {
-    var f = new Intl.DateTimeFormat("en-CA", {
-      timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit",
-      hour: "2-digit", hour12: false, weekday: "short"
-    }).formatToParts(d).reduce(function (a, p) { a[p.type] = p.value; return a; }, {});
-    return { iso: f.year + "-" + f.month + "-" + f.day, hour: parseInt(f.hour, 10), wd: f.weekday };
+  function rpc(fn, args) {
+    return fetch(REST + fn, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": ANON_KEY,
+        "Authorization": "Bearer " + ANON_KEY
+      },
+      body: JSON.stringify(args)
+    }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    });
   }
 
-  function dayList() {
-    var now = new Date(), out = [];
-    for (var i = 0; i < DAYS_AHEAD && out.length < 14; i++) {
-      var d = new Date(now.getTime() + i * 86400000);
-      var p = bkkParts(d);
-      var dow = new Date(p.iso + "T12:00:00Z").getUTCDay();
-      if (CLOSED_DAYS.indexOf(dow) !== -1) continue;
-      var last = SLOT_END - 1;
-      if (i === 0 && bkkParts(now).hour >= last) continue;   /* nothing left today */
-      out.push({ iso: p.iso, dayNum: p.iso.slice(8), today: i === 0 });
-    }
-    return out;
+  function dayOf(date) {
+    return ((grid && grid.days) || []).filter(function (x) { return x.date === date; })[0] || null;
   }
+  function hasRoom(day) { return day.slots.some(function (x) { return x.left > 0; }); }
 
-  function slotsFor(iso) {
-    var out = [], nowP = bkkParts(new Date());
-    for (var h = SLOT_START; h < SLOT_END; h++) {
-      if (iso === nowP.iso && h <= nowP.hour) continue;        /* already past */
-      out.push(h);
-    }
-    return out;
+  function loadGrid() {
+    var type = BOOKING_TYPE[intent];
+    if (!type) return;
+    gridState = "loading";
+    renderCal();
+    rpc("cc_booking_slots", { p_public_key: PUBLIC_KEY, p_type: type })
+      .then(function (j) {
+        if (!j || !j.ok) throw new Error((j && j.reason) || "no grid");
+        grid = j;
+        gridState = "ready";
+        /* keep the customer's choice only if it is still open */
+        if (pickedSlot) {
+          var day = dayOf(pickedDay), keep = null;
+          if (day) keep = day.slots.filter(function (x) { return x.start === pickedSlot.start && x.left > 0; })[0];
+          pickedSlot = keep || null;
+        }
+      })["catch"](function () {
+        grid = null;
+        gridState = "error";
+      })["finally"](function () { renderCal(); });
   }
 
   function locale() { return document.documentElement.lang === "th" ? "th-TH" : "en-GB"; }
@@ -206,68 +236,80 @@
     });
   }
 
-  function pad(n) { return (n < 10 ? "0" : "") + n; }
-  function slotLabel(h) { return pad(h) + ":00\u2013" + pad(h + 1) + ":00"; }
-
   function slotText() {
-    if (!pickedDay || pickedHour === null) return "";
-    var d = new Date(pickedDay + "T12:00:00Z");
-    var day = d.toLocaleDateString(locale(),
+    if (!pickedSlot || !pickedDay) return "";
+    var day = new Date(pickedDay + "T12:00:00Z").toLocaleDateString(locale(),
       { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
-    return day + ", " + slotLabel(pickedHour);
+    return day + ", " + pickedSlot.label + "–" + pickedSlot.end;
+  }
+
+  function note(text) {
+    var p = document.createElement("p");
+    p.className = "cc-none";
+    p.textContent = text;
+    return p;
   }
 
   function renderSlots() {
     var wrap = modal.querySelector(".cc-slots"), d = L();
     wrap.innerHTML = "";
-    var hours = pickedDay ? slotsFor(pickedDay) : [];
-    if (!hours.length) {
-      var p = document.createElement("p");
-      p.className = "cc-none"; p.textContent = d.pickDay;
-      wrap.appendChild(p); return;
-    }
-    hours.forEach(function (h) {
+    var day = dayOf(pickedDay);
+    if (!day) return;
+    day.slots.forEach(function (x) {
       var b = document.createElement("button");
       b.type = "button";
-      b.className = "cc-slot" + (h === pickedHour ? " on" : "");
-      b.textContent = slotLabel(h);
-      b.addEventListener("click", function () {
-        pickedHour = h;
-        [].slice.call(wrap.children).forEach(function (o) { o.classList.remove("on"); });
-        b.classList.add("on");
-        status.textContent = ""; status.className = "cc-st";
-      });
+      b.className = "cc-slot" + (pickedSlot && pickedSlot.start === x.start ? " on" : "");
+      b.textContent = x.label + "–" + x.end;
+      if (x.left <= 0) {
+        b.disabled = true;
+        b.title = d.full;
+        b.setAttribute("aria-label", x.label + " – " + d.full);
+      } else {
+        b.addEventListener("click", function () {
+          pickedSlot = x;
+          [].slice.call(wrap.children).forEach(function (o) { o.classList.remove("on"); });
+          b.classList.add("on");
+          status.textContent = ""; status.className = "cc-st";
+        });
+      }
       wrap.appendChild(b);
     });
   }
 
   function renderCal() {
+    if (!modal) return;
     var cal = modal.querySelector(".cc-cal"), d = L();
-    if (intent !== "viewing") { cal.classList.remove("on"); return; }
+    if (!BOOKING_TYPE[intent]) { cal.classList.remove("on"); return; }
     cal.classList.add("on");
     modal.querySelector("[data-cc-dayhead]").textContent = d.pickDay;
     modal.querySelector("[data-cc-timehead]").textContent = d.pickTime;
     modal.querySelector("[data-cc-tz]").textContent = d.tz;
 
-    var days = dayList(), wrap = modal.querySelector(".cc-days");
-    wrap.innerHTML = "";
-    if (pickedDay && !days.some(function (x) { return x.iso === pickedDay; })) {
-      pickedDay = null; pickedHour = null;
+    var days = modal.querySelector(".cc-days"), slots = modal.querySelector(".cc-slots");
+    days.innerHTML = "";
+    slots.innerHTML = "";
+    if (gridState === "loading" || gridState === "idle") { slots.appendChild(note(d.loading)); return; }
+    if (gridState === "error" || !grid) { slots.appendChild(note(d.gridErr)); return; }
+    if (!grid.days.length) { slots.appendChild(note(d.noSlots)); return; }
+
+    if (!dayOf(pickedDay)) {
+      pickedDay = (grid.days.filter(hasRoom)[0] || grid.days[0]).date;
+      pickedSlot = null;
     }
-    if (!pickedDay && days.length) { pickedDay = days[0].iso; }
-    days.forEach(function (x) {
+    grid.days.forEach(function (x) {
       var b = document.createElement("button");
       b.type = "button";
-      b.className = "cc-day" + (x.iso === pickedDay ? " on" : "");
-      b.innerHTML = "<small>" + wdLabel(x.iso) + "</small><b>" + x.dayNum + "</b>";
+      b.className = "cc-day" + (x.date === pickedDay ? " on" : "") + (hasRoom(x) ? "" : " full");
+      b.innerHTML = "<small>" + wdLabel(x.date) + "</small><b>" + x.date.slice(8) + "</b>";
       b.addEventListener("click", function () {
-        pickedDay = x.iso; pickedHour = null;
-        [].slice.call(wrap.children).forEach(function (o) { o.classList.remove("on"); });
+        pickedDay = x.date;
+        pickedSlot = null;
+        [].slice.call(days.children).forEach(function (o) { o.classList.remove("on"); });
         b.classList.add("on");
         renderSlots();
         status.textContent = ""; status.className = "cc-st";
       });
-      wrap.appendChild(b);
+      days.appendChild(b);
     });
     renderSlots();
   }
@@ -297,8 +339,9 @@
 
   function open(which) {
     intent = which || "sales";
-    pickedHour = null;
+    pickedSlot = null;
     build(); paint();
+    if (BOOKING_TYPE[intent]) loadGrid();
     modal.classList.add("open");
     modal.querySelector(".cc-box").scrollTop = 0;
     lenis(false);
@@ -311,35 +354,13 @@
     lenis(true);
   }
 
-  function submit(e) {
-    e.preventDefault();
-    var d = L(), btn = modal.querySelector(".cc-send");
-    var body = {
-      name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      phone: form.phone.value.trim(),
-      subject: (d[intent] || d.sales).s,
-      message: form.message.value.trim(),
-      language: document.documentElement.lang === "th" ? "th" : "en"
-    };
-    if (!body.name || (!body.email && !body.phone)) {
-      status.textContent = d.req; status.className = "cc-st err"; return;
-    }
-    var slot = "";
-    if (intent === "viewing") {
-      if (!body.phone || !body.email) {
-        status.textContent = d.needBoth; status.className = "cc-st err"; return;
-      }
-      slot = slotText();
-      if (!slot) { status.textContent = d.needSlot; status.className = "cc-st err"; return; }
-      body.subject = body.subject + " \u2014 " + slot;
-      body.message = "Requested viewing: " + slot + " (" + TZ + ")\n" +
-                     "Customer was told: we will call to confirm and send an email confirmation." +
-                     (body.message ? "\n\n" + body.message : "");
-    }
-    btn.disabled = true; btn.textContent = d.sending;
-    status.textContent = ""; status.className = "cc-st";
-    fetch(API_URL + "/cc-form", {
+  function setStatus(text, kind) {
+    status.textContent = text;
+    status.className = "cc-st" + (kind ? " " + kind : "");
+  }
+
+  function notifyCenter(body) {
+    return fetch(API_URL + "/cc-form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -351,13 +372,107 @@
     }).then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.json();
-    }).then(function (j) {
-      status.textContent = (j && j.reply) || (slot ? d.okSlot.replace("{s}", slot) : d.ok);
-      status.className = "cc-st ok";
+    });
+  }
+
+  /* Booking intents claim the slot first and only then notify the contact
+     center, carrying the booking reference. If that notification fails after
+     a successful claim the slot is still held, so the customer gets their
+     reference and a fallback rather than an error. If the calendar itself
+     could not load, the request still goes through — flagged for the team as
+     having no slot held — because a lead is worth more than a dead form. */
+  function submit(e) {
+    e.preventDefault();
+    var d = L(), btn = modal.querySelector(".cc-send");
+    var body = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      subject: (d[intent] || d.sales).s,
+      message: form.message.value.trim(),
+      language: document.documentElement.lang === "th" ? "th" : "en"
+    };
+    if (!body.name || (!body.email && !body.phone)) { setStatus(d.req, "err"); return; }
+
+    var type = BOOKING_TYPE[intent];
+    var booking = !!type && gridState === "ready";
+    if (type) {
+      var need = (grid && grid.type) || { require_phone: true, require_email: true };
+      if ((need.require_phone && !body.phone) || (need.require_email && !body.email)) {
+        setStatus(d.needBoth, "err"); return;
+      }
+    }
+    if (booking && !pickedSlot) { setStatus(d.needSlot, "err"); return; }
+
+    var slot = booking ? slotText() : "";
+    btn.disabled = true; btn.textContent = d.sending;
+    setStatus("");
+
+    var claim = booking
+      ? rpc("cc_book", {
+          p_public_key: PUBLIC_KEY,
+          p_type: type,
+          p_starts_at: pickedSlot.start,
+          p_name: body.name,
+          p_email: body.email,
+          p_phone: body.phone,
+          p_note: body.message || null,
+          p_language: body.language
+        }).then(function (j) {
+          if (!j || !j.ok) {
+            var err = new Error("booking refused");
+            err.reason = (j && j.reason) || "unknown";
+            throw err;
+          }
+          return j;
+        })
+      : Promise.resolve(null);
+
+    claim.then(function (bk) {
+      var ref = bk && bk.ref;
+      if (bk) {
+        body.subject = body.subject + " — " + slot + " — " + ref;
+        body.message = "Booking " + ref + " — slot held: " + slot + " (" + grid.type.tz + ")\n" +
+                       "Customer was told: we will call to confirm and send an email confirmation." +
+                       (body.message ? "\n\n" + body.message : "");
+      } else if (type) {
+        body.message = "Live calendar unavailable — no slot was held. Please call to agree a time." +
+                       (body.message ? "\n\n" + body.message : "");
+      }
+      return notifyCenter(body).then(function (j) {
+        return { ref: ref, reply: j && j.reply };
+      }, function (err) {
+        if (ref) return { ref: ref, reply: null, unnotified: true };
+        throw err;
+      });
+    }).then(function (res) {
+      var msg;
+      if (res.ref) {
+        msg = res.reply
+          ? res.reply + "\n\n" + d.refLine.replace("{r}", res.ref)
+          : d.okBooked.replace("{s}", slot).replace("{r}", res.ref);
+        if (res.unnotified) msg += "\n\n" + d.unnotified.replace("{r}", res.ref);
+      } else {
+        msg = res.reply || d.ok;
+      }
+      setStatus(msg, "ok");
       form.reset();
-      try { status.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (e) {}
-    })["catch"](function () {
-      status.textContent = d.err; status.className = "cc-st err";
+      pickedSlot = null;
+      if (booking) loadGrid();
+      try { status.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (x) {}
+    })["catch"](function (err) {
+      var r = err && err.reason;
+      if (r === "taken") {
+        setStatus(d.taken, "err"); pickedSlot = null; loadGrid();
+      } else if (r === "rate_limited") {
+        setStatus(d.limited, "err");
+      } else if (r === "contact_required") {
+        setStatus(d.needBoth, "err");
+      } else if (r) {
+        setStatus(d.slotGone, "err"); pickedSlot = null; loadGrid();
+      } else {
+        setStatus(d.err, "err");
+      }
     })["finally"](function () {
       btn.disabled = false; btn.textContent = d.send;
     });
