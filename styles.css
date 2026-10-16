@@ -1361,12 +1361,15 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 }
 .pswitch-tab:hover { color: var(--ink); }
 .pswitch-tab.is-on { background: var(--ink); color: var(--cream); }
+.pswitch-tab-flag { color: var(--terra); }
+.pswitch-tab-flag:hover { color: var(--terra); }
+.pswitch-tab-flag.is-on { background: var(--terra); color: #fff; }
 
 /* the stage runs the full width of the section — the pod is the point */
 .pswitch-stage {
   position: relative; border-radius: 22px; overflow: hidden;
-  aspect-ratio: 3 / 2;
-  background: radial-gradient(118% 92% at 50% 6%, #FBF8F2 0%, #F1EADF 56%, #E4D9C8 100%);
+  aspect-ratio: 1344 / 752;
+  background: #E4D9C8;
   border: 1px solid var(--line);
   box-shadow: 0 40px 90px -56px rgba(28,24,19,0.55);
 }
@@ -1386,16 +1389,9 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
   margin-top: clamp(26px, 3.4vw, 42px);
 }
 .pswitch-tail { display: flex; flex-direction: column; align-items: flex-start; }
-/* contact shadow, so the pod sits on the floor instead of floating */
-.pswitch-stage::after {
-  content: ""; position: absolute; left: 50%; bottom: 7.5%;
-  width: 62%; height: 7%; transform: translateX(-50%);
-  background: radial-gradient(50% 50% at 50% 50%, rgba(28,24,19,0.26), rgba(28,24,19,0) 72%);
-  pointer-events: none;
-}
 .pswitch-img {
   position: relative; z-index: 1;
-  display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom;
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: center;
   animation: pswFade .45s cubic-bezier(.2,.8,.2,1);
 }
 @keyframes pswFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -1412,7 +1408,7 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 @media (prefers-reduced-motion: reduce) { .pswitch-img { animation: none; } }
 @media (max-width: 900px) {
   .pswitch-info { grid-template-columns: 1fr; gap: 22px; }
-  .pswitch-stage { aspect-ratio: 4 / 3; }
+  .pswitch-stage { aspect-ratio: 5 / 4; }
   .pswitch-tabs { width: 100%; justify-content: center; }
   .pswitch-tab { flex: 1 1 auto; padding: 11px 14px; text-align: center; }
 }
