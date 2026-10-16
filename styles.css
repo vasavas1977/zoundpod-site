@@ -1207,3 +1207,46 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 .sus-certs-page { margin: clamp(26px, 4vw, 44px) 0 0; }
 .sus-certs-page .certrow { width: 100%; max-width: 900px; height: auto; display: block; }
 .sus-more { margin-top: clamp(22px, 4vw, 38px); }
+
+/* Sustainable page: the certificate row and the Low- list are white-on-transparent
+   art built for the home page's dark forest section, so those beats are dark here
+   too rather than being recoloured. */
+.sus-dark, .sus-dark-band {
+  position: relative; color: var(--light); isolation: isolate; background: #0d110b;
+}
+.sus-dark::before, .sus-dark-band::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: url(assets/img/forest.jpg) center/cover no-repeat;
+}
+.sus-dark::after, .sus-dark-band::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to right, rgba(10,14,9,0.88), rgba(10,14,9,0.62));
+}
+/* full-bleed background, content still centred on the 1180px column */
+.sus-dark {
+  max-width: none;
+  padding-inline: max(clamp(20px, 5vw, 64px), calc((100% - 1180px) / 2));
+}
+.sus-dark-band { max-width: none; padding-left: 0; padding-right: 0; }
+.sus-dark-band > * { max-width: 1180px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 64px); }
+.sus-dark .display-2,
+.sus-dark-band .display-3 { color: var(--light); text-shadow: 0 2px 40px rgba(0,0,0,0.4); }
+.sus-dark .lead,
+.sus-dark-band .sec-sub { color: rgba(244,239,231,0.86); }
+.sus-dark .eyebrow,
+.sus-dark-band .eyebrow { color: var(--sage); }
+.sus-dark .btn-ghost { color: var(--light); border-color: rgba(244,239,231,0.5); }
+/* the Low- list keeps its original light-on-dark styling here, as designed */
+.sus-dark-band .sus-lows-page li { color: rgba(244,239,231,0.94); border-top-color: rgba(244,239,231,0.20); }
+.sus-badge-fig img { border-radius: 14px; box-shadow: 0 26px 60px rgba(0,0,0,0.42); }
+
+/* catalogue download */
+.cat-sec { border-top: 1px solid var(--line); }
+.cat-wrap {
+  display: grid; gap: clamp(22px, 4vw, 56px); align-items: center;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+.cat-copy .display-3 { margin: 14px 0 14px; }
+.cat-action { display: grid; gap: 12px; justify-items: start; }
+.cat-meta { color: var(--stone); font-size: 0.84rem; letter-spacing: 0.06em; margin: 0; }
+@media (max-width: 860px) { .cat-wrap { grid-template-columns: 1fr; } }
