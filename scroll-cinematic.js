@@ -96,14 +96,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function raf(t) { lenis.raf(t); scrubs.forEach(s => s.update()); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
 
+  // Reveal once a quarter of the element is on screen — or, for an element
+  // taller than four screens (the comparison table stacked on a phone), once
+  // it fills a quarter of the screen: its own 25% can never fit in view, so a
+  // ratio-only rule left it invisible forever.
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
+      const screen = e.rootBounds ? e.rootBounds.height : window.innerHeight;
+      if (e.intersectionRatio < 0.25 && e.intersectionRect.height < screen * 0.25) return;
       e.target.classList.add("in");
       if (e.target.classList.contains("stat-num")) animateCount(e.target);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.25 });
+  }, { threshold: [0, 0.02, 0.05, 0.1, 0.15, 0.2, 0.25] });
   document.querySelectorAll(".reveal, .stat-num").forEach((el) => io.observe(el));
 
   lenis.on("scroll", ({ scroll }) => {
