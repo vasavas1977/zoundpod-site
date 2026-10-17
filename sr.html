@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=ct1" />
+  <link rel="stylesheet" href="styles.css?v=fm1" />
 </head>
 <body>
 
@@ -252,13 +252,22 @@
       <p class="eyebrow" data-i18n="srs_film_eyebrow">On film</p>
       <h2 class="display-3" data-i18n="srs_film_title">See it working.</h2>
     </div>
-    <figure class="yt reveal" data-yt="F5ZBv7W51yE" data-title="ZOUND Pod | SR SERIES">
-      <button class="yt-play" type="button" aria-label="Play: ZOUND Pod SR Series">
-        <img src="https://i.ytimg.com/vi/F5ZBv7W51yE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" />
-        <span class="yt-btn" aria-hidden="true"></span>
-      </button>
-      <figcaption data-i18n="srs_film_cap">ZOUND Pod · SR Series</figcaption>
-    </figure>
+    <div class="ser-films">
+      <figure class="yt reveal" data-yt="F5ZBv7W51yE" data-title="ZOUND Pod | SR SERIES">
+        <button class="yt-play" type="button" aria-label="Play: ZOUND Pod SR Series">
+          <img src="https://i.ytimg.com/vi/F5ZBv7W51yE/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
+          <span class="yt-btn" aria-hidden="true"></span>
+        </button>
+        <figcaption data-i18n="srs_film_cap">ZOUND Pod · SR Series</figcaption>
+      </figure>
+      <figure class="yt reveal" style="transition-delay:80ms" data-yt="lkjc2T1bNZA" data-title="ห้องเก็บเสียง ZOUND Pod">
+        <button class="yt-play" type="button" aria-label="Play: ZOUND Pod soundproof room — SR Series">
+          <img src="https://i.ytimg.com/vi/lkjc2T1bNZA/maxresdefault.jpg" alt="" loading="lazy" width="1280" height="720" />
+          <span class="yt-btn" aria-hidden="true"></span>
+        </button>
+        <figcaption data-i18n="srs_film_cap2">The ZOUND Pod soundproof room &middot; SR Series</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- ============ CATALOGUE ============ -->
@@ -302,7 +311,7 @@
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js?v=lazy1"></script>
-  <script src="i18n.js?v=ct3"></script>
+  <script src="i18n.js?v=fm1"></script>
   <script src="cc.js?v=ct3"></script>
   <script src="sound.js?v=hdrmusic5"></script>
   <script src="series.js?v=psw2"></script>

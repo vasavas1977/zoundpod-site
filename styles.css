@@ -1634,3 +1634,8 @@ html[lang="th"] .cool-steps h3, html[lang="th"] .cool-honest h3 { font-family: "
 .cmp-cat, .spec-cat { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 18px; }
 .spec-cat { max-width: 1280px; margin: 18px auto 0; padding: 0 clamp(24px,6vw,80px); }
 .cmp-cat .cat-meta, .spec-cat .cat-meta { margin: 0; }
+
+/* SR page: two films side by side */
+.ser-films { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 3vw, 34px); }
+.ser-films .yt { margin-top: clamp(30px, 5vw, 54px); }
+@media (max-width: 760px) { .ser-films { grid-template-columns: 1fr; } .ser-films .yt + .yt { margin-top: 18px; } }
