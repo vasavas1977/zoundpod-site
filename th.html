@@ -103,7 +103,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=cool1" />
+  <link rel="stylesheet" href="styles.css?v=ab5" />
 </head>
 <body>
 
@@ -761,11 +761,48 @@
   <!-- ============ COOLING (VOGUE M, L, L Plus air-conditioning) ============ -->
   <section class="cool-sec" id="cooling">
     <div class="cool-wrap">
-      <div class="cool-head reveal">
-        <p class="eyebrow eyebrow-light" data-i18n="cool_eyebrow">Cooling · VOGUE M, L and L Plus</p>
-        <h2 class="display-3" data-i18n="cool_title">Cooler air.<br/>No drain pipe.</h2>
-        <p class="sec-sub" data-i18n="cool_sub">An ordinary air-conditioner drips water that has to be piped away. Ours keeps it: the unit&rsquo;s own heat evaporates the water and returns it to the pod as gentle humidity. No plumbing, no drip tray, no building work &mdash; so it goes wherever a VOGUE pod goes.</p>
-        <p class="cool-badge" data-i18n="cool_badge">Exclusive in Thailand to ZOUND &middot; included free on VOGUE M, L and L Plus</p>
+      <div class="cool-top">
+        <div class="cool-head reveal">
+          <p class="eyebrow eyebrow-light" data-i18n="cool_eyebrow">Cooling · VOGUE M, L and L Plus</p>
+          <h2 class="display-3" data-i18n="cool_title">Cooler air.<br/>No drain pipe.</h2>
+          <p class="sec-sub" data-i18n="cool_sub">An ordinary air-conditioner drips water that has to be piped away. Ours keeps it: the unit&rsquo;s own heat evaporates the water and returns it to the pod as gentle humidity. No plumbing, no drip tray, no building work &mdash; so it goes wherever a VOGUE pod goes.</p>
+          <p class="cool-badge" data-i18n="cool_badge">Exclusive in Thailand to ZOUND &middot; included free on VOGUE M, L and L Plus</p>
+        </div>
+        <figure class="cool-fig reveal">
+          <svg viewBox="0 0 660 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How the ZOUND air-conditioner works: a unit on the roof of a VOGUE pod sends cool air down into the cabin, keeps its condensation, evaporates it with its own heat and returns it as humidity, so the pod needs no drain pipe">
+            <!-- the pod -->
+            <path class="cd-pod" d="M170 520 V210 Q170 170 210 170 H430 Q470 170 470 210 V520 Z"/>
+            <path class="cd-frame" d="M260 186 V506 M380 186 V506"/>
+            <path class="cd-handle" d="M371 318 V382"/>
+            <path class="cd-floor" d="M130 520 H510"/>
+            <!-- the roof unit: cold coil on the left, warm side on the right -->
+            <rect class="cd-unit" x="250" y="120" width="140" height="46" rx="10"/>
+            <path class="cd-coil" d="M264 132 V154 M271 132 V154 M278 132 V154 M285 132 V154 M292 132 V154"/>
+            <circle class="cd-warm" cx="360" cy="143" r="7"/>
+            <circle class="cd-drop" cx="306" cy="143" r="3.6"/>
+            <!-- cool air down into the cabin -->
+            <path class="cd-air" d="M276 168 C262 240 224 284 222 372"/>
+            <path class="cd-air cd-air-2" d="M292 168 C292 250 290 330 296 430"/>
+            <!-- water back as humidity -->
+            <path class="cd-hum" d="M356 168 c12 22 -10 42 2 64 s-10 44 2 66"/>
+            <path class="cd-hum cd-hum-2" d="M372 168 c12 22 -10 42 2 64 s-10 44 2 66"/>
+            <!-- what it does for the room -->
+            <rect class="cd-pill" x="262" y="436" width="116" height="36" rx="18"/>
+            <text class="cd-pill-t" x="320" y="460" text-anchor="middle">&minus;3&ndash;5 &deg;C</text>
+            <text class="cd-label cd-label-s" x="320" y="494" text-anchor="middle" data-i18n="cool_d_temp">cooler than without it</text>
+            <!-- no drain pipe -->
+            <path class="cd-pipe" d="M440 520 V546 H570"/>
+            <circle class="cd-x" cx="505" cy="546" r="11"/>
+            <path class="cd-x" d="M498 539 L512 553 M512 539 L498 553"/>
+            <!-- labels -->
+            <text class="cd-label" x="320" y="98" text-anchor="middle" data-i18n="cool_d_unit">Roof unit keeps its own water</text>
+            <path class="cd-lead" d="M96 326 H226"/>
+            <text class="cd-label" x="20" y="331" data-i18n="cool_d_air">Cool air</text>
+            <path class="cd-lead" d="M372 238 H484"/>
+            <text class="cd-label" x="490" y="243" data-i18n="cool_d_hum">Water back as humidity</text>
+            <text class="cd-label" x="505" y="584" text-anchor="middle" data-i18n="cool_d_pipe">No drain pipe</text>
+          </svg>
+        </figure>
       </div>
 
       <ol class="cool-steps">
@@ -1001,7 +1038,7 @@
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js?v=lazy1"></script>
   <script src="shatter.js?v=lineup22"></script>
-  <script src="i18n.js?v=cool2"></script>
+  <script src="i18n.js?v=ab4"></script>
   <script src="cc.js?v=cc5"></script>
   <script src="compare.js?v=lineup20"></script>
 

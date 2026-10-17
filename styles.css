@@ -1538,6 +1538,10 @@ html[lang="th"] .cmp-group th, html[lang="th"] .cmp-models thead th { letter-spa
 .about-three p { margin: 0; line-height: 1.55; }
 .about-films { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 3vw, 34px); }
 .about-films .yt { margin-top: 0; }
+.about-films-1 { grid-template-columns: minmax(0, 760px); }
+.about-film { max-width: 760px; margin: clamp(28px, 4vw, 44px) 0 0; }
+/* this cover carries a quote on its right half: keep the play button in the corner */
+.about-film .yt-btn { inset: auto 20px 20px auto; margin: 0; width: 64px; height: 64px; }
 .about-co { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
 .about-mission { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
 .about-mission li { font-family: "Fraunces", Georgia, serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.3; padding: 20px 0; border-bottom: 1px solid var(--line); }
@@ -1588,4 +1592,40 @@ html[lang="th"] .cool-steps h3, html[lang="th"] .cool-honest h3 { font-family: "
 @media (max-width: 860px) {
   .cool-steps, .cool-grid { grid-template-columns: 1fr; }
   .cool-steps li:not(:last-child)::after { content: none; }
+}
+
+/* #cooling diagram: the pod, its roof unit and the water loop, drawn and
+   animated in SVG like the airflow diagram above it */
+.cool-top { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.cool-fig { margin: 0; }
+.cool-fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+.cd-pod { fill: rgba(244,239,231,0.04); stroke: rgba(244,239,231,0.55); stroke-width: 2; }
+.cd-frame { stroke: rgba(244,239,231,0.22); stroke-width: 1.5; fill: none; }
+.cd-handle { stroke: rgba(244,239,231,0.55); stroke-width: 4; stroke-linecap: round; }
+.cd-floor { stroke: rgba(244,239,231,0.25); stroke-width: 1.5; }
+.cd-unit { fill: #2a2520; stroke: #8fd3f2; stroke-width: 1.5; }
+.cd-coil { stroke: #8fd3f2; stroke-width: 2; stroke-linecap: round; opacity: 0.8; }
+.cd-warm { fill: #e0a17f; animation: cd-pulse 2.4s ease-in-out infinite; }
+.cd-drop { fill: #8fd3f2; animation: cd-drop 2.4s ease-in infinite; }
+.cd-air { fill: none; stroke: #8fd3f2; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 5 13; animation: cd-flow 1.6s linear infinite; }
+.cd-air-2 { animation-duration: 1.9s; }
+.cd-hum { fill: none; stroke: rgba(244,239,231,0.7); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 3 9; animation: cd-flow-slow 2.8s linear infinite; }
+.cd-hum-2 { animation-duration: 3.4s; opacity: 0.6; }
+.cd-pill { fill: rgba(143,211,242,0.14); stroke: #8fd3f2; stroke-width: 1.5; animation: cd-breathe 4s ease-in-out infinite; }
+.cd-pill-t { fill: #8fd3f2; font: 500 20px "Inter", sans-serif; }
+.cd-pipe { fill: none; stroke: rgba(244,239,231,0.35); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 2 10; }
+.cd-x { fill: var(--ink); stroke: #e0a17f; stroke-width: 2.4; stroke-linecap: round; }
+.cd-lead { stroke: rgba(244,239,231,0.3); stroke-width: 1; stroke-dasharray: 2 4; }
+/* paint-order lays an ink outline under each label, so lines behind it never cut through the text */
+.cd-label { fill: rgba(244,239,231,0.85); font: 500 17px "Inter", "Noto Sans Thai", sans-serif; paint-order: stroke; stroke: var(--ink); stroke-width: 6px; stroke-linejoin: round; }
+.cd-label-s { font-size: 14px; fill: rgba(244,239,231,0.7); }
+@keyframes cd-flow { to { stroke-dashoffset: -36; } }
+@keyframes cd-flow-slow { to { stroke-dashoffset: -24; } }
+@keyframes cd-drop { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateX(44px); opacity: 0; } }
+@keyframes cd-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes cd-breathe { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .cool-fig * { animation: none !important; } }
+@media (max-width: 860px) {
+  .cool-top { grid-template-columns: 1fr; }
+  .cool-fig { max-width: 520px; }
 }
