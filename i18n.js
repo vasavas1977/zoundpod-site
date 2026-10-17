@@ -157,6 +157,7 @@
     ab_eyebrow: "เกี่ยวกับ ZOUND",
     ab_title: "เราสร้างห้อง<br/>ที่เราหาซื้อไม่ได้",
     ab_lead: "ZOUND ช่วยให้ทุกคนและทุกทีมสร้างพื้นที่ทำงานที่สวยงาม &mdash; พื้นที่ที่รู้สึกดีและทำงานได้ดีที่สุด",
+    ab_by: 'ZOUND เป็นแบรนด์ของ <a href="https://1toall.co.th" target="_blank" rel="noopener">บริษัท วัน-ทู-ออล จำกัด <span style="white-space:nowrap">(1-TO-ALL)</span></a>',
     ab_story_eyebrow: "จุดเริ่มต้น",
     ab_story_title: "ปี 2019<br/>ออฟฟิศที่ไม่ตอบโจทย์อีกต่อไป",
     ab_p1: "ในปี 2019 คุณวศวัส นนท์โสภา ซีอีโอของเรา เจอปัญหาที่ทุกที่ทำงานยุคใหม่รู้ดี นั่นคือการจัดหาเฟอร์นิเจอร์สำนักงานเป็นเรื่องยุ่งยากมาก",
@@ -167,6 +168,9 @@
     ab_g3: "ไม่มีใครตอบโจทย์การทำงานแบบไฮบริดหลังยุคโควิด-19 ได้จริง",
     ab_p4: "เราเจอเรื่องนี้กับตัวเอง ตอนเปลี่ยนจากโต๊ะประจำมาเป็นพื้นที่แบบโคเวิร์กกิ้ง และพบปัญหาที่ไม่มีบริษัทเฟอร์นิเจอร์หรือนักออกแบบรายไหนแก้ได้ เราอยากได้ออฟฟิศที่ดูเรียบหรูสวยงามในงบที่สมเหตุสมผล ใช้งานได้จริง สะท้อนวัฒนธรรมองค์กร และช่วยให้ทีมทำงานได้ดีที่สุด ZOUND คือสิ่งที่เราสร้างขึ้นเพื่อไปให้ถึงจุดนั้น",
     ab_use_eyebrow: "ไม่ได้แค่ขาย",
+    ab_push_h: "เราไม่เคยเร่งให้ใครซื้อ",
+    ab_push_p: "มาเปรียบเทียบทุกซีรีส์เคียงข้างกัน รับคำแนะนำ แล้วตัดสินใจในเวลาของคุณเอง ผลลัพธ์คือ ลูกค้า 95% ที่ซื้อพ็อด ZOUND กลับมาหาเราอีก",
+    os_stat2: "ของลูกค้าที่ซื้อพ็อด ZOUND กลับมาหาเราอีก",
     ab_use_title: "เราทำงานในพ็อด<br/>ทุกวัน",
     ab_kt_eyebrow: "มืออาชีพเลือกใช้",
     ab_kt_title: "สตูดิโอส่วนตัว<br/>ของ Krit Tone",
@@ -292,6 +296,7 @@
     // Contact channels
     ch_call: "โทร",
     ch_web: "เว็บไซต์",
+    ch_by: "ZOUND โดย",
 
     // FAQ
     faq_eyebrow: "คำถามที่พบบ่อย",
@@ -628,8 +633,8 @@
     lfs_scale_eyebrow: "เทียบขนาดจริง",
     lfs_scale_title: "พอดีกับบ้านคุณ",
     lfs_scale_sub: "ทั้งสามขนาดของ Life เทียบตามสัดส่วนจริง รวมถึงความสูง จึงเห็นได้ว่ารุ่น Home เตี้ยกว่ารุ่น Pro อยู่ 10 ซม.",
-    srs_eyebrow: "ซีรีส์ SR · Professional",
-    srs_title: "รุ่นที่<br/>ใครๆ ก็ลอกเลียน",
+    srp_eyebrow: "ซีรีส์ SR · Professional",
+    srp_title: "รุ่นที่<br/>ใครๆ ก็ลอกเลียน",
     srs_lead: "ซีรีส์ SR คือพ็อดที่กำหนดรูปแบบของตลาดนี้ในประเทศไทย มีให้เลือกสี่ขนาด ตั้งแต่บูธสำหรับหนึ่งคน ไปจนถึงห้องที่นั่งได้หกคน ทุกขนาดใช้เปลือกคาร์บอนโพลิเมอร์รีไซเคิลแบบเดียวกัน โครงเกรดอากาศยานแบบเดียวกัน ไม่มีไม้ และไม่มีกาวในทุกรุ่น",
     srs_cta_models: "ดูทั้งสี่ขนาด",
     srs_cta_showroom: "เยี่ยมชมโชว์รูม",
@@ -721,6 +726,22 @@
     });
   }
 
+  /* A page with a real other-language version (/sr <-> /th/sr, / <-> /th) goes
+     there, so the address, the crawlable text and the language always match;
+     pages without one switch in place as before. */
+  function switchTo(lang) {
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    if (alt) {
+      var to = new URL(alt.getAttribute("href"), location.href);
+      if (to.pathname.replace(/\/$/, "") !== location.pathname.replace(/\/$/, "")) {
+        try { localStorage.setItem("zound-lang", lang); } catch (e) {}
+        location.href = to.pathname + location.search + location.hash;
+        return;
+      }
+    }
+    apply(lang);
+  }
+
   function apply(lang) {
     var th = lang === "th";
     document.documentElement.lang = th ? "th" : "en";
@@ -760,7 +781,7 @@
     if (t) {
       [].slice.call(t.querySelectorAll("[data-lang]")).forEach(function (s) {
         s.style.cursor = "pointer";
-        s.addEventListener("click", function () { apply(s.getAttribute("data-lang")); });
+        s.addEventListener("click", function () { switchTo(s.getAttribute("data-lang")); });
       });
     }
 

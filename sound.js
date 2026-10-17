@@ -11,7 +11,7 @@
   "use strict";
 
   var KEY = "zound-snd";
-  var SRC = "assets/audio/ambient.mp3";
+  var SRC = "/assets/audio/ambient.mp3";   /* root path: pages also live in /th/ */
 
   // every control on the page (header button, and any legacy corner button)
   var triggers = [].slice.call(document.querySelectorAll(".snd-head, .snd-toggle"));

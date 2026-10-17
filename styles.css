@@ -1653,3 +1653,16 @@ html[lang="th"] .cool-steps h3, html[lang="th"] .cool-honest h3 { font-family: "
 .ser-films { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 3vw, 34px); }
 .ser-films .yt { margin-top: clamp(30px, 5vw, 54px); }
 @media (max-width: 760px) { .ser-films { grid-template-columns: 1fr; } .ser-films .yt + .yt { margin-top: 18px; } }
+
+/* showroom: two proof figures stacked; about: the never-push promise */
+.os-stats { display: grid; gap: 28px; }
+.about-promise { display: grid; grid-template-columns: auto 1fr; gap: clamp(18px, 3vw, 36px); align-items: center; max-width: 760px; margin-top: clamp(28px, 4vw, 44px); padding: clamp(22px, 3vw, 32px); background: var(--shell); border: 1px solid var(--line); border-radius: 18px; }
+.about-promise-n { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: clamp(3rem, 7vw, 4.6rem); line-height: 1; color: var(--terra); margin: 0; }
+.about-promise h3 { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.4rem; margin: 0 0 8px; }
+html[lang="th"] .about-promise h3 { font-family: "Noto Serif Thai", "Fraunces", serif; }
+.about-promise p:not(.about-promise-n) { margin: 0; color: var(--stone); line-height: 1.6; }
+@media (max-width: 560px) { .about-promise { grid-template-columns: 1fr; } }
+
+/* About hero: who ZOUND is by */
+.ab-by { margin-top: 18px; font-size: 1rem; color: var(--stone); letter-spacing: .01em; }
+.ab-by a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
