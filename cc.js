@@ -48,7 +48,20 @@
       limited: "We\u2019ve already received several requests from this connection. Please call 1605 or message LINE @zound.",
       okBooked: "You\u2019re booked in for {s} \u2014 reference {r}. Someone will call you shortly to confirm, and a confirmation email is on its way.",
       refLine: "Your booking reference: {r}",
-      unnotified: "If you haven\u2019t heard from us within a working day, call 1605 and quote {r}."
+      unnotified: "If you haven\u2019t heard from us within a working day, call 1605 and quote {r}.",
+      manage: { t: "Your booking", s: "", l: "Change the time or cancel below." },
+      lookingUp: "Finding your booking\u2026",
+      notFound: "We couldn\u2019t find this booking \u2014 the link may be incomplete. Please call 1605 or message LINE @zound.",
+      refLabel: "Reference",
+      mstatus: { requested: "Waiting for our confirmation call", confirmed: "Confirmed", cancelled: "Cancelled",
+                 expired: "Expired", completed: "Completed", no_show: "Missed" },
+      newTime: "Choose a new time", moveIt: "Move my booking", back: "Back",
+      cancelIt: "Cancel booking", cancelAsk: "Cancel this booking? The time will be given to someone else.",
+      cancelYes: "Yes, cancel it", keep: "Keep my booking",
+      movedOk: "Done \u2014 your booking is now {s}. Someone will call you shortly to confirm it, and we\u2019ve emailed you the new time.",
+      cancelOk: "Your booking is cancelled. We\u2019ve emailed you a confirmation.",
+      tooLate: "Your visit is too close to change online. Please call 1605 or message LINE @zound.",
+      noChange: "This booking can\u2019t be changed online any more. Call 1605 if you need anything."
     },
     th: {
       sales:    { t: "ปรึกษาฝ่ายขาย", s: "สอบถามฝ่ายขาย",
@@ -76,7 +89,20 @@
       limited: "เราได้รับคำขอจากการเชื่อมต่อนี้หลายครั้งแล้ว กรุณาโทร 1605 หรือทักไลน์ @zound",
       okBooked: "จองเรียบร้อยแล้วสำหรับ {s} รหัสการจอง {r} เจ้าหน้าที่จะโทรยืนยันกับคุณเร็ว ๆ นี้ พร้อมส่งอีเมลยืนยันตามไปด้วย",
       refLine: "รหัสการจองของคุณ: {r}",
-      unnotified: "หากยังไม่ได้รับการติดต่อภายในหนึ่งวันทำการ กรุณาโทร 1605 แล้วแจ้งรหัส {r}"
+      unnotified: "หากยังไม่ได้รับการติดต่อภายในหนึ่งวันทำการ กรุณาโทร 1605 แล้วแจ้งรหัส {r}",
+      manage: { t: "การจองของคุณ", s: "", l: "เปลี่ยนเวลาหรือยกเลิกได้ด้านล่าง" },
+      lookingUp: "กำลังค้นหาการจองของคุณ\u2026",
+      notFound: "ไม่พบการจองนี้ ลิงก์อาจไม่ครบ กรุณาโทร 1605 หรือทักไลน์ @zound",
+      refLabel: "รหัส",
+      mstatus: { requested: "รอเจ้าหน้าที่โทรยืนยัน", confirmed: "ยืนยันแล้ว", cancelled: "ยกเลิกแล้ว",
+                 expired: "หมดอายุ", completed: "เสร็จสิ้น", no_show: "ไม่ได้มาตามนัด" },
+      newTime: "เลือกเวลาใหม่", moveIt: "ย้ายการจอง", back: "ย้อนกลับ",
+      cancelIt: "ยกเลิกการจอง", cancelAsk: "ยกเลิกการจองนี้? เวลานี้จะเปิดให้คนอื่นจองได้",
+      cancelYes: "ใช่ ยกเลิกเลย", keep: "เก็บการจองไว้",
+      movedOk: "เรียบร้อย การจองของคุณย้ายไปเป็น {s} แล้ว เจ้าหน้าที่จะโทรยืนยันเร็ว ๆ นี้ และเราได้ส่งอีเมลแจ้งเวลาใหม่ให้แล้ว",
+      cancelOk: "ยกเลิกการจองแล้ว เราได้ส่งอีเมลยืนยันให้คุณแล้ว",
+      tooLate: "ใกล้เวลานัดเกินกว่าจะเปลี่ยนออนไลน์ได้ กรุณาโทร 1605 หรือทักไลน์ @zound",
+      noChange: "การจองนี้ไม่สามารถเปลี่ยนแปลงออนไลน์ได้แล้ว หากต้องการความช่วยเหลือ โทร 1605"
     }
   };
   function L() { return document.documentElement.lang === "th" ? T.th : T.en; }
@@ -134,7 +160,17 @@
       ".cc-slot[disabled]:hover{border-color:rgba(28,24,19,.16)}" +
       ".cc-day.full{opacity:.45}" +
       ".cc-tz{color:#6F6559;font-size:.76rem;margin:0 0 10px}" +
-      ".cc-none{color:#6F6559;font-size:.85rem;margin:0 0 8px}";
+      ".cc-none{color:#6F6559;font-size:.85rem;margin:0 0 8px}" +
+      /* manage view: the booking card and its actions replace the contact fields */
+      ".cc-ov.managing .cc-f>input,.cc-ov.managing .cc-f>textarea,.cc-ov.managing .cc-f>.cc-row{display:none}" +
+      ".cc-sum{background:#fff;border:1px solid rgba(28,24,19,.12);border-radius:12px;padding:14px 16px;margin:0 0 14px;" +
+      "display:grid;gap:3px;font-size:.92rem;line-height:1.5}" +
+      ".cc-sum b{font-weight:600}.cc-sum span{color:#6F6559}" +
+      ".cc-macts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}" +
+      ".cc-ghost{font:inherit;font-weight:500;background:transparent;color:#1C1813;border:1px solid rgba(28,24,19,.25);" +
+      "border-radius:100px;padding:11px 22px;cursor:pointer}" +
+      ".cc-ghost:hover{border-color:#1C1813}" +
+      ".cc-ghost.danger{color:#9C3B2E;border-color:rgba(156,59,46,.4)}";
     document.head.appendChild(css);
 
     modal = document.createElement("div");
@@ -145,6 +181,7 @@
       '<div class="cc-box" data-lenis-prevent tabindex="-1">' +
         '<h3 data-cc-title></h3>' +
         '<p class="cc-lead" data-cc-lead></p>' +
+        '<div class="cc-manage"></div>' +
         '<form class="cc-f" novalidate>' +
           '<div class="cc-cal">' +
             '<h4 data-cc-dayhead></h4><div class="cc-days"></div>' +
@@ -203,8 +240,16 @@
   }
   function hasRoom(day) { return day.slots.some(function (x) { return x.left > 0; }); }
 
+  /* The booking type the calendar shows: the intent's, or the booking being
+     rescheduled from a customer's private link. */
+  var manage = null;   /* { ref, token, info, rescheduling, confirmingCancel } */
+  function calType() {
+    if (manage) return manage.rescheduling && manage.info ? manage.info.type.key : null;
+    return BOOKING_TYPE[intent] || null;
+  }
+
   function loadGrid() {
-    var type = BOOKING_TYPE[intent];
+    var type = calType();
     if (!type) return;
     gridState = "loading";
     renderCal();
@@ -279,7 +324,7 @@
   function renderCal() {
     if (!modal) return;
     var cal = modal.querySelector(".cc-cal"), d = L();
-    if (!BOOKING_TYPE[intent]) { cal.classList.remove("on"); return; }
+    if (!calType()) { cal.classList.remove("on"); return; }
     cal.classList.add("on");
     modal.querySelector("[data-cc-dayhead]").textContent = d.pickDay;
     modal.querySelector("[data-cc-timehead]").textContent = d.pickTime;
@@ -340,7 +385,11 @@
   function open(which) {
     intent = which || "sales";
     pickedSlot = null;
-    build(); paint();
+    manage = null;
+    build();
+    modal.classList.remove("managing");
+    modal.querySelector(".cc-manage").innerHTML = "";
+    paint();
     if (BOOKING_TYPE[intent]) loadGrid();
     modal.classList.add("open");
     modal.querySelector(".cc-box").scrollTop = 0;
@@ -478,11 +527,149 @@
     });
   }
 
+
+  /* ---------- a customer's own booking: reschedule or cancel ----------
+     Opened from the private link in every booking email
+     (?bk=<ref>&bt=<token>). The token is checked by the contact center; this
+     page only renders what cc_booking_lookup returns and calls
+     cc_booking_reschedule_self / cc_booking_cancel_self. */
+  function esc(t) {
+    return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function whenText(i) {
+    var tz = i.type.tz, loc = locale();
+    var day = new Intl.DateTimeFormat(loc, { timeZone: tz, weekday: "short", day: "numeric", month: "short", year: "numeric" })
+      .format(new Date(i.starts_at));
+    var t = new Intl.DateTimeFormat(loc, { timeZone: tz, hour: "2-digit", minute: "2-digit", hour12: false });
+    return day + ", " + t.format(new Date(i.starts_at)) + "–" + t.format(new Date(i.ends_at));
+  }
+
+  function button(label, cls, onClick) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = cls;
+    b.textContent = label;
+    b.addEventListener("click", onClick);
+    return b;
+  }
+
+  function renderManage(msg) {
+    var box = modal.querySelector(".cc-manage"), d = L(), i = manage && manage.info;
+    box.innerHTML = "";
+    if (!i) { box.appendChild(note(msg || d.lookingUp)); renderCal(); return; }
+
+    var th = document.documentElement.lang === "th";
+    var label = (th && i.type.label_th) || i.type.label_en;
+    box.innerHTML =
+      '<div class="cc-sum"><b>' + esc(label) + "</b><span>" + esc(whenText(i)) + "</span><span>" +
+      esc((d.mstatus[i.status] || i.status) + " · " + d.refLabel + " " + i.ref) + "</span></div>";
+
+    var acts = document.createElement("div");
+    acts.className = "cc-macts";
+    var active = i.status === "requested" || i.status === "confirmed";
+
+    if (manage.rescheduling) {
+      acts.appendChild(button(d.moveIt, "cc-send", reschedule));
+      acts.appendChild(button(d.back, "cc-ghost", function () {
+        manage.rescheduling = false; pickedSlot = null; setStatus(""); renderManage();
+      }));
+    } else if (manage.confirmingCancel) {
+      box.appendChild(note(d.cancelAsk));
+      acts.appendChild(button(d.cancelYes, "cc-send", cancelBooking));
+      acts.appendChild(button(d.keep, "cc-ghost", function () { manage.confirmingCancel = false; renderManage(); }));
+    } else {
+      if (i.can_reschedule) {
+        acts.appendChild(button(d.newTime, "cc-send", function () {
+          manage.rescheduling = true; pickedSlot = null; setStatus(""); renderManage(); loadGrid();
+        }));
+      }
+      if (i.can_cancel) {
+        acts.appendChild(button(d.cancelIt, "cc-ghost danger", function () {
+          manage.confirmingCancel = true; setStatus(""); renderManage();
+        }));
+      }
+      if (active && !i.can_reschedule && !i.can_cancel) box.appendChild(note(d.tooLate));
+      else if (!active) box.appendChild(note(d.noChange));
+    }
+    box.appendChild(acts);
+    renderCal();
+  }
+
+  function refreshBooking(then) {
+    rpc("cc_booking_lookup", { p_ref: manage.ref, p_token: manage.token })
+      .then(function (j) {
+        manage.info = j && j.ok ? j : null;
+        renderManage(manage.info ? null : L().notFound);
+        if (then) then();
+      })["catch"](function () { renderManage(L().err); });
+  }
+
+  function reschedule() {
+    var d = L();
+    if (!pickedSlot) { setStatus(d.needSlot, "err"); return; }
+    var slot = slotText();
+    rpc("cc_booking_reschedule_self", { p_ref: manage.ref, p_token: manage.token, p_starts_at: pickedSlot.start })
+      .then(function (j) {
+        if (!j || !j.ok) {
+          var r = (j && j.reason) || "";
+          if (r === "taken") { setStatus(d.taken, "err"); pickedSlot = null; loadGrid(); }
+          else if (r === "too_late") { setStatus(d.tooLate, "err"); }
+          else { setStatus(d.slotGone, "err"); pickedSlot = null; loadGrid(); }
+          return;
+        }
+        manage.rescheduling = false;
+        pickedSlot = null;
+        refreshBooking(function () { setStatus(d.movedOk.replace("{s}", slot), "ok"); });
+      })["catch"](function () { setStatus(d.err, "err"); });
+  }
+
+  function cancelBooking() {
+    var d = L();
+    rpc("cc_booking_cancel_self", { p_ref: manage.ref, p_token: manage.token })
+      .then(function (j) {
+        manage.confirmingCancel = false;
+        if (!j || !j.ok) {
+          setStatus((j && j.reason) === "too_late" ? d.tooLate : d.noChange, "err");
+          renderManage();
+          return;
+        }
+        refreshBooking(function () { setStatus(d.cancelOk, "ok"); });
+      })["catch"](function () { setStatus(d.err, "err"); });
+  }
+
+  function openManage(ref, token) {
+    intent = "manage";
+    pickedSlot = null;
+    manage = { ref: ref, token: token, info: null, rescheduling: false, confirmingCancel: false };
+    build();
+    modal.classList.add("managing");
+    paint();
+    modal.classList.add("open");
+    modal.querySelector(".cc-box").scrollTop = 0;
+    lenis(false);
+    renderManage();
+    refreshBooking();
+  }
+
   /* ---------- wire the CTAs ----------
      Only intercepts once a key is configured; otherwise the button keeps its
      own href so phone and email still work. */
   function init() {
     if (!live) return;
+
+    var qs = new URLSearchParams(location.search);
+    var bk = qs.get("bk"), bt = qs.get("bt");
+    if (bk && bt) {
+      /* the link works like a key: keep it out of the address bar and history */
+      qs.delete("bk");
+      qs.delete("bt");
+      try {
+        var rest = qs.toString();
+        history.replaceState(null, "", location.pathname + (rest ? "?" + rest : "") + location.hash);
+      } catch (e) {}
+      openManage(bk, bt);
+    }
 
     [].slice.call(document.querySelectorAll("[data-cc]")).forEach(function (el) {
       el.addEventListener("click", function (e) {
