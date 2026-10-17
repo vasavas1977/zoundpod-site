@@ -1629,3 +1629,8 @@ html[lang="th"] .cool-steps h3, html[lang="th"] .cool-honest h3 { font-family: "
   .cool-top { grid-template-columns: 1fr; }
   .cool-fig { max-width: 520px; }
 }
+
+/* catalogue download under the comparison and the VOGUE specs */
+.cmp-cat, .spec-cat { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 18px; }
+.spec-cat { max-width: 1280px; margin: 18px auto 0; padding: 0 clamp(24px,6vw,80px); }
+.cmp-cat .cat-meta, .spec-cat .cat-meta { margin: 0; }

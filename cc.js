@@ -34,24 +34,24 @@
       name: "Your name", email: "Email", phone: "Phone", msg: "How can we help?",
       send: "Send", sending: "Sending…", close: "Close",
       ok: "Thank you — our team has your message and will come back to you shortly.",
-      err: "Sorry, that didn’t send. Please call 1605 or message LINE @zound and we’ll pick it up right away.",
+      err: "Sorry, that didn’t send. Please call 02-030-3883 or message LINE @zound and we’ll pick it up right away.",
       req: "Please add your name and either an email or a phone number.",
       pickDay: "Pick a day", pickTime: "Pick a time", tz: "Showroom time (Bangkok)",
       needSlot: "Please choose a day and a time for your visit.",
       needBoth: "For a viewing please leave both a phone number and an email \u2014 we call to confirm and send the confirmation by email.",
       loading: "Loading available times\u2026",
-      gridErr: "We couldn\u2019t load the calendar just now. Send your details anyway and we\u2019ll call to agree a time \u2014 or call 1605.",
+      gridErr: "We couldn\u2019t load the calendar just now. Send your details anyway and we\u2019ll call to agree a time \u2014 or call 02-030-3883.",
       noSlots: "No times are open over the next few weeks. Send your details and we\u2019ll call you.",
       full: "Taken",
       taken: "Sorry \u2014 that time has just been taken. Please choose another.",
       slotGone: "That time is no longer available. Please choose another.",
-      limited: "We\u2019ve already received several requests from this connection. Please call 1605 or message LINE @zound.",
+      limited: "We\u2019ve already received several requests from this connection. Please call 02-030-3883 or message LINE @zound.",
       okBooked: "You\u2019re booked in for {s} \u2014 reference {r}. Someone will call you shortly to confirm, and a confirmation email is on its way.",
       refLine: "Your booking reference: {r}",
-      unnotified: "If you haven\u2019t heard from us within a working day, call 1605 and quote {r}.",
+      unnotified: "If you haven\u2019t heard from us within a working day, call 02-030-3883 and quote {r}.",
       manage: { t: "Your booking", s: "", l: "Change the time or cancel below." },
       lookingUp: "Finding your booking\u2026",
-      notFound: "We couldn\u2019t find this booking \u2014 the link may be incomplete. Please call 1605 or message LINE @zound.",
+      notFound: "We couldn\u2019t find this booking \u2014 the link may be incomplete. Please call 02-030-3883 or message LINE @zound.",
       refLabel: "Reference",
       mstatus: { requested: "Waiting for our confirmation call", confirmed: "Confirmed", cancelled: "Cancelled",
                  expired: "Expired", completed: "Completed", no_show: "Missed" },
@@ -60,8 +60,8 @@
       cancelYes: "Yes, cancel it", keep: "Keep my booking",
       movedOk: "Done \u2014 your booking is now {s}. Someone will call you shortly to confirm it, and we\u2019ve emailed you the new time.",
       cancelOk: "Your booking is cancelled. We\u2019ve emailed you a confirmation.",
-      tooLate: "Your visit is too close to change online. Please call 1605 or message LINE @zound.",
-      noChange: "This booking can\u2019t be changed online any more. Call 1605 if you need anything."
+      tooLate: "Your visit is too close to change online. Please call 02-030-3883 or message LINE @zound.",
+      noChange: "This booking can\u2019t be changed online any more. Call 02-030-3883 if you need anything."
     },
     th: {
       sales:    { t: "ปรึกษาฝ่ายขาย", s: "สอบถามฝ่ายขาย",
@@ -75,24 +75,24 @@
       name: "ชื่อของคุณ", email: "อีเมล", phone: "เบอร์โทร", msg: "ให้เราช่วยเรื่องอะไรดี?",
       send: "ส่ง", sending: "กำลังส่ง…", close: "ปิด",
       ok: "ขอบคุณครับ ทีมงานได้รับข้อความแล้ว และจะติดต่อกลับโดยเร็วที่สุด",
-      err: "ขออภัย ส่งไม่สำเร็จ กรุณาโทร 1605 หรือทักไลน์ @zound แล้วเราจะดูแลให้ทันที",
+      err: "ขออภัย ส่งไม่สำเร็จ กรุณาโทร 02-030-3883 หรือทักไลน์ @zound แล้วเราจะดูแลให้ทันที",
       req: "กรุณากรอกชื่อ และอีเมลหรือเบอร์โทรอย่างน้อยหนึ่งอย่าง",
       pickDay: "เลือกวัน", pickTime: "เลือกเวลา", tz: "เวลาโชว์รูม (กรุงเทพฯ)",
       needSlot: "กรุณาเลือกวันและเวลาที่สะดวกเข้าชม",
       needBoth: "สำหรับนัดชมโชว์รูม กรุณากรอกทั้งเบอร์โทรและอีเมล เพราะเราจะโทรยืนยันและส่งอีเมลยืนยันให้",
       loading: "กำลังโหลดเวลาที่ว่าง\u2026",
-      gridErr: "ขออภัย ตอนนี้โหลดปฏิทินไม่ได้ ฝากรายละเอียดไว้ได้เลย แล้วเราจะโทรนัดเวลากับคุณ หรือโทร 1605",
+      gridErr: "ขออภัย ตอนนี้โหลดปฏิทินไม่ได้ ฝากรายละเอียดไว้ได้เลย แล้วเราจะโทรนัดเวลากับคุณ หรือโทร 02-030-3883",
       noSlots: "ช่วงไม่กี่สัปดาห์ข้างหน้ายังไม่มีเวลาว่าง ฝากรายละเอียดไว้ แล้วเราจะโทรหาคุณ",
       full: "เต็ม",
       taken: "ขออภัย เวลานี้เพิ่งมีคนจองไปแล้ว กรุณาเลือกเวลาอื่น",
       slotGone: "เวลานี้ไม่ว่างแล้ว กรุณาเลือกเวลาอื่น",
-      limited: "เราได้รับคำขอจากการเชื่อมต่อนี้หลายครั้งแล้ว กรุณาโทร 1605 หรือทักไลน์ @zound",
+      limited: "เราได้รับคำขอจากการเชื่อมต่อนี้หลายครั้งแล้ว กรุณาโทร 02-030-3883 หรือทักไลน์ @zound",
       okBooked: "จองเรียบร้อยแล้วสำหรับ {s} รหัสการจอง {r} เจ้าหน้าที่จะโทรยืนยันกับคุณเร็ว ๆ นี้ พร้อมส่งอีเมลยืนยันตามไปด้วย",
       refLine: "รหัสการจองของคุณ: {r}",
-      unnotified: "หากยังไม่ได้รับการติดต่อภายในหนึ่งวันทำการ กรุณาโทร 1605 แล้วแจ้งรหัส {r}",
+      unnotified: "หากยังไม่ได้รับการติดต่อภายในหนึ่งวันทำการ กรุณาโทร 02-030-3883 แล้วแจ้งรหัส {r}",
       manage: { t: "การจองของคุณ", s: "", l: "เปลี่ยนเวลาหรือยกเลิกได้ด้านล่าง" },
       lookingUp: "กำลังค้นหาการจองของคุณ\u2026",
-      notFound: "ไม่พบการจองนี้ ลิงก์อาจไม่ครบ กรุณาโทร 1605 หรือทักไลน์ @zound",
+      notFound: "ไม่พบการจองนี้ ลิงก์อาจไม่ครบ กรุณาโทร 02-030-3883 หรือทักไลน์ @zound",
       refLabel: "รหัส",
       mstatus: { requested: "รอเจ้าหน้าที่โทรยืนยัน", confirmed: "ยืนยันแล้ว", cancelled: "ยกเลิกแล้ว",
                  expired: "หมดอายุ", completed: "เสร็จสิ้น", no_show: "ไม่ได้มาตามนัด" },
@@ -101,8 +101,8 @@
       cancelYes: "ใช่ ยกเลิกเลย", keep: "เก็บการจองไว้",
       movedOk: "เรียบร้อย การจองของคุณย้ายไปเป็น {s} แล้ว เจ้าหน้าที่จะโทรยืนยันเร็ว ๆ นี้ และเราได้ส่งอีเมลแจ้งเวลาใหม่ให้แล้ว",
       cancelOk: "ยกเลิกการจองแล้ว เราได้ส่งอีเมลยืนยันให้คุณแล้ว",
-      tooLate: "ใกล้เวลานัดเกินกว่าจะเปลี่ยนออนไลน์ได้ กรุณาโทร 1605 หรือทักไลน์ @zound",
-      noChange: "การจองนี้ไม่สามารถเปลี่ยนแปลงออนไลน์ได้แล้ว หากต้องการความช่วยเหลือ โทร 1605"
+      tooLate: "ใกล้เวลานัดเกินกว่าจะเปลี่ยนออนไลน์ได้ กรุณาโทร 02-030-3883 หรือทักไลน์ @zound",
+      noChange: "การจองนี้ไม่สามารถเปลี่ยนแปลงออนไลน์ได้แล้ว หากต้องการความช่วยเหลือ โทร 02-030-3883"
     }
   };
   function L() { return document.documentElement.lang === "th" ? T.th : T.en; }
@@ -370,7 +370,7 @@
     modal.querySelector(".cc-send").textContent = d.send;
     modal.querySelector(".cc-x").textContent = d.close;
     modal.querySelector(".cc-alt").innerHTML =
-      '<a href="tel:1605">1605</a> &nbsp;·&nbsp; <a href="' + LINE_URL + '" target="_blank" rel="noopener">LINE @zound</a>' +
+      '<a href="tel:+6620303883">02-030-3883</a> &nbsp;·&nbsp; <a href="' + LINE_URL + '" target="_blank" rel="noopener">LINE @zound</a>' +
       ' &nbsp;·&nbsp; <a href="mailto:contact@zoundpod.com">contact@zoundpod.com</a>';
     status.textContent = ""; status.className = "cc-st";
     renderCal();
