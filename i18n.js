@@ -380,6 +380,126 @@
     nav_vogue_sub: "รุ่นเรือธง &middot; 5 ขนาด",
     nav_sr_sub: "สำหรับมืออาชีพ &middot; 4 ขนาด",
     nav_life_sub: "สำหรับบ้าน &middot; 3 ขนาด",
+    /* --- showroom #compare: VOGUE / SR / Life side by side (cmp_*) --- */
+    nav_cmp: "เปรียบเทียบ",
+    nav_cmp_sub: "ครบ 3 ซีรีส์ เทียบกันชัดๆ",
+    cmp_eyebrow: "เปรียบเทียบทั้งซีรีส์",
+    cmp_title: "VOGUE, SR หรือ Life?",
+    cmp_pick_sub: "เลือกพ็อดก็เหมือนเลือกที่นั่งบนเครื่องบิน: SR คือชั้นประหยัดของสายการบินชั้นนำ Life คือพรีเมียมอีโคโนมี และ VOGUE คือชั้นธุรกิจ ทั้งสามซีรีส์สร้างด้วยวิธีเดียวกัน &mdash; ไม่ใช้สกรู ไม่ใช้กาว และไม่ใช้วัสดุที่ทำจากไม้เลย",
+    cmp_sr_tag: "มืออาชีพ · ต้นฉบับ",
+    cmp_sr_lead: "ดีไซน์ต้นฉบับของ ZOUND — รูปทรงที่เริ่มมีคู่แข่งเลียนแบบแล้ว มี 4 ขนาด ตั้งแต่บูธ 1 คน ไปจนถึงห้องประชุม 6 คน",
+    cmp_choose: "เหมาะกับคุณ ถ้า",
+    cmp_sr_c1: "กำลังจัดออฟฟิศ และอยากได้ทุกขนาดในดีไซน์เดียวกัน",
+    cmp_sr_c2: "ต้องการพื้นที่สูงสุด 6 คน — หรือ 8 คนกับรุ่น 2XL ที่สั่งผลิตพิเศษ",
+    cmp_sr_c3: "อยากเพิ่มอุปกรณ์เสริม เช่น smart lock ชุดประชุม หรือแอร์",
+    cmp_sr_cta: "ดูซีรีส์ SR",
+    cmp_life_tag: "สำหรับบ้าน · ผนังหุ้มผ้า",
+    cmp_life_lead: "ห้องอะคูสติกหุ้มผ้าเก็บเสียง ติดล้อเลื่อน — ดีไซน์ที่ยังไม่มีใครเลียนแบบได้",
+    cmp_life_c1: "จะวางในบ้าน สตูดิโอ หรือออฟฟิศที่ต้องคุมงบประมาณ",
+    cmp_life_c2: "ชอบผนังหุ้มผ้านุ่มๆ เลือกได้ 6 สี",
+    cmp_life_c3: "อาจต้องย้ายที่ — เข็นได้ และประกอบเสร็จในราวสามชั่วโมง",
+    cmp_life_cta: "ดูซีรีส์ Life",
+    cmp_vogue_tag: "เรือธง · one of a kind",
+    cmp_vogue_lead: "พ็อดที่ประณีตที่สุดของเรา ไม่มีใครเลียนแบบได้ กันเสียงได้ถึง 32&nbsp;dB ผนังอะคูสติกลายร่อง 3 มิติ และแผงควบคุมอัจฉริยะในตัว",
+    cmp_vogue_c1: "พ็อดเป็นส่วนหนึ่งของภาพลักษณ์ออฟฟิศคุณ",
+    cmp_vogue_c2: "ต้องการระบบจองห้อง ไฟแสดงสถานะการใช้งาน และควบคุมผ่าน Cloud ในตัว",
+    cmp_vogue_c3: "ต้องการกันเสียง 32&nbsp;dB ทุกขนาด มีให้เลือก 5 ขนาด 7 สี",
+    cmp_vogue_cta: "ดูซีรีส์ VOGUE",
+    cmp_t_title: "ทุกความต่างที่สำคัญ",
+    cmp_t_sub: "ช่วงตัวเลขคือจากรุ่นเล็กสุดถึงใหญ่สุดของแต่ละซีรีส์ ข้อมูลใดที่แคตตาล็อกปี 2026 ไม่ได้ระบุ เราจะบอกตรงๆ ไม่เดา",
+    cmp_col_spec: "ข้อมูลจำเพาะ",
+    cmp_g_use: "การใช้งานและจำนวนที่นั่ง",
+    cmp_r_for: "เหมาะกับ",
+    cmp_sr_for: "ออฟฟิศ: ตั้งแต่บูธทำงานเงียบๆ ไปจนถึงห้องประชุม 6 คน",
+    cmp_life_for: "บ้าน สตูดิโอ และออฟฟิศที่คุมงบประมาณ",
+    cmp_vogue_for: "ออฟฟิศระดับแฟลกชิป ชั้นที่ต้อนรับลูกค้า และพื้นที่ผู้บริหาร",
+    cmp_r_models: "รุ่น",
+    cmp_sr_2xl: "+ 2XL สั่งผลิตพิเศษ",
+    cmp_r_seats: "จำนวนที่นั่ง",
+    cmp_sr_seats: "1 ถึง 6 คน",
+    cmp_sr_seats2: "8 คนในรุ่น 2XL",
+    cmp_life_seats: "1 ถึง 4 คน",
+    cmp_vogue_seats: "1 ถึง 4 คน",
+    cmp_g_size: "ขนาด",
+    cmp_r_foot: "พื้นที่วาง (กว้าง × ลึก)",
+    cmp_r_height: "ความสูง",
+    cmp_life_h: "2.10 ม. รุ่น Home · 2.20 ม. รุ่น Pro",
+    cmp_r_weight: "น้ำหนัก",
+    cmp_g_ac: "อะคูสติกและอากาศ",
+    cmp_r_db: "ลดเสียง",
+    cmp_sr_db: "30 dB ±5 ในรุ่น S",
+    cmp_sr_db2: "รุ่น M, L และ XL: แคตตาล็อกไม่ได้ระบุ — สอบถามเราได้",
+    cmp_life_db: "30 dB ±5",
+    cmp_vogue_db: "สูงสุด 32 dB ทุกขนาด",
+    cmp_r_wall: "โครงสร้างอะคูสติก",
+    cmp_sr_wall: "เปลือกคาร์บอนโพลิเมอร์รีไซเคิล ใยโพลีเอสเตอร์ซับเสียง กระจกนิรภัยเทมเปอร์",
+    cmp_life_wall: "แผง 15 + 15 มม. หุ้มผ้าเก็บเสียง กระจกลามิเนตกันเสียง 3 + 3 มม.",
+    cmp_vogue_wall: "แผงหลายชั้น พื้นผิวอะคูสติกลายร่อง 3 มิติ",
+    cmp_r_air: "อากาศบริสุทธิ์",
+    cmp_sr_air: "78 – 300 ม³/ชม. · พัดลม 1 ถึง 3 ตัว",
+    cmp_life_air: "125 ม³/ชม. · พัดลมเทอร์โบ 1 ตัว (Home), พัดลม 2 ตัว (Pro L)",
+    cmp_vogue_air: "91 – 182 ม³/ชม. · พัดลม 1 ถึง 2 ตัว",
+    cmp_r_cool: "เครื่องปรับอากาศ",
+    cmp_sr_cool: "อุปกรณ์เสริม",
+    cmp_na: "แคตตาล็อกไม่ได้ระบุ",
+    cmp_vogue_cool: "ไม่อยู่ในตารางสเปคของแคตตาล็อก — โปรดยืนยันกับฝ่ายขาย",
+    cmp_g_pw: "ไฟฟ้าและเทคโนโลยี",
+    cmp_r_watt: "กำลังไฟ",
+    cmp_r_conn: "ปลั๊กและการเชื่อมต่อ",
+    cmp_sr_conn: "USB 3.0 และปลั๊ก 100–240 V; รุ่น L และ XL มี USB-C",
+    cmp_life_conn: "ปลั๊กไฟและ USB",
+    cmp_life_conn2: "รายละเอียดแต่ละรุ่น สอบถามเพิ่มเติม",
+    cmp_vogue_conn: "แผงควบคุมพร้อม USB-A, USB-C, ปลั๊กไฟ และ Ethernet",
+    cmp_r_smart: "เซนเซอร์และระบบอัจฉริยะ",
+    cmp_sr_smart: "เซนเซอร์ตรวจจับการเคลื่อนไหว เปิดไฟและพัดลมให้อัตโนมัติ",
+    cmp_life_smart: "เซนเซอร์อินฟราเรด ปิดไฟและพัดลมเองหลังออกจากห้อง 5 นาที",
+    cmp_vogue_smart: "เซนเซอร์เรดาร์ ไฟแสดงสถานะ NFC, Smart Control, Room Booking, Cloud Management และระบบแจ้งเตือนบำรุงรักษาล่วงหน้า",
+    cmp_r_light: "แสงสว่าง",
+    cmp_sr_light: "โคมไฟ 4000 K; รุ่น L และ XL เพิ่มไฟ LED บรรยากาศ",
+    cmp_life_light: "ไฟ LED 4000 K; รุ่น Home มีโคมไฟตั้งโต๊ะ Philips",
+    cmp_vogue_light: "ไฟดาวน์ไลท์ LED หรี่ได้ พร้อมไฟบรรยากาศ",
+    cmp_g_fit: "ภายในและงานผิว",
+    cmp_r_fur: "เฟอร์นิเจอร์",
+    cmp_sr_fur: "โต๊ะและเก้าอี้ (S) ไปจนถึงโต๊ะและโซฟา (L)",
+    cmp_life_fur: "โต๊ะและโซฟา (Home)",
+    cmp_life_fur2: "รุ่น Pro: แคตตาล็อกไม่ได้ระบุ — สอบถามเราได้",
+    cmp_vogue_fur: "โต๊ะพร้อมเก้าอี้หรือโซฟา ตามขนาด",
+    cmp_r_fin: "สี",
+    cmp_sr_fin: "5 สี: ขาว เทา ส้ม เขียว ดำ",
+    cmp_life_fin: "ผ้า 6 สี: Cloud, Hazel, Storm, Taffy, Mint, Southsea",
+    cmp_vogue_fin: "7 สี",
+    cmp_r_opt: "อุปกรณ์เสริม",
+    cmp_sr_opt: "Smart lock ชุดประชุม เครื่องปรับอากาศ",
+    cmp_vogue_opt: "แคตตาล็อกไม่ได้ระบุ — ระบบอัจฉริยะด้านบนมีมาในตัว",
+    cmp_r_move: "การติดตั้ง",
+    cmp_free: "ตั้งอิสระ — ไม่ต้องต่อเติมอาคาร",
+    cmp_life_move: "ติดล้อเลื่อน ประกอบเสร็จในราวสามชั่วโมง",
+    cmp_r_price: "ราคา",
+    cmp_price: "เสนอราคาตามขนาด สี และหน้างานของคุณ — ราคาจริงขึ้นอยู่กับทั้งสามอย่าง",
+    cmp_price_cta: "ขอใบเสนอราคา",
+    cmp_m_title: "ทุกรุ่น ในตารางเดียว",
+    cmp_m_sub: "กว้าง × ลึก × สูง จากแคตตาล็อก ZOUND ปี 2026 บนมือถือเลื่อนตารางไปด้านข้างได้",
+    cmp_c_model: "รุ่น",
+    cmp_c_seats: "ที่นั่ง",
+    cmp_c_dim: "กว้าง × ลึก × สูง (ม.)",
+    cmp_c_wt: "น้ำหนัก",
+    cmp_c_db: "ลดเสียง",
+    cmp_c_air: "อากาศบริสุทธิ์",
+    cmp_c_w: "กำลังไฟ",
+    cmp_mto: "สั่งผลิตพิเศษ",
+    cmp_air_1: "78 ม³/ชม. · พัดลม 1 ตัว",
+    cmp_air_2: "160 ม³/ชม. · พัดลม 2 ตัว",
+    cmp_air_3: "263 ม³/ชม. · พัดลม 3 ตัว",
+    cmp_air_4: "300 ม³/ชม. · พัดลม 3 ตัว",
+    cmp_air_5: "435 ม³/ชม. · พัดลม 3 ตัว",
+    cmp_air_6: "125 ม³/ชม. · พัดลมเทอร์โบ 1 ตัว",
+    cmp_air_7: "125 ม³/ชม. · พัดลม 2 ตัว",
+    cmp_air_8: "93 ม³/ชม. · พัดลม 1 ตัว",
+    cmp_air_9: "91 ม³/ชม. · พัดลม 1 ตัว",
+    cmp_air_10: "123.66 ม³/ชม. · พัดลม 2 ตัว",
+    cmp_air_11: "158 ม³/ชม. · พัดลม 2 ตัว",
+    cmp_air_12: "182.3 ม³/ชม. · พัดลม 2 ตัว",
+    cmp_m_note: "ค่าการลดเสียงเป็นตัวเลขของแคตตาล็อกตามแต่ละซีรีส์ &ldquo;สอบถามเพิ่มเติม&rdquo; หมายถึงแคตตาล็อกไม่ได้ระบุสำหรับขนาดนั้น เฟอร์นิเจอร์ แสงสว่าง และปลั๊กไฟแตกต่างกันตามขนาด — ดูตารางฉบับเต็มของแต่ละรุ่นได้ในแคตตาล็อกปี 2026",
     susp_lead: "ใน ZOUND พ็อด ไม่มีอะไรระเหยออกมา เพราะไม่มีวัสดุที่ระเหยสารอยู่ข้างใน ไร้ไม้ ไร้กาว ไร้สกรู ไร้น็อต แต่เลือกใช้คาร์บอนไฟเบอร์รีไซเคิลแทน — รายแรกในกลุ่มพ็อดอะคูสติก — และได้รับการรับรอง GREENGUARD Gold ด้านการปล่อยสารเคมีต่ำ",
     susp_cta_numbers: "ดูตัวเลขจริง",
     susp_num_eyebrow: "วัดได้ ไม่ใช่แค่กล่าวอ้าง",
@@ -585,10 +705,36 @@
         if (on) { drop.setAttribute("data-open", ""); } else { drop.removeAttribute("data-open"); }
         dropBtn.setAttribute("aria-expanded", on ? "true" : "false");
       };
+      // With a mouse the menu has already opened on hover, so a click on
+      // "Pods" must not toggle it shut: it would fade out under the pointer and
+      // the next click would land on the page behind it. Keyboard activation
+      // (detail 0) and touch still toggle; mouseleave closes it for the mouse.
+      var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
       dropBtn.addEventListener("click", function (e) {
         e.stopPropagation();
+        if (canHover && e.detail > 0) { openDrop(true); return; }
         openDrop(!drop.hasAttribute("data-open"));
       });
+      // A menu entry that points at the top of the page it's already on
+      // (VOGUE, from the home page) jumps straight there instead of
+      // smooth-scrolling back through ~20,000px of scroll-driven sections.
+      drop.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("a[href='#top']");
+        if (!a) return;
+        e.preventDefault();
+        openDrop(false);
+        if (location.hash !== "#top") history.pushState(null, "", "#top");
+        toTop();
+      });
+      // ...and Forward back onto that entry lands at the top again, rather
+      // than wherever the restored scroll (or Lenis's target) happened to be.
+      window.addEventListener("popstate", function () {
+        if (location.hash === "#top") requestAnimationFrame(toTop);
+      });
+      function toTop() {
+        if (window.__lenis) { window.__lenis.scrollTo(0, { immediate: true, force: true }); }
+        else { window.scrollTo({ top: 0, behavior: "instant" }); }
+      }
       drop.addEventListener("mouseenter", function () { openDrop(true); });
       drop.addEventListener("mouseleave", function () { openDrop(false); });
       drop.addEventListener("focusout", function (e) {
@@ -600,6 +746,43 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") openDrop(false);
       });
+    }
+
+    // Arriving from another page at #section (Pods → Compare is /showroom#compare):
+    // the browser smooth-scrolls there from the top before the images above have
+    // their height, so it lands short. Jump once the page has loaded — header
+    // offset comes from scroll-padding-top — and once more if late images moved
+    // it, unless the visitor has started scrolling. Back/Forward keeps its own
+    // restored position.
+    var navEntry = window.performance && performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    var arriving = location.hash.length > 1 && location.hash !== "#top" && !(navEntry && navEntry.type === "back_forward");
+    if (arriving) {
+      // html's smooth scroll-behavior would otherwise animate the browser's own
+      // jump from the top, toward a target measured before the hero has its
+      // height, and keep animating after ours; smooth stays on for in-page links
+      var root = document.documentElement;
+      root.style.scrollBehavior = "auto";
+      var settleTo = function () {
+        var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (!el) return null;
+        el.scrollIntoView({ behavior: "instant", block: "start" });
+        return window.scrollY;
+      };
+      var settle = function () {
+        var at = settleTo();
+        if (at == null) { root.style.scrollBehavior = ""; return; }
+        // fonts (Thai especially) and late images can still move the target; follow
+        // it until the visitor scrolls on their own
+        var again = function () { if (Math.abs(window.scrollY - at) < 4) at = settleTo(); };
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(again);
+        setTimeout(again, 700);
+        setTimeout(function () { again(); root.style.scrollBehavior = ""; }, 1600);
+      };
+      // a timer, not requestAnimationFrame: rAF waits for a painted frame, which a
+      // background tab or a slow first paint can hold back for seconds
+      settleTo();   // now, as the document is ready; then again once it has loaded
+      if (document.readyState === "complete") { setTimeout(settle, 0); }
+      else { window.addEventListener("load", function () { setTimeout(settle, 0); }); }
     }
   }
 
