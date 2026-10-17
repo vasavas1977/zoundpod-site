@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=fm1" />
+  <link rel="stylesheet" href="styles.css?v=mc1" />
 </head>
 <body>
 
@@ -309,6 +309,12 @@
     <h3 class="cmp-h3 reveal" data-i18n="cmp_t_title">Every difference that matters</h3>
     <p class="cmp-lede reveal" data-i18n="cmp_t_sub">Ranges run from the smallest to the largest model in each series. Where the 2026 catalogue gives no figure, we say so rather than guess.</p>
     <div class="cmp-wrap reveal">
+      <!-- phones show two series at a time; desktop shows all three and hides this -->
+      <div class="cmp-pickbar" role="group" aria-label="Choose two series to compare">
+        <select class="cmp-sel" data-side="a" aria-label="First series"><option value="sr" selected>SR</option><option value="life">Life</option><option value="vogue">VOGUE</option></select>
+        <span class="cmp-vs" data-i18n="cmp_vs">vs</span>
+        <select class="cmp-sel" data-side="b" aria-label="Second series"><option value="sr">SR</option><option value="life">Life</option><option value="vogue" selected>VOGUE</option></select>
+      </div>
       <table class="cmp-table">
         <thead>
           <tr>
@@ -322,141 +328,141 @@
           <tr class="cmp-group"><th scope="rowgroup" colspan="4" data-i18n="cmp_g_feel">The feeling</th></tr>
           <tr class="cmp-feel">
             <th scope="row" data-i18n="cmp_r_feel">If it were an airline seat</th>
-            <td data-label="SR"><strong data-i18n="cmp_sr_feel">Economy class</strong> <span class="cmp-sub" data-i18n="cmp_sr_feel2">A great seat on a full-service airline: the popular professional choice, and ZOUND's original design that others have started to copy.</span></td>
-            <td data-label="Life"><strong data-i18n="cmp_life_feel">Premium economy</strong> <span class="cmp-sub" data-i18n="cmp_life_feel2">Softer and more personal: walls wrapped in acoustic fabric, and a design nobody has copied yet.</span></td>
-            <td data-label="VOGUE" class="cmp-v"><strong data-i18n="cmp_vogue_feel">Business class</strong> <span class="cmp-sub" data-i18n="cmp_vogue_feel2">One of a kind, and nobody can copy it: 32 dB of quiet, air-conditioning from size M, room booking and cloud smart control.</span></td>
+            <td data-label="SR" data-col="sr"><strong data-i18n="cmp_sr_feel">Economy class</strong> <span class="cmp-sub" data-i18n="cmp_sr_feel2">A great seat on a full-service airline: the popular professional choice, and ZOUND's original design that others have started to copy.</span></td>
+            <td data-label="Life" data-col="life"><strong data-i18n="cmp_life_feel">Premium economy</strong> <span class="cmp-sub" data-i18n="cmp_life_feel2">Softer and more personal: walls wrapped in acoustic fabric, and a design nobody has copied yet.</span></td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v"><strong data-i18n="cmp_vogue_feel">Business class</strong> <span class="cmp-sub" data-i18n="cmp_vogue_feel2">One of a kind, and nobody can copy it: 32 dB of quiet, air-conditioning from size M, room booking and cloud smart control.</span></td>
           </tr>
           <tr class="cmp-group"><th scope="rowgroup" colspan="4" data-i18n="cmp_g_use">Use &amp; capacity</th></tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_for">Best for</th>
-            <td data-label="SR" data-i18n="cmp_sr_for">Offices: focus booths up to six-person meeting rooms</td>
-            <td data-label="Life" data-i18n="cmp_life_for">Homes, studios and budget-conscious offices</td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_for">Flagship offices, client-facing floors and executive spaces</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_for">Offices: focus booths up to six-person meeting rooms</td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_life_for">Homes, studios and budget-conscious offices</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_for">Flagship offices, client-facing floors and executive spaces</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_models">Models</th>
-            <td data-label="SR">S · M · L · XL <span class="cmp-sub" data-i18n="cmp_sr_2xl">+ 2XL, made to order</span></td>
-            <td data-label="Life">Home · Pro S · Pro L</td>
-            <td data-label="VOGUE" class="cmp-v">S · S Plus · M · L · L Plus</td>
+            <td data-label="SR" data-col="sr">S · M · L · XL <span class="cmp-sub" data-i18n="cmp_sr_2xl">+ 2XL, made to order</span></td>
+            <td data-label="Life" data-col="life">Home · Pro S · Pro L</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v">S · S Plus · M · L · L Plus</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_seats">Seats</th>
-            <td data-label="SR"><span data-i18n="cmp_sr_seats">1 to 6</span> <span class="cmp-sub" data-i18n="cmp_sr_seats2">8 in the 2XL</span></td>
-            <td data-label="Life" data-i18n="cmp_life_seats">1 to 4</td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_seats">1 to 4</td>
+            <td data-label="SR" data-col="sr"><span data-i18n="cmp_sr_seats">1 to 6</span> <span class="cmp-sub" data-i18n="cmp_sr_seats2">8 in the 2XL</span></td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_life_seats">1 to 4</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_seats">1 to 4</td>
           </tr>
 
           <tr class="cmp-group"><th scope="rowgroup" colspan="4" data-i18n="cmp_g_size">Size</th></tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_foot">Footprint (W × D)</th>
-            <td data-label="SR">1.00 × 0.94 – 2.20 × 2.14 m</td>
-            <td data-label="Life">1.10 × 0.90 – 2.20 × 1.22 m</td>
-            <td data-label="VOGUE" class="cmp-v">1.00 × 0.94 – 2.20 × 1.64 m</td>
+            <td data-label="SR" data-col="sr">1.00 × 0.94 – 2.20 × 2.14 m</td>
+            <td data-label="Life" data-col="life">1.10 × 0.90 – 2.20 × 1.22 m</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v">1.00 × 0.94 – 2.20 × 1.64 m</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_height">Height</th>
-            <td data-label="SR">2.30 m</td>
-            <td data-label="Life"><span data-i18n="cmp_life_h">2.10 m Home · 2.20 m Pro</span></td>
-            <td data-label="VOGUE" class="cmp-v">2.10 m</td>
+            <td data-label="SR" data-col="sr">2.30 m</td>
+            <td data-label="Life" data-col="life"><span data-i18n="cmp_life_h">2.10 m Home · 2.20 m Pro</span></td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v">2.10 m</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_weight">Weight</th>
-            <td data-label="SR">235 – 721 kg</td>
-            <td data-label="Life">198 – 400 kg</td>
-            <td data-label="VOGUE" class="cmp-v">216 – 669 kg</td>
+            <td data-label="SR" data-col="sr">235 – 721 kg</td>
+            <td data-label="Life" data-col="life">198 – 400 kg</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v">216 – 669 kg</td>
           </tr>
 
           <tr class="cmp-group"><th scope="rowgroup" colspan="4" data-i18n="cmp_g_ac">Acoustics &amp; air</th></tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_db">Sound reduction</th>
-            <td data-label="SR"><span data-i18n="cmp_sr_db">30 dB ±5 on Model S</span> <span class="cmp-sub cmp-gap" data-i18n="cmp_sr_db2">M, L and XL: not stated in the catalogue — ask us</span></td>
-            <td data-label="Life" data-i18n="cmp_life_db">30 dB ±5</td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_db">Up to 32 dB, every size</td>
+            <td data-label="SR" data-col="sr"><span data-i18n="cmp_sr_db">30 dB ±5 on Model S</span> <span class="cmp-sub cmp-gap" data-i18n="cmp_sr_db2">M, L and XL: not stated in the catalogue — ask us</span></td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_life_db">30 dB ±5</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_db">Up to 32 dB, every size</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_wall">Acoustic build</th>
-            <td data-label="SR" data-i18n="cmp_sr_wall">Recycled carbon-polymer shell, acoustic polyester fibre, tempered glass</td>
-            <td data-label="Life" data-i18n="cmp_life_wall">15 + 15 mm panels clad in acoustic fabric, 3 + 3 mm laminated acoustic glass</td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_wall">Layered panels with a 3D fluted acoustic surface</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_wall">Recycled carbon-polymer shell, acoustic polyester fibre, tempered glass</td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_life_wall">15 + 15 mm panels clad in acoustic fabric, 3 + 3 mm laminated acoustic glass</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_wall">Layered panels with a 3D fluted acoustic surface</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_air">Fresh air</th>
-            <td data-label="SR"><span data-i18n="cmp_sr_air">78 – 300 m³/h · 1 to 3 fans</span></td>
-            <td data-label="Life"><span data-i18n="cmp_life_air">125 m³/h · 1 turbo fan (Home), 2 fans (Pro L)</span></td>
-            <td data-label="VOGUE" class="cmp-v"><span data-i18n="cmp_vogue_air">91 – 182 m³/h · 1 to 2 fans</span></td>
+            <td data-label="SR" data-col="sr"><span data-i18n="cmp_sr_air">78 – 300 m³/h · 1 to 3 fans</span></td>
+            <td data-label="Life" data-col="life"><span data-i18n="cmp_life_air">125 m³/h · 1 turbo fan (Home), 2 fans (Pro L)</span></td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v"><span data-i18n="cmp_vogue_air">91 – 182 m³/h · 1 to 2 fans</span></td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_cool">Air-conditioning</th>
-            <td data-label="SR" data-i18n="cmp_no_ac">Not available</td>
-            <td data-label="Life" data-i18n="cmp_no_ac">Not available</td>
-            <td data-label="VOGUE" class="cmp-v"><span data-i18n="cmp_vogue_cool">Included free on M, L and L Plus</span> <span class="cmp-sub" data-i18n="cmp_vogue_cool2">Not available on S or S Plus — there is no room for the unit</span> <a class="cmp-link" href="/#cooling" data-i18n="cmp_cool_link">How it works</a></td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_no_ac">Not available</td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_no_ac">Not available</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v"><span data-i18n="cmp_vogue_cool">Included free on M, L and L Plus</span> <span class="cmp-sub" data-i18n="cmp_vogue_cool2">Not available on S or S Plus — there is no room for the unit</span> <a class="cmp-link" href="/#cooling" data-i18n="cmp_cool_link">How it works</a></td>
           </tr>
 
           <tr class="cmp-group"><th scope="rowgroup" colspan="4" data-i18n="cmp_g_pw">Power &amp; technology</th></tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_watt">Power draw</th>
-            <td data-label="SR">17 – 39 W</td>
-            <td data-label="Life">7 – 16 W</td>
-            <td data-label="VOGUE" class="cmp-v">55 – 127 W</td>
+            <td data-label="SR" data-col="sr">17 – 39 W</td>
+            <td data-label="Life" data-col="life">7 – 16 W</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v">55 – 127 W</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_conn">Power &amp; connectivity</th>
-            <td data-label="SR" data-i18n="cmp_sr_conn">USB 3.0 and 100–240 V sockets; USB-C on L and XL</td>
-            <td data-label="Life"><span data-i18n="cmp_life_conn">Power socket and USB</span> <span class="cmp-sub cmp-gap" data-i18n="cmp_life_conn2">Per-model detail on request</span></td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_conn">Control panel with USB-A, USB-C, power outlet and Ethernet</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_conn">USB 3.0 and 100–240 V sockets; USB-C on L and XL</td>
+            <td data-label="Life" data-col="life"><span data-i18n="cmp_life_conn">Power socket and USB</span> <span class="cmp-sub cmp-gap" data-i18n="cmp_life_conn2">Per-model detail on request</span></td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_conn">Control panel with USB-A, USB-C, power outlet and Ethernet</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_smart">Sensors &amp; smart features</th>
-            <td data-label="SR" data-i18n="cmp_sr_smart">Motion sensor wakes the light and fan</td>
-            <td data-label="Life" data-i18n="cmp_life_smart">Infrared sensor; light and fan switch off five minutes after you leave</td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_smart">Radar sensor, occupancy light, NFC, Smart Control, Room Booking, Cloud Management and predictive maintenance</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_smart">Motion sensor wakes the light and fan</td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_life_smart">Infrared sensor; light and fan switch off five minutes after you leave</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_smart">Radar sensor, occupancy light, NFC, Smart Control, Room Booking, Cloud Management and predictive maintenance</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_light">Lighting</th>
-            <td data-label="SR" data-i18n="cmp_sr_light">4000 K lamp; L and XL add ambient LED</td>
-            <td data-label="Life" data-i18n="cmp_life_light">4000 K LED; Home adds a Philips desk lamp</td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_light">LED downlight with dimmer, plus ambient light</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_light">4000 K lamp; L and XL add ambient LED</td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_life_light">4000 K LED; Home adds a Philips desk lamp</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_light">LED downlight with dimmer, plus ambient light</td>
           </tr>
 
           <tr class="cmp-group"><th scope="rowgroup" colspan="4" data-i18n="cmp_g_fit">Fit-out &amp; finish</th></tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_fur">Furniture</th>
-            <td data-label="SR" data-i18n="cmp_sr_fur">Table and chair (S) up to table and sofas (L)</td>
-            <td data-label="Life"><span data-i18n="cmp_life_fur">Table and sofa (Home)</span> <span class="cmp-sub cmp-gap" data-i18n="cmp_life_fur2">Pro models: not stated — ask us</span></td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_fur">Table with a chair, sofa or sofas, by size</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_fur">Table and chair (S) up to table and sofas (L)</td>
+            <td data-label="Life" data-col="life"><span data-i18n="cmp_life_fur">Table and sofa (Home)</span> <span class="cmp-sub cmp-gap" data-i18n="cmp_life_fur2">Pro models: not stated — ask us</span></td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_fur">Table with a chair, sofa or sofas, by size</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_fin">Finishes</th>
-            <td data-label="SR">
+            <td data-label="SR" data-col="sr">
               <span class="cmp-sw" aria-hidden="true"><i style="--sw:#E3E3E3"></i><i style="--sw:#868686"></i><i style="--sw:#D68019"></i><i style="--sw:#575F54"></i><i style="--sw:#494443"></i></span>
               <span data-i18n="cmp_sr_fin">5 colours: White, Grey, Orange, Green, Black</span>
             </td>
-            <td data-label="Life">
+            <td data-label="Life" data-col="life">
               <span class="cmp-sw" aria-hidden="true"><i style="--sw:#B0AEAF"></i><i style="--sw:#A29E95"></i><i style="--sw:#68676C"></i><i style="--sw:#B19BAE"></i><i style="--sw:#ABB4BF"></i><i style="--sw:#8D9799"></i></span>
               <span data-i18n="cmp_life_fin">6 fabrics: Cloud, Hazel, Storm, Taffy, Mint, Southsea</span>
             </td>
-            <td data-label="VOGUE" class="cmp-v">
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v">
               <span class="cmp-sw" aria-hidden="true"><i style="--sw:#f1ece3"></i><i style="--sw:#3a3a3c"></i><i style="--sw:#b9a892"></i><i style="--sw:#6e2f33"></i><i style="--sw:#c98a3c"></i><i style="--sw:#9aa284"></i><i style="--sw:#6c6f52"></i></span>
               <span data-i18n="cmp_vogue_fin">7 colours</span>
             </td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_opt">Options</th>
-            <td data-label="SR" data-i18n="cmp_sr_opt">Smart lock, conference set</td>
-            <td data-label="Life"><span class="spec-tbc" data-i18n="cmp_na">Not listed in the catalogue</span></td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_opt">None needed — air-conditioning (M and up) and the smart features above come included</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_opt">Smart lock, conference set</td>
+            <td data-label="Life" data-col="life"><span class="spec-tbc" data-i18n="cmp_na">Not listed in the catalogue</span></td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_opt">None needed — air-conditioning (M and up) and the smart features above come included</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_move">Installation</th>
-            <td data-label="SR" data-i18n="cmp_free">Freestanding — no building work</td>
-            <td data-label="Life" data-i18n="cmp_life_move">On wheels; about three hours to assemble</td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_free">Freestanding — no building work</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_free">Freestanding — no building work</td>
+            <td data-label="Life" data-col="life" data-i18n="cmp_life_move">On wheels; about three hours to assemble</td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_free">Freestanding — no building work</td>
           </tr>
           <tr>
             <th scope="row" data-i18n="cmp_r_price">Starting price</th>
-            <td data-label="SR" data-i18n="cmp_sr_price">From &#3647;2xx,xxx</td>
-            <td data-label="Life"><span data-i18n="cmp_life_price">Promotion from &#3647;12x,xxx</span> <span class="cmp-sub" data-i18n="cmp_life_price2">until 31 December 2026</span></td>
-            <td data-label="VOGUE" class="cmp-v" data-i18n="cmp_vogue_price">From &#3647;36x,xxx</td>
+            <td data-label="SR" data-col="sr" data-i18n="cmp_sr_price">From &#3647;2xx,xxx</td>
+            <td data-label="Life" data-col="life"><span data-i18n="cmp_life_price">Promotion from &#3647;12x,xxx</span> <span class="cmp-sub" data-i18n="cmp_life_price2">until 31 December 2026</span></td>
+            <td data-label="VOGUE" data-col="vogue" class="cmp-v" data-i18n="cmp_vogue_price">From &#3647;36x,xxx</td>
           </tr>
           <tr>
             <td colspan="4" class="cmp-price"><div class="cmp-price-in">
@@ -603,11 +609,11 @@
   <!-- engine: smooth scroll + scroll reveals/counters + i18n + compare slider -->
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js?v=rv1"></script>
-  <script src="i18n.js?v=fm1"></script>
+  <script src="i18n.js?v=mc1"></script>
   <script src="cc.js?v=ct3"></script>
   <script src="compare.js?v=lineup20"></script>
   <script src="sound.js?v=hdrmusic5"></script>
-  <script src="series.js?v=psw2"></script>
+  <script src="series.js?v=mc1"></script>
   <script>
     // nav stays solid on the showroom page (no full-bleed scrub hero)
     document.getElementById('nav').classList.add('nav-solid');

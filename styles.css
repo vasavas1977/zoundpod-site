@@ -1446,6 +1446,7 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 .cmp-card-flag :focus-visible { outline-color: var(--cream); }
 
 /* side-by-side table */
+.cmp-pickbar { display: none; }
 .cmp-wrap { max-width: 1180px; }
 .cmp-table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 0.93rem; line-height: 1.5; }
 .cmp-table thead th { position: sticky; top: 70px; z-index: 2; background: var(--cream); text-align: left; padding: 16px 18px; font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.45rem; border-bottom: 1px solid var(--line); }
@@ -1497,19 +1498,32 @@ html[lang="th"] .cmp-group th, html[lang="th"] .cmp-models thead th { letter-spa
   .cmp-card { display: grid; grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
-  /* side-by-side table becomes one block per row: the row label, then SR / Life / VOGUE */
-  .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table th, .cmp-table td { display: block; width: auto; }
+  /* phones: two series side by side, chosen in the sticky picker; each row is its
+     label across the top, then the two values in a pair of cards */
+  .cmp-pickbar { display: flex; align-items: center; gap: 10px; position: sticky; top: 70px; z-index: 3;
+    margin: 0 -4px 6px; padding: 10px 4px; background: var(--cream); border-bottom: 1px solid var(--line); }
+  .cmp-sel { flex: 1; min-width: 0; appearance: none; -webkit-appearance: none; font: 400 1.1rem "Fraunces", Georgia, serif; color: var(--ink);
+    padding: 10px 34px 10px 14px; border: 1px solid var(--line); border-radius: 12px;
+    background: var(--shell) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%231c1813' stroke-width='1.4'/%3E%3C/svg%3E") no-repeat right 14px center / 10px 6px; }
+  .cmp-vs { color: var(--stone); font-size: 0.85rem; flex: none; }
+  .cmp-table, .cmp-table tbody { display: block; width: auto; }
   .cmp-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .cmp-table tbody tr { padding: 4px 0 14px; border-bottom: 1px solid var(--line); }
-  .cmp-table tbody th[scope="row"] { border: 0; padding: 14px 0 8px; color: var(--ink); font-weight: 600; }
-  /* label sits in a gutter so cells holding several pieces (swatches, notes) still line up */
-  .cmp-table td { position: relative; padding: 9px 12px 9px 84px; border: 0; border-radius: 10px; }
-  .cmp-table td::before { content: attr(data-label); position: absolute; left: 12px; top: 8px; font-family: "Fraunces", Georgia, serif; font-size: 1.02rem; }
-  .cmp-table td.cmp-v { border-radius: 10px; }
-  .cmp-table td.cmp-price { padding: 4px 0; }
+  .cmp-table tbody tr { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .cmp-table tbody th[scope="row"] { grid-column: 1 / -1; order: 0; display: block; border: 0; padding: 0 0 2px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; color: var(--stone); }
+  .cmp-table td { display: block; width: auto; padding: 10px 12px 12px; border: 0; border-radius: 12px; background: var(--shell); font-size: 0.92rem; line-height: 1.45; }
+  .cmp-table td::before { content: attr(data-label); display: block; margin-bottom: 4px; font-family: "Fraunces", Georgia, serif; font-size: 0.95rem; color: var(--stone); }
+  .cmp-table td.cmp-v { background: var(--ink); }
+  .cmp-table td.cmp-v::before { color: #e0a17f; }
+  .cmp-table td.cmp-off { display: none; }
+  .cmp-table tr:nth-last-child(2) td.cmp-v { border-radius: 12px; }
+  .cmp-table .cmp-sub { font-size: 0.78rem; }
+  .cmp-feel strong { font-size: 1.12rem; }
+  .cmp-sw { gap: 5px; } .cmp-sw i { width: 16px; height: 16px; }
+  .cmp-table tr.cmp-group { display: block; padding: 0; border: 0; }
+  .cmp-group th { display: block; padding: 26px 0 8px; }
+  .cmp-table td.cmp-price { grid-column: 1 / -1; background: none; padding: 4px 0; }
   .cmp-table td.cmp-price::before { content: none; }
-  .cmp-group th { padding-top: 28px; }
-  .cmp-table tr.cmp-group { padding: 0; border: 0; }
+}
 }
 
 /* ============================================================

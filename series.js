@@ -6,6 +6,34 @@
 (function () {
   "use strict";
 
+  /* ---------- comparison: two series side by side on phones ----------
+     Desktop shows all three columns and ignores this. On a phone the table
+     shows the pair chosen in the two selects, left then right; picking the
+     series already on the other side swaps them, so the pair stays distinct. */
+  function initComparePick(wrap) {
+    var sels = [].slice.call(wrap.querySelectorAll(".cmp-sel"));
+    var cells = [].slice.call(wrap.querySelectorAll("td[data-col]"));
+    if (sels.length !== 2 || !cells.length) return;
+    function apply() {
+      var a = sels[0].value, b = sels[1].value;
+      cells.forEach(function (td) {
+        var c = td.getAttribute("data-col");
+        td.classList.toggle("cmp-off", c !== a && c !== b);
+        td.style.order = c === a ? "1" : c === b ? "2" : "";
+      });
+    }
+    sels.forEach(function (sel, i) {
+      var prev = sel.value;
+      sel.addEventListener("change", function () {
+        var other = sels[1 - i];
+        if (other.value === sel.value) other.value = prev;
+        prev = sel.value;
+        apply();
+      });
+    });
+    apply();
+  }
+
   /* ---------- colour + size switcher ----------
      The stage carries data-prefix (asset folder) and the buttons carry the
      colour/size slugs; the image path is <prefix>/<size>-<colour>.webp. */
@@ -138,6 +166,7 @@
   function init() {
     [].slice.call(document.querySelectorAll("[data-prefix]")).forEach(initStage);
     [].slice.call(document.querySelectorAll(".yt[data-yt]")).forEach(initYouTube);
+    [].slice.call(document.querySelectorAll(".cmp-wrap")).forEach(initComparePick);
     [].slice.call(document.querySelectorAll(".pswitch")).forEach(initPodSwitch);
   }
 
