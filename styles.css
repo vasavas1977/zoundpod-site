@@ -1459,13 +1459,18 @@ html[lang="th"] #installations .display-2 { font-size: clamp(2.0rem, 5.2vw, 3.9r
 .cmp-table tr:nth-last-child(2) td.cmp-v { border-radius: 0 0 16px 16px; }
 .cmp-group th { text-align: left; padding: 30px 0 10px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); border-bottom: 1px solid var(--line); }
 .cmp-sub { display: block; margin-top: 4px; font-size: 0.82rem; color: var(--stone); }
+/* the feeling row leads the table: the class name reads like a heading */
+.cmp-feel strong { display: block; font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.3rem; line-height: 1.2; color: var(--terra); }
+.cmp-feel td.cmp-v strong { color: #e0a17f; }
+.cmp-feel .cmp-sub { margin-top: 6px; line-height: 1.5; }
+html[lang="th"] .cmp-feel strong { font-family: "Noto Serif Thai", "Fraunces", serif; }
 .cmp-gap { font-style: italic; }
 .cmp-sw { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .cmp-sw i { width: 20px; height: 20px; border-radius: 50%; background: var(--sw); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.16); }
 .cmp-v .cmp-sw i { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28); }
 .cmp-price-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
 /* the price cell spans all three series, so it sits on the page colour, not VOGUE's */
-.cmp-table tr:last-child td.cmp-price { border-bottom: 0; }
+.cmp-table tr:last-child td.cmp-price { border-bottom: 0; padding-left: 0; }
 
 /* every-model table: scrolls inside itself on narrow screens, never the page */
 .cmp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 16px; background: var(--shell); }
