@@ -1524,7 +1524,6 @@ html[lang="th"] .cmp-group th, html[lang="th"] .cmp-models thead th { letter-spa
   .cmp-table td.cmp-price { grid-column: 1 / -1; background: none; padding: 4px 0; }
   .cmp-table td.cmp-price::before { content: none; }
 }
-}
 
 /* ============================================================
    ABOUT — /about. Series-page sections plus a few text blocks.
@@ -1697,4 +1696,93 @@ html[lang="th"] .learn-note { display: none; }
 }
 @media (max-width: 520px) {
   .learn-play { right: 10px; bottom: 10px; padding: 8px 14px 8px 9px; font-size: .8rem; }
+}
+
+/* ============================================================
+   LEARN HUB — /learn and /th/learn
+   Hero, one 16:9 guide (room for more), a 9:16 Shorts shelf, closing CTA.
+   Players reuse .learn-player / .learn-play and learn.js (click-to-play).
+   ============================================================ */
+.lh-sec { --lh-pad: clamp(24px, 6vw, 80px); padding: clamp(64px, 10vh, 120px) var(--lh-pad); }
+.lh-in { max-width: 1100px; margin: 0 auto; }
+.lh-band { background: var(--sand); }
+.lh-hero { padding-top: clamp(124px, 19vh, 196px); padding-bottom: clamp(30px, 6vh, 64px); }
+.lh-hero .eyebrow { display: block; margin-bottom: 20px; }
+.lh-hero .display { font-size: clamp(2.7rem, 7.4vw, 5.8rem); }
+.lh-hero .sec-sub { max-width: 36ch; margin-top: 24px; }
+.lh-head { margin-bottom: clamp(30px, 5vh, 52px); }
+.lh-head .eyebrow { display: block; margin-bottom: 16px; }
+.lh-head .sec-sub { margin-top: 16px; }
+
+/* guides: the lead episode is wide; each later episode is a one-column cell */
+.lh-guides { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: stretch; }
+.lh-ep-cap { padding-top: 26px; }
+.lh-ep-cap .eyebrow { margin-bottom: 10px; }
+.lh-ep-title { font-family: "Noto Serif Thai", "Fraunces", Georgia, serif; font-weight: 400; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 12px; }
+html[lang="en"] .lh-ep-title { font-family: "Fraunces", Georgia, serif; font-weight: 300; line-height: 1.12; }
+.lh-ep-sub { color: var(--stone); max-width: 54ch; font-size: 1.02rem; line-height: 1.6; margin-bottom: 22px; }
+.lh-ep-list { grid-template-columns: 1fr 1fr; gap: 9px 32px; margin-bottom: 0; }
+.lh-soon { align-self: start; }
+.lh-soon-frame { display: grid; place-items: center; aspect-ratio: 16 / 9; border: 1px dashed rgba(28,24,19,.26); border-radius: 18px; }
+.lh-soon-frame span { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -0.02em; color: var(--terra); opacity: .5; }
+.lh-soon .lh-ep-cap .eyebrow { color: var(--stone); }
+.lh-soon-sub { color: var(--stone); font-size: .95rem; line-height: 1.5; }
+
+/* shorts: 9:16 posters, 3 across; a swipe rail on phones */
+.lh-shorts { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(30px, 4.5vw, 52px) clamp(18px, 2.6vw, 32px); }
+.lh-short { display: flex; flex-direction: column; min-width: 0; }
+.lh-short-frame { position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; cursor: pointer; background: var(--ink);
+  box-shadow: 0 30px 60px -34px rgba(28,24,19,.55), 0 0 0 1px var(--line); }
+.lh-short-frame img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.lh-short-frame:hover img { transform: scale(1.025); }
+.lh-short-frame:hover .learn-play { transform: translateY(-2px); background: #fff; }
+.lh-short-frame:focus-visible { outline: 2px solid var(--terra); outline-offset: 5px; }
+.lh-short-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.lh-short-frame.playing { cursor: default; }
+.lh-play { top: 12px; right: 12px; bottom: auto; padding: 8px 15px 8px 9px; font-size: .82rem; }
+.lh-play i { width: 26px; height: 26px; }
+.lh-short-cap { padding: 18px 2px 0; }
+.lh-short-title { font-family: "Noto Serif Thai", "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.12rem; line-height: 1.45; letter-spacing: 0; }
+.lh-short-desc { color: var(--stone); font-size: .94rem; line-height: 1.55; margin-top: 6px; }
+.lh-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.lh-tag { display: inline-block; font: 600 .64rem/1 "Inter", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--stone);
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; }
+.lh-tag-fun { color: var(--terra); border-color: rgba(181,97,63,.42); }
+html[lang="th"] .lh-tag-th { display: none; }
+html[lang="th"] .lh-tag { font-family: "Noto Sans Thai", "Inter", sans-serif; letter-spacing: .04em; text-transform: none; font-size: .74rem; }
+html[lang="th"] .lh-ep-title, html[lang="th"] .lh-short-title { line-height: 1.5; }
+html[lang="th"] .lh-short-desc, html[lang="th"] .lh-ep-sub { line-height: 1.7; }
+
+/* closing CTA */
+.lh-cta .lh-in { max-width: 760px; text-align: center; }
+.lh-cta .eyebrow { display: block; margin-bottom: 20px; }
+.lh-cta .sec-sub { margin: 20px auto 0; max-width: 46ch; }
+.lh-cta-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px 28px; margin-top: 38px; }
+.lh-link { color: var(--stone); font-size: .95rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--line); transition: color .25s, text-decoration-color .25s; }
+.lh-link:hover { color: var(--ink); text-decoration-color: currentColor; }
+.learn-all { margin-top: 18px; }
+.learn-all a { color: var(--stone); font-size: .95rem; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--line); transition: color .25s, text-decoration-color .25s; }
+.learn-all a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.learn-all a:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; border-radius: 2px; }
+
+@media (max-width: 900px) {
+  .lh-guides { grid-template-columns: 1fr; }
+  .lh-soon { display: flex; align-items: center; gap: 18px; }
+  .lh-soon-frame { flex: 0 0 120px; border-radius: 12px; }
+  .lh-soon-frame span { font-size: 1.5rem; }
+  .lh-soon .lh-ep-cap { padding-top: 0; }
+}
+@media (max-width: 640px) {
+  .lh-ep-list { grid-template-columns: 1fr; }
+  /* phone: a horizontal swipe rail, one poster and a sliver of the next */
+  .lh-shorts { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--lh-pad)); padding-inline: var(--lh-pad); scroll-padding-inline: var(--lh-pad); overscroll-behavior-x: contain; }
+  .lh-shorts::-webkit-scrollbar { display: none; }
+  .lh-short { flex: 0 0 min(72vw, 300px); scroll-snap-align: start; }
+  .lh-play { top: 10px; right: 10px; padding: 6px 12px 6px 7px; font-size: .76rem; gap: 7px; }
+  .lh-play i { width: 22px; height: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lh-short-frame img, .learn-player img { transition: none; }
+  .lh-short-frame:hover img, .learn-player:hover img { transform: none; }
 }
