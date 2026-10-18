@@ -37,6 +37,15 @@
 
     // learn with ZOUND (explainer video under the manifesto)
     nav_learn: "เรียนรู้",
+    nav_videos: "วิดีโอ",
+    nav_videos_sub: "เรียนรู้กับ ZOUND",
+    nav_blog_sub: "บทความและคู่มือ",
+    nav_faq_sub: "ตอบทุกข้อสงสัยที่พบบ่อย",
+    nav_about: "เกี่ยวกับเรา",
+    nav_about_us: "รู้จัก ZOUND",
+    nav_about_us_sub: "ZOUND โดย 1-TO-ALL",
+    nav_sus_sub: "ได้มาตรฐาน GREENGUARD Gold",
+    nav_contact_sub: "02-030-3883 &middot; LINE @zound",
     learn_eyebrow: "เรียนรู้กับ ZOUND · EP.1",
     learn_title: "7 เช็กลิสต์<br/>เลือกพ็อดให้ออฟฟิศ",
     learn_sub: "คู่มือ 5 นาที จากทีมกว่า 200 ชีวิตที่ใช้พ็อดของเราทุกวัน ดูก่อนเทียบทุกแบรนด์ รวมถึงของเราด้วย",
@@ -847,20 +856,33 @@
       });
     }
 
-    // desktop nav: the Pods menu. Below 1100px the panel is static and always
-    // open inside the drawer, so toggling data-open there is simply inert.
-    var drop = navEl && navEl.querySelector(".nav-drop");
-    var dropBtn = drop && drop.querySelector(".nav-drop-btn");
-    if (drop && dropBtn) {
+    // desktop nav: the Pods / Learn / About menus. Below 1100px the panels are static and
+    // always open inside the drawer, so toggling data-open there is simply inert.
+    var drops = navEl ? Array.prototype.slice.call(navEl.querySelectorAll(".nav-drop")) : [];
+    var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
+    function toTop() {
+      if (window.__lenis) { window.__lenis.scrollTo(0, { immediate: true, force: true }); }
+      else { window.scrollTo({ top: 0, behavior: "instant" }); }
+    }
+    drops.forEach(function (drop) {
+      var dropBtn = drop.querySelector(".nav-drop-btn");
+      if (!dropBtn) return;
       var openDrop = function (on) {
-        if (on) { drop.setAttribute("data-open", ""); } else { drop.removeAttribute("data-open"); }
+        if (on) {
+          drops.forEach(function (d) {            // only one menu open at a time
+            if (d !== drop && d.hasAttribute("data-open")) {
+              d.removeAttribute("data-open");
+              var b = d.querySelector(".nav-drop-btn"); if (b) b.setAttribute("aria-expanded", "false");
+            }
+          });
+          drop.setAttribute("data-open", "");
+        } else { drop.removeAttribute("data-open"); }
         dropBtn.setAttribute("aria-expanded", on ? "true" : "false");
       };
-      // With a mouse the menu has already opened on hover, so a click on
-      // "Pods" must not toggle it shut: it would fade out under the pointer and
+      // With a mouse the menu has already opened on hover, so a click on the
+      // label must not toggle it shut: it would fade out under the pointer and
       // the next click would land on the page behind it. Keyboard activation
       // (detail 0) and touch still toggle; mouseleave closes it for the mouse.
-      var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
       dropBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         if (canHover && e.detail > 0) { openDrop(true); return; }
@@ -877,15 +899,6 @@
         if (location.hash !== "#top") history.pushState(null, "", "#top");
         toTop();
       });
-      // ...and Forward back onto that entry lands at the top again, rather
-      // than wherever the restored scroll (or Lenis's target) happened to be.
-      window.addEventListener("popstate", function () {
-        if (location.hash === "#top") requestAnimationFrame(toTop);
-      });
-      function toTop() {
-        if (window.__lenis) { window.__lenis.scrollTo(0, { immediate: true, force: true }); }
-        else { window.scrollTo({ top: 0, behavior: "instant" }); }
-      }
       drop.addEventListener("mouseenter", function () { openDrop(true); });
       drop.addEventListener("mouseleave", function () { openDrop(false); });
       drop.addEventListener("focusout", function (e) {
@@ -896,6 +909,13 @@
       });
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") openDrop(false);
+      });
+    });
+    // ...and Forward back onto the #top entry lands at the top again, rather
+    // than wherever the restored scroll (or Lenis's target) happened to be.
+    if (drops.length) {
+      window.addEventListener("popstate", function () {
+        if (location.hash === "#top") requestAnimationFrame(toTop);
       });
     }
 
