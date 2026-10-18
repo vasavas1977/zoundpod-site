@@ -103,7 +103,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=th4" />
+  <link rel="stylesheet" href="styles.css?v=learn1" />
+  <!-- Learn with ZOUND EP.1 (YouTube) -->
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "7 เช็กลิสต์ เลือกพ็อดเก็บเสียงให้ออฟฟิศ ก่อนเสียเงินฟรี | เรียนรู้กับ ZOUND EP.1",
+    "description": "ก่อนซื้อพ็อดเก็บเสียงให้ออฟฟิศ เช็ก 7 ข้อนี้ก่อน: เงียบ อากาศ ขนาด วัสดุ การใช้งาน โชว์รูมจริง และลูกค้าซื้อซ้ำ คู่มือจากทีม ZOUND กว่า 200 ชีวิตที่ใช้พ็อดของเราทุกวัน",
+    "thumbnailUrl": [
+      "https://zoundpod.com/assets/img/learn/ep1-poster.jpg"
+    ],
+    "uploadDate": "2026-10-18T20:22:00+07:00",
+    "duration": "PT4M55S",
+    "inLanguage": "th",
+    "embedUrl": "https://www.youtube.com/embed/pzyy8rknsWc",
+    "url": "https://www.youtube.com/watch?v=pzyy8rknsWc",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ZOUND",
+      "url": "https://zoundpod.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zoundpod.com/assets/img/zound-logo.png"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -122,6 +148,7 @@
       </div>
       <a href="/th/sustainable" data-i18n="nav_sus">Sustainable</a>
       <a href="/th/showroom" data-i18n="nav_showroom">Showroom</a>
+      <a href="#learn" data-i18n="nav_learn">Learn</a>
       <a href="/blog" data-i18n="nav_blog">Blog</a>
       <a href="#faq" data-i18n="nav_faq">FAQ</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -167,6 +194,38 @@
       Built for the companies that treat focus as a competitive advantage.
     </h2>
     <p class="reveal sub" data-i18n="mani_sub">Discover a new way to connect and focus.</p>
+  </section>
+
+  <!-- ============ LEARN WITH ZOUND (explainer video, click-to-play) ============ -->
+  <section class="learn-sec" id="learn" aria-labelledby="learn-title">
+    <div class="learn-wrap">
+      <div class="learn-copy">
+        <p class="eyebrow reveal" data-i18n="learn_eyebrow">Learn with ZOUND · Episode 1</p>
+        <h2 class="reveal display-3" id="learn-title" data-i18n="learn_title">Seven things to check<br/>before you buy a pod.</h2>
+        <p class="reveal learn-sub" data-i18n="learn_sub">A five-minute guide from a team of 200+ who use our pods every day. Watch it before you compare any brand, ours included.</p>
+        <ol class="learn-list reveal">
+          <li data-i18n="learn_1">Is it truly quiet?</li>
+          <li data-i18n="learn_2">Does the air keep moving?</li>
+          <li data-i18n="learn_3">Is the size right for the job?</li>
+          <li data-i18n="learn_4">Are the materials safe?</li>
+          <li data-i18n="learn_5">Is it easy to use and install?</li>
+          <li data-i18n="learn_6">Can you try it in a real showroom?</li>
+          <li data-i18n="learn_7">Do customers come back for more?</li>
+        </ol>
+        <div class="learn-cta reveal">
+          <button class="btn btn-lg" type="button" data-no-music data-learn-play="#learn-player" data-i18n="learn_watch">Watch the guide · 4:55</button>
+          <a class="btn btn-ghost btn-lg" href="/th/showroom" data-i18n="learn_book">Try it at the showroom</a>
+        </div>
+        <p class="learn-note reveal" data-i18n="learn_note">Narrated in Thai.</p>
+      </div>
+      <div class="learn-media reveal">
+        <div class="learn-player" id="learn-player" role="button" tabindex="0" data-no-music data-yt="pzyy8rknsWc"
+             aria-label="Play: 7 things to check before you buy an office pod (4:55)">
+          <img src="assets/img/learn/ep1-poster.jpg?v=ep1" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+          <span class="learn-play" aria-hidden="true"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i><span data-i18n="learn_play">Watch · 4:55</span></span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ============ RANGE INTRO ============ -->
@@ -219,11 +278,11 @@
       <canvas></canvas>
       <div class="pod-copy left">
         <span class="pod-index">03</span>
-        <p class="eyebrow" data-i18n="pod_m_size">Model M · 1 person</p>
+        <p class="eyebrow" data-i18n="pod_m_size">Model M · 1&ndash;2 people</p>
         <h3 class="display-3" data-i18n="pod_m_title">The focus room.</h3>
         <p class="pod-desc" data-i18n="pod_m_desc">An individual workroom with a proper desk and ergonomic chair, sealed from the noise of the floor.</p>
         <ul class="spec">
-          <li><span class="spec-k" data-i18n="nv_cap">Capacity</span><span class="spec-v" data-i18n="cap_1p">1 person</span></li>
+          <li><span class="spec-k" data-i18n="nv_cap">Capacity</span><span class="spec-v" data-i18n="cap_12">1&ndash;2 people</span></li>
           <li><span class="spec-k" data-i18n="nv_foot">Footprint</span><span class="spec-v">1.55 &times; 1.24&nbsp;m</span></li>
           <li><span class="spec-k" data-i18n="nv_aco">Acoustics</span><span class="spec-v">&minus;32&nbsp;dB</span></li>
         </ul>
@@ -1040,14 +1099,15 @@
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js?v=rv1"></script>
   <script src="shatter.js?v=lineup22"></script>
-  <script src="i18n.js?v=th4"></script>
+  <script src="i18n.js?v=th5"></script>
   <script src="cc.js?v=ct3"></script>
   <script src="compare.js?v=lineup20"></script>
 
   <!-- ambient sound: discreet luxury toggle (off by default) -->
   <!-- ambient sound: controlled from the labeled button in the header -->
 
-  <script src="sound.js?v=th1"></script>
+  <script src="sound.js?v=learn1"></script>
+  <script src="learn.js?v=learn1"></script>
   <script>
     // nav goes solid after leaving hero
     const nav = document.getElementById('nav');

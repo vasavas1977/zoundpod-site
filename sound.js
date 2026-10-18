@@ -158,6 +158,16 @@
   triggers.forEach(function (el) {
     el.addEventListener("click", function () { if (playing) stop(); else start(); });
   });
+
+  // let other parts of the page (e.g. the explainer video) pause the music
+  // without recording an "off" preference
+  window.zoundSound = {
+    pause: function () {
+      if (!playing) return;
+      if (useWA && ctx) waStop(); else fade(0, 600, function () { ensureAudio().pause(); });
+      playing = false; render();
+    }
+  };
   render();
 
   // keep the label in the right language when the visitor switches EN/ไทย
@@ -181,6 +191,8 @@
       if (playing) { disarm(); return; }
       // if they tapped the music control itself, let its own handler run
       if (e && e.target && triggers.some(function (tr) { return tr.contains(e.target); })) { disarm(); return; }
+      // a tap on a video player must not start the music on top of the video
+      if (e && e.target && e.target.closest && e.target.closest("[data-no-music]")) return;
       start();
       // keep listeners armed until playback actually sticks (a blocked attempt
       // may need the next, "cleaner" gesture — e.g. a tap after a scroll)
