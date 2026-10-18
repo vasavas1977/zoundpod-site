@@ -24,8 +24,8 @@
   <meta property="og:title" content="ZOUND — Luxury Soundproof Office Pods" />
   <meta property="og:description" content="VOGUE Series acoustic booths for upscale workspaces — up to 32 dB isolation, GREENGUARD Gold materials, Panasonic ventilation. A room within the room." />
   <meta property="og:url" content="https://zoundpod.com/" />
-  <meta property="og:image" content="https://zoundpod.com/assets/img/og-cover.jpg" />
-  <meta property="og:image:secure_url" content="https://zoundpod.com/assets/img/og-cover.jpg" />
+  <meta property="og:image" content="https://zoundpod.com/assets/img/og-cover.jpg?v=brand1" />
+  <meta property="og:image:secure_url" content="https://zoundpod.com/assets/img/og-cover.jpg?v=brand1" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -37,7 +37,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ZOUND — Luxury Soundproof Office Pods" />
   <meta name="twitter:description" content="VOGUE Series acoustic booths for upscale workspaces — 32 dB isolation, GREENGUARD Gold, Panasonic ventilation. A room within the room." />
-  <meta name="twitter:image" content="https://zoundpod.com/assets/img/og-cover.jpg" />
+  <meta name="twitter:image" content="https://zoundpod.com/assets/img/og-cover.jpg?v=brand1" />
   <meta name="twitter:image:alt" content="A ZOUND VOGUE soundproof office pod in a luxury travertine gallery" />
 
   <!-- Icons / PWA -->
@@ -58,7 +58,7 @@
         "alternateName": ["ZOUND Pod", "ZOUND Acoustic"],
         "url": "https://zoundpod.com/",
         "logo": "https://zoundpod.com/icon-512.png",
-        "image": "https://zoundpod.com/assets/img/og-cover.jpg",
+        "image": "https://zoundpod.com/assets/img/og-cover.jpg?v=brand1",
         "description": "ZOUND crafts luxury soundproof office pods and acoustic booths for upscale workspaces.",
         "slogan": "A room within the room.",
         "email": "contact@zoundpod.com",
@@ -82,7 +82,7 @@
         "name": "ZOUND VOGUE Series Soundproof Office Pod",
         "brand": { "@id": "https://zoundpod.com/#organization" },
         "category": "Acoustic Office Pod / Soundproof Phone Booth",
-        "image": ["https://zoundpod.com/assets/img/og-cover.jpg"],
+        "image": ["https://zoundpod.com/assets/img/og-cover.jpg?v=brand1"],
         "url": "https://zoundpod.com/",
         "description": "Luxury soundproof office pods in five sizes (S, S Plus, M, L, L Plus) with up to 32 dB acoustic isolation, Panasonic ventilation, smart controls, and GREENGUARD Gold certified materials.",
         "material": "Recycled carbon fibre, acoustic glass, premium textile",
@@ -1110,20 +1110,20 @@
   <script>
     window.SCRUB_SECTIONS = [
       { section:"#hero",  frameCount:96, bg:"#b9aaa0", framePath:(i)=>`frames/hero/frame_${String(i).padStart(4,"0")}.jpg?v=hero1080` },
-      { section:"#pod-s",    frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-s/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
-      { section:"#pod-splus",frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-splus/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
+      { section:"#pod-s",    frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-s/frame_${String(i).padStart(4,"0")}.jpg?v=brand1` },
+      { section:"#pod-splus",frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-splus/frame_${String(i).padStart(4,"0")}.jpg?v=brand1` },
       { section:"#pod-m",    frameCount:50, bg:"#b5b1b2", framePath:(i)=>`frames/pod-m/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
-      { section:"#pod-l",    frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-l/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
-      { section:"#pod-lplus",frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-lplus/frame_${String(i).padStart(4,"0")}.jpg?v=lineup21` },
+      { section:"#pod-l",    frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-l/frame_${String(i).padStart(4,"0")}.jpg?v=brand1` },
+      { section:"#pod-lplus",frameCount:121, bg:"#b5b1b2", framePath:(i)=>`frames/pod-lplus/frame_${String(i).padStart(4,"0")}.jpg?v=brand1` },
       { section:"#air",   frameCount:179, bg:"#efe9df", framePath:(i)=>`frames/fan/frame_${String(i).padStart(4,"0")}.jpg` },
-      { section:"#colors",frameCount:179, bg:"#0e0e0e", framePath:(i)=>`frames/colors/frame_${String(i).padStart(4,"0")}.jpg` },
+      { section:"#colors",frameCount:179, bg:"#0e0e0e", framePath:(i)=>`frames/colors/frame_${String(i).padStart(4,"0")}.jpg?v=brand1` },
     ];
   </script>
 
   <!-- Lenis smooth scroll + engine -->
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="scroll-cinematic.js?v=rv1"></script>
-  <script src="shatter.js?v=lineup22"></script>
+  <script src="shatter.js?v=brand1"></script>
   <script src="i18n.js?v=nav1"></script>
   <script src="cc.js?v=ct3"></script>
   <script src="compare.js?v=lineup20"></script>
@@ -1184,7 +1184,7 @@
       var ctx = cv.getContext('2d', { alpha: false });
       var COUNT = 121, BG = '#cfc8c1';
       var imgs = [], firstDrawn = false, framesRequested = false;
-      function path(i) { return 'frames/control/frame_' + String(i).padStart(4, '0') + '.jpg?v=ctl1'; }
+      function path(i) { return 'frames/control/frame_' + String(i).padStart(4, '0') + '.jpg?v=brand1'; }
       /* poster frame now; the rest only once the plate is near the viewport,
          so a cold visit doesn't fetch all 121 frames before any scrolling */
       function loadFrame(i) {
