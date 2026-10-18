@@ -1786,3 +1786,12 @@ html[lang="th"] .lh-short-desc, html[lang="th"] .lh-ep-sub { line-height: 1.7; }
   .lh-short-frame img, .learn-player img { transition: none; }
   .lh-short-frame:hover img, .learn-player:hover img { transform: none; }
 }
+
+/* Learn hub: EP.2 sits in the side column above the next "coming soon" card */
+.lh-side { display: grid; gap: clamp(20px, 2.6vw, 34px); align-content: start; }
+.lh-ep-sm .lh-ep-cap { padding-top: 18px; }
+.lh-ep-sm .lh-ep-title { font-size: clamp(1.2rem, 1.7vw, 1.45rem); margin-bottom: 8px; }
+.lh-ep-sm .lh-ep-sub { font-size: .95rem; margin-bottom: 8px; }
+.lh-ep-sm .learn-play { right: 10px; bottom: 10px; padding: 7px 13px 7px 8px; font-size: .78rem; }
+.lh-ep-sm .learn-play i { width: 24px; height: 24px; }
+@media (max-width: 900px) { .lh-ep-sm .lh-ep-title { font-size: 1.35rem; } }
