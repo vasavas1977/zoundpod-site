@@ -18,7 +18,7 @@
                 line: "d-QdCOLN2KMdEOatu6oq", call: "uwlICOXN2KMdEOatu6oq" }
     },
     metaPixel: "393803552640034",               /* "Zoundme's Pixel", Zound ad account */
-    tiktokPixel: ""                             /* pixel code */
+    tiktokPixel: "DBBR2NRC77U6FGK2JG8G"         /* "ZOUNDPOD website", _adv ad account */
   };
 
   var KEY = "zp_consent", SRC_KEY = "zp_src";
