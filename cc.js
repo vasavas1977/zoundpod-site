@@ -442,6 +442,8 @@
       language: document.documentElement.lang === "th" ? "th" : "en"
     };
     if (!body.name || (!body.email && !body.phone)) { setStatus(d.req, "err"); return; }
+    /* where this visitor came from (consent.js); shown to the team as "Lead source" */
+    if (window.ZoundTrack && window.ZoundTrack.source) body.source = window.ZoundTrack.source();
 
     var type = BOOKING_TYPE[intent];
     var booking = !!type && gridState === "ready";
@@ -505,6 +507,12 @@
         msg = res.reply || d.ok;
       }
       setStatus(msg, "ok");
+      /* lets consent.js count a booked viewing or a sent enquiry */
+      try {
+        document.dispatchEvent(new CustomEvent("zound:lead", {
+          detail: { kind: res.ref ? "viewing" : "enquiry", intent: intent, ref: res.ref || null }
+        }));
+      } catch (x) {}
       form.reset();
       pickedSlot = null;
       if (booking) loadGrid();
