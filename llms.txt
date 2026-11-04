@@ -57,6 +57,15 @@ Prices are starting prices; a quote depends on the size, finish and site.
 
 Exclusive in Thailand to ZOUND, and included free on VOGUE M, L and L Plus. The unit sits on the roof of the pod and needs no drain pipe: it keeps its own condensation, evaporates it with its own heat and returns it to the pod as humidity, so there is no plumbing and no building work. It is not an office or home air-conditioner — it takes the edge off, typically 3–5 °C cooler than the same pod without it. Unit: 600 W cooling capacity, 280 W power, cooling only, roof-mounted, cross-flow airflow, 480 × 285 × 235 mm, 12.5 kg, 50 dB ±2 outside the pod.
 
+## Company certifications
+
+ZOUND is a brand of 1-TO-ALL Co., Ltd. The company holds:
+- ISO 9001:2015 (quality management system)
+- ISO/IEC 27001:2022 (information security management, for Internet Provider services)
+- PCI DSS v4.0.1 (payment card data security, assessed by ACIS Professional Center)
+
+These certifications cover the company's management systems and services. Pod materials and testing are described on https://zoundpod.com/sustainable.
+
 ## Good to know
 
 - A ZOUND pod is not a silent vault: it brings a busy office down to a calm level where you can still hear an alarm or someone at the door.

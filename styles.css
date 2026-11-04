@@ -1567,6 +1567,19 @@ html[lang="th"] .about-mission li { font-family: "Noto Serif Thai", "Fraunces", 
   .about-three, .about-films, .about-co { grid-template-columns: 1fr; }
 }
 
+/* Company certifications on /about: text only, the certificates belong to 1-TO-ALL */
+.about-certs { margin-top: clamp(32px, 5vh, 56px); scroll-margin-top: 96px; }
+.about-certs-title { margin: 0 0 16px; font-size: 1rem; font-weight: 600; color: var(--ink); }
+.about-cert-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 2vw, 20px); }
+.about-cert-list li { display: grid; gap: 6px; align-content: start; padding: clamp(16px, 2vw, 22px); background: var(--shell); border: 1px solid var(--line); border-radius: 16px; }
+.about-cert-list strong { font-family: "Fraunces", Georgia, serif; font-weight: 500; font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--ink); }
+.about-cert-list span { color: var(--stone); font-size: 0.92rem; line-height: 1.45; }
+.about-cert-note { margin: 16px 0 0; max-width: 70ch; color: var(--stone); font-size: 0.88rem; }
+.about-cert-note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) {
+  .about-cert-list { grid-template-columns: 1fr; }
+}
+
 /* ============================================================
    COOLING — homepage #cooling: the VOGUE M / L / L Plus air-conditioner.
    Dark band after the airflow diagram; three steps, an honest

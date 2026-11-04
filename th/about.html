@@ -46,7 +46,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=learn4" />
+  <link rel="stylesheet" href="/styles.css?v=cert1" />
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -80,6 +80,11 @@
     "@type": "Organization",
     "name": "1-TO-ALL Co., Ltd.",
     "url": "https://1toall.co.th",
+    "hasCredential": [
+     {"@type": "EducationalOccupationalCredential", "name": "ISO 9001:2015", "credentialCategory": "certification", "description": "Quality management system"},
+     {"@type": "EducationalOccupationalCredential", "name": "ISO/IEC 27001:2022", "credentialCategory": "certification", "description": "Information security management, for Internet Provider services"},
+     {"@type": "EducationalOccupationalCredential", "name": "PCI DSS v4.0.1", "credentialCategory": "certification", "description": "Payment card data security, assessed by ACIS Professional Center"}
+    ],
     "address": {
      "@type": "PostalAddress",
      "streetAddress": "359, 361, 363 Pracha Uthit Rd.",
@@ -261,6 +266,15 @@
         <dd><a href="https://line.me/R/ti/p/@zound" target="_blank" rel="noopener">@zound</a></dd>
       </dl>
     </div>
+    <div class="about-certs reveal" id="certifications">
+      <h3 class="about-certs-title" data-i18n="ab_cert_title">การรับรองมาตรฐานของบริษัท</h3>
+      <ul class="about-cert-list">
+        <li><strong>ISO 9001:2015</strong><span data-i18n="ab_cert_9001">ระบบบริหารงานคุณภาพ</span></li>
+        <li><strong>ISO/IEC 27001:2022</strong><span data-i18n="ab_cert_27001">ระบบบริหารความมั่นคงปลอดภัยสารสนเทศ ในการให้บริการอินเทอร์เน็ต</span></li>
+        <li><strong>PCI DSS v4.0.1</strong><span data-i18n="ab_cert_pci">ความปลอดภัยของข้อมูลบัตรชำระเงิน ประเมินโดย ACIS Professional Center</span></li>
+      </ul>
+      <p class="about-cert-note" data-i18n="ab_cert_note">ได้รับการรับรองในนามบริษัท วัน-ทู-ออล จำกัด เจ้าของแบรนด์ ZOUND ครอบคลุมระบบบริหารงานและบริการของบริษัท ส่วนวัสดุและการทดสอบของตัวพ็อด ดูได้ที่หน้า <a href="/th/sustainable">ความยั่งยืน</a></p>
+    </div>
   </div></section>
 
   <!-- ============ CTA ============ -->
@@ -284,13 +298,14 @@
       <a href="/assets/docs/ZOUND-Catalogue-2026.pdf" download data-i18n="foot_cat">แคตตาล็อก (PDF)</a>
       <span>zoundpod.com · 02-030-3883</span>
       <span data-i18n="foot_series">VOGUE — ซีรีส์พ็อดเก็บเสียงเรือธงของเรา</span>
+      <a href="/th/about#certifications" data-i18n="foot_certs">1-TO-ALL: ISO 9001 · ISO/IEC 27001 · PCI DSS</a>
       <span data-i18n="foot_by">© 2026 ZOUND · โดย 1toAll</span>
     </div>
   </footer>
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="/scroll-cinematic.js?v=rv1"></script>
-  <script src="/i18n.js?v=nav2"></script>
+  <script src="/i18n.js?v=cert1"></script>
   <script src="/cc.js?v=ct4"></script>
   <script src="/sound.js?v=th1"></script>
   <script src="/series.js?v=mc1"></script>
