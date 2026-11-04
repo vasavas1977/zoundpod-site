@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <!-- Ad landing page. Built to show on a phone in under 3 seconds: no scroll engine, one 17–34 KB photo,
        inline CSS, two deferred scripts (cc.js for booking, consent.js for PDPA + ad measurement). -->
-  <title>นัดชมโชว์รูม ZOUND · ลองนั่งพ็อดเก็บเสียงของจริง</title>
-  <meta name="description" content="นัดชมแบบส่วนตัวที่โชว์รูม ZOUND ห้วยขวาง ลองนั่งพ็อดเก็บเสียง VOGUE ของจริง เทียบ SR, Life และ VOGUE ในห้องเดียวกัน เงียบลงสูงสุด 32 dB ติดตั้งราว 45 นาที" />
+  <title>นัดชมโชว์รูมตู้เก็บเสียง ZOUND | ลองนั่งของจริงที่ห้วยขวาง</title>
+  <meta name="description" content="นัดชมแบบส่วนตัวที่โชว์รูม ZOUND ห้วยขวาง ลองนั่งตู้เก็บเสียง VOGUE ของจริง เทียบ SR และ Life ในห้องเดียว ลดเสียงสูงสุด 32 dB ติดตั้งราว 45 นาที" />
   <meta name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#1c1813" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -14,8 +14,8 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ZOUND" />
-  <meta property="og:title" content="นัดชมโชว์รูม ZOUND · ลองนั่งพ็อดเก็บเสียงของจริง" />
-  <meta property="og:description" content="เทียบ SR, Life และ VOGUE ในห้องเดียวกัน เงียบลงสูงสุด 32 dB ติดตั้งราว 45 นาที" />
+  <meta property="og:title" content="นัดชมโชว์รูมตู้เก็บเสียง ZOUND | ลองนั่งของจริงที่ห้วยขวาง" />
+  <meta property="og:description" content="นัดชมแบบส่วนตัวที่โชว์รูม ZOUND ห้วยขวาง ลองนั่งตู้เก็บเสียง VOGUE ของจริง เทียบ SR และ Life ในห้องเดียว ลดเสียงสูงสุด 32 dB ติดตั้งราว 45 นาที" />
   <meta property="og:url" content="https://zoundpod.com/th/visit" />
   <meta property="og:image" content="https://zoundpod.com/assets/img/og-cover-th.jpg?v=brand1" />
   <meta property="og:locale" content="th_TH" />
@@ -96,6 +96,9 @@
     .learn { background: var(--sand); border-radius: 14px; padding: 20px; display: grid; gap: 8px; }
     .learn p { margin: 0; color: #4a433b; }
     .learn a { font-weight: 600; color: var(--terra); }
+    .learn .remote { margin: 6px 0 0; padding: 12px 0 0; border-top: 1px solid var(--line); list-style: none; display: grid; gap: 8px; }
+    .learn .fine { font-size: .84rem; color: var(--stone); }
+    .learn .fine a { font-weight: 400; text-decoration: underline; }
 
     .visit address { font-style: normal; color: #4a433b; }
     .visit .muted { margin: 0; color: var(--stone); font-size: .92rem; }
@@ -124,7 +127,7 @@
     <section class="hero">
       <div style="display:grid;gap:20px;min-width:0">
         <p class="eyebrow">โชว์รูม ZOUND · ห้วยขวาง กรุงเทพฯ</p>
-        <h1>ลองนั่งพ็อดเก็บเสียงของจริง ก่อนตัดสินใจ</h1>
+        <h1>ลองนั่งตู้เก็บเสียงของจริง ก่อนตัดสินใจ</h1>
         <p class="lead">นัดชมแบบส่วนตัว ฟังความเงียบด้วยตัวเอง ลองประชุมออนไลน์หรือโทรศัพท์ในพ็อดจริง แล้วเทียบ SR, Life และ VOGUE ในห้องเดียวกัน</p>
         <div class="ctas">
           <a class="btn" href="tel:+6620303883" data-cc="viewing">นัดชมโชว์รูม</a>
@@ -141,7 +144,7 @@
     </section>
 
     <div class="facts" role="list">
-      <div class="fact" role="listitem"><b>32 dB</b><span>เงียบลงสูงสุด (VOGUE)</span></div>
+      <div class="fact" role="listitem"><b>32 dB</b><span>ลดเสียงรบกวนสูงสุด (VOGUE)</span></div>
       <div class="fact" role="listitem"><b>95 m³/h</b><span>พัดลม Panasonic เสียงต่ำกว่า 40 dB</span></div>
       <div class="fact" role="listitem"><b>45 นาที</b><span>เวลาติดตั้งโดยประมาณ</span></div>
       <div class="fact" role="listitem"><b>GREENGUARD</b><span>วัสดุมาตรฐาน Gold ปล่อยมลพิษต่ำ</span></div>
@@ -173,6 +176,11 @@
         <div class="learn">
           <p>ยังไม่สะดวกมาโชว์รูม? เริ่มจากคลิปสั้นของเรา</p>
           <a href="https://youtu.be/Nj1cunqII0Q" target="_blank" rel="noopener">ดู 7 เช็กลิสต์ก่อนซื้อพ็อดเก็บเสียง ↗</a>
+          <ul class="remote">
+            <li><a href="https://line.me/R/ti/p/@zound" target="_blank" rel="noopener">วิดีโอคอล 15 นาที ให้ทีมงานพาชมโชว์รูมสด ↗</a></li>
+            <li><a href="https://line.me/R/ti/p/@zound" target="_blank" rel="noopener">ส่งรูปมุมออฟฟิศมา 1 รูป เราใช้ AI ทำภาพจำลองให้ดู ↗</a></li>
+          </ul>
+          <p class="fine">ทั้งสองแบบคุยกับทีมงานทาง LINE @zound รูปที่ส่งมาใช้เพื่อทำภาพจำลองเท่านั้น ดู<a href="/th/privacy">นโยบายความเป็นส่วนตัว</a></p>
         </div>
       </section>
     </div>
@@ -187,7 +195,7 @@
     </div>
   </footer>
 
-  <script src="/cc.js?v=ct4" defer></script>
+  <script src="/cc.js?v=ct5" defer></script>
   <script src="/consent.js?v=c2" defer></script>
 </body>
 </html>

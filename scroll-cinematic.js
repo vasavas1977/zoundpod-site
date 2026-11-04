@@ -2,37 +2,62 @@
    PRISM — scroll engine
    Multiple canvas frame-sequence scrub sections + scroll reveals + counters
    ============================================================ */
+/* How many of a sequence's frames this visitor downloads.
+   - Every device: the poster frame at once, the rest of a sequence only once its section is within
+     ~1.5 screens (a cold visit used to fetch all 1,338 frames, ~93 MB, as the page was scrolled).
+   - Only every Nth frame is ever requested: every 2nd on desktop, every 4th on a phone (narrow screen),
+     every 6th with Save-Data or a 2G/3G connection. The canvas draws the closest frame it has, so the
+     scrub still moves smoothly; it just steps through half, a quarter or a sixth of the pictures. */
+function frameStep() {
+  const c = navigator.connection || {};
+  if (c.saveData || /(^|-)[23]g$/.test(c.effectiveType || "")) return 6;
+  if (window.matchMedia && window.matchMedia("(max-width: 820px)").matches) return 4;
+  return 2;
+}
+
 function initScrub(cfg) {
   const section = document.querySelector(cfg.section);
   const canvas  = section.querySelector("canvas");
   const ctx     = canvas.getContext("2d", { alpha: false });
   const lines   = [...section.querySelectorAll(".reveal-line")];
   const bgFill  = cfg.bg || "#0a0a12";
+  const step    = frameStep();
   const images = [];
-  let firstDrawn = false;
+  let painted = false;                            // has the canvas shown a frame yet?
   let framesRequested = false;
-  /* Load the poster frame immediately so the canvas is never blank, but hold
-     the rest until the section is within ~1.5 viewports. Requesting all of
-     them up front made a cold visit fetch every frame of every section
-     (1,338 files, ~81MB) before the visitor had scrolled anywhere. */
+  let current = -1;
   function loadFrame(i) {
     if (images[i]) return images[i];
     const img = new Image();
+    img.onload = () => {
+      const at = current < 0 ? 0 : current;
+      if (!painted || Math.abs(i - at) < step) draw(at);   // a nearer frame than the one on screen has arrived
+    };
     img.src = cfg.framePath(i + 1);
-    img.onload = () => { if (!firstDrawn) { firstDrawn = true; draw(0); } };
     images[i] = img;
     return img;
   }
+  /* every step-th frame, and the last so the end of the sequence is exact */
   function loadAllFrames() {
     if (framesRequested) return;
     framesRequested = true;
-    for (let i = 0; i < cfg.frameCount; i++) loadFrame(i);
+    for (let i = 0; i < cfg.frameCount; i++) if (i % step === 0 || i === cfg.frameCount - 1) loadFrame(i);
   }
   loadFrame(0);
-  let current = -1;
+  /* the loaded frame closest to the one asked for */
+  function nearest(index) {
+    for (let d = 0; d <= step * 2; d++) {
+      for (const i of d ? [index - d, index + d] : [index]) {
+        const img = images[i];
+        if (img && img.complete && img.naturalWidth) return img;
+      }
+    }
+    return null;
+  }
   function draw(index) {
-    const img = images[index];
-    if (!img || !img.complete || !img.naturalWidth) return;
+    const img = nearest(index);
+    if (!img) return;
+    painted = true;
     const cw = canvas.clientWidth, ch = canvas.clientHeight;
     const ir = img.naturalWidth / img.naturalHeight, cr = cw / ch;
     let dw, dh, dx, dy;
@@ -50,9 +75,9 @@ function initScrub(cfg) {
   }
   function update() {
     const rect = section.getBoundingClientRect();
-    /* pull the rest of the frames in once the section is within ~1.5 screens.
-       Driven off the rAF rect rather than IntersectionObserver so there is no
-       second code path that can silently fail and strand the poster frame. */
+    /* pull the frames in once the section is within ~1.5 screens. Driven off the rAF rect
+       rather than IntersectionObserver so there is no second code path that can silently fail
+       and strand the poster frame. */
     const vh = window.innerHeight || 800;
     const near = vh * 1.5;
     if (rect.bottom > -near && rect.top < window.innerHeight + near) loadAllFrames();

@@ -4,7 +4,7 @@
 
 Website: https://zoundpod.com (the only official ZOUND website)
 Phone: 02-030-3883 (+66 2 030 3883) · Email: contact@zoundpod.com · LINE: @zound
-Showroom: Pracha Uthit Soi 5, Huai Khwang, Bangkok — private viewings by appointment, all three series side by side.
+Showroom: 359, 361, 363 Pracha Uthit Rd. (Pracha Uthit Soi 5), Huai Khwang, Bangkok 10310 — private viewings by appointment, Monday to Saturday 10:00–18:00, all three series side by side.
 
 ## Key pages
 
@@ -18,6 +18,7 @@ Showroom: Pracha Uthit Soi 5, Huai Khwang, Bangkok — private viewings by appoi
 - [Sustainability](https://zoundpod.com/sustainable): materials and emissions
 - [2026 catalogue (PDF, 18 MB)](https://zoundpod.com/assets/docs/ZOUND-Catalogue-2026.pdf): full specification tables
 - [Thai home page](https://zoundpod.com/th)
+- [Thai questions and answers](https://zoundpod.com/th/faq): ventilation, noise reduction, installation, moving, warranty, materials, sizes, power and viewings
 
 ## The three series at a glance
 
@@ -71,3 +72,34 @@ These certifications cover the company's management systems and services. Pod ma
 - A ZOUND pod is not a silent vault: it brings a busy office down to a calm level where you can still hear an alarm or someone at the door.
 - Every series: no screws, no bolts, no glue, and no wood-based materials.
 - Buyers are encouraged to visit the showroom before choosing — like viewing a show unit before buying a condo.
+
+
+## ภาษาไทย (Thai)
+
+> ZOUND คือตู้เก็บเสียงและห้องเก็บเสียงสำเร็จรูปสำหรับออฟฟิศและบ้านในประเทศไทย จำหน่ายและติดตั้งโดยบริษัท วัน-ทู-ออล จำกัด กรุงเทพฯ มี 3 ซีรีส์ คือ VOGUE (รุ่นเรือธง) SR (รุ่นต้นฉบับสำหรับออฟฟิศ) และ Life (สำหรับบ้าน) ทุกรุ่นไม่ใช้ไม้ ไม่ใช้กาว ไม่ใช้สกรู ตั้งอิสระ ไม่ต้องทุบ ไม่ต้องต่อเติม
+
+คำที่ลูกค้าคนไทยใช้ค้นหา: ตู้เก็บเสียง, ห้องเก็บเสียงสำเร็จรูป, ตู้เก็บเสียงออฟฟิศ, ห้องเก็บเสียงสำหรับบ้าน, ห้องประชุมเล็กสำเร็จรูป, phone booth ออฟฟิศ, บูธเก็บเสียง, พ็อดเก็บเสียง
+
+หน้าภาษาไทย: [หน้าแรก](https://zoundpod.com/th) · [ซีรีส์ SR](https://zoundpod.com/th/sr) · [ซีรีส์ Life](https://zoundpod.com/th/life) · [โชว์รูม](https://zoundpod.com/th/showroom) · [คำถามที่พบบ่อย](https://zoundpod.com/th/faq) · [เรียนรู้](https://zoundpod.com/th/learn) · [เกี่ยวกับ ZOUND](https://zoundpod.com/th/about) · [วัสดุและความยั่งยืน](https://zoundpod.com/th/sustainable)
+
+### สามซีรีส์
+
+- VOGUE (รุ่นเรือธง): ขนาด S, S Plus, M, L, L Plus นั่งได้ 1–4 คน ลดเสียงรบกวนสูงสุด 32 dB ทุกขนาด มีพัดลมระบายอากาศ ติดตั้งราว 45 นาที มี 7 สี ระบบทำความเย็นแถมให้เฉพาะรุ่น M, L และ L Plus (ไม่ใช่แอร์แบบที่ใช้ในออฟฟิศหรือบ้าน)
+- SR (รุ่นต้นฉบับสำหรับออฟฟิศ): ขนาด S, M, L, XL นั่งได้ 1–6 คน (รุ่น 2XL สำหรับ 8 คน ผลิตตามสั่ง) รุ่น S ลดเสียง 30 dB ±5 รุ่น M, L, XL แคตตาล็อกยังไม่ระบุตัวเลข มี 5 สี ไม่มีระบบทำความเย็น
+- Life (สำหรับบ้านและออฟฟิศขนาดเล็ก): ขนาด Home, Pro S, Pro L นั่งได้ 1–4 คน ลดเสียง 30 dB ±5 ติดล้อเลื่อนย้ายได้ ผนังหุ้มผ้า 6 สี ประกอบเสร็จราว 3 ชั่วโมง ไม่มีระบบทำความเย็น
+
+ราคาขึ้นกับขนาด สี และหน้างาน ขอใบเสนอราคาจากทีมงาน
+
+### โชว์รูม และวิธีนัดชม
+
+- โชว์รูม: 359, 361, 363 ถ.ประชาอุทิศ (ประชาอุทิศ ซ.5) เขตห้วยขวาง กรุงเทพมหานคร 10310 ลองนั่งของจริงและเทียบทั้งสามซีรีส์ในที่เดียว
+- เข้าชมตามนัดหมาย จันทร์–เสาร์ 10:00–18:00
+- นัดชม: ปุ่ม “นัดชมโชว์รูม” ที่ https://zoundpod.com/th/visit หรือโทร 02-030-3883 หรือ LINE @zound (https://line.me/R/ti/p/@zound)
+- ยังไม่สะดวกมาโชว์รูม: วิดีโอคอล 15 นาที ให้ทีมงานพาชมโชว์รูมสด หรือส่งรูปมุมออฟฟิศมา 1 รูป เราใช้ AI ทำภาพจำลองให้ดู ผ่าน LINE @zound
+
+### ควรรู้
+
+- ตู้ลดเสียงรบกวน ไม่ใช่ห้องที่ตัดเสียงทั้งหมด ภายในสงบราว 30 dB และยังได้ยินสัญญาณเตือนหรือเสียงเคาะประตู
+- รับประกันโครงสร้าง 3 ปี / 1 ปี ระบบไฟฟ้าและอิเล็กทรอนิกส์
+- ZOUND เป็นแบรนด์ของบริษัท วัน-ทู-ออล จำกัด ซึ่งได้รับ ISO 9001:2015, ISO/IEC 27001:2022 และ PCI DSS v4.0.1 ใบรับรองเหล่านี้ครอบคลุมระบบการจัดการและบริการของบริษัท ไม่ใช่การทดสอบตัวพ็อด
+- ถ้าออฟฟิศเป็นพื้นที่เช่า อาจต้องได้รับความยินยอมจากเจ้าของอาคารก่อนติดตั้ง

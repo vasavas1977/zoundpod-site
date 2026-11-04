@@ -26,19 +26,23 @@
       sales:    { t: "Talk to sales", s: "Sales enquiry",
                   l: "Tell us about your floor and we\u2019ll come back to you." },
       viewing:  { t: "Book a viewing", s: "Showroom viewing request",
-                  l: "Pick a time that suits you. We\u2019ll call to confirm it and email you the confirmation and directions." },
+                  l: "Pick a time that suits you. We\u2019ll call to confirm it, and if you leave an email we\u2019ll send the confirmation and directions there too." },
       question: { t: "Ask a question", s: "Question",
                   l: "Ask us anything \u2014 sizes, acoustics, lead time, installation." },
       quote:    { t: "Get a free consultation", s: "Consultation request",
                   l: "Tell us about your space and we\u2019ll design the quiet around it." },
       name: "Your name", email: "Email", phone: "Phone", msg: "How can we help?",
+      emailOpt: "Email (optional)", emailReq: "Email (required)", phoneReq: "Phone (required)",
+      seats: "Seats you need (optional)", heard: "How did you hear about us? (optional)",
       send: "Send", sending: "Sending…", close: "Close",
       ok: "Thank you — our team has your message and will come back to you shortly.",
       err: "Sorry, that didn’t send. Please call 02-030-3883 or message LINE @zound and we’ll pick it up right away.",
       req: "Please add your name and either an email or a phone number.",
       pickDay: "Pick a day", pickTime: "Pick a time", tz: "Showroom time (Bangkok)",
       needSlot: "Please choose a day and a time for your visit.",
-      needBoth: "For a viewing please leave both a phone number and an email \u2014 we call to confirm and send the confirmation by email.",
+      needPhone: "For a viewing please leave a phone number \u2014 we call to confirm your visit.",
+      needEmail: "For a viewing please also leave an email \u2014 we send the confirmation there.",
+      badEmail: "That email address doesn\u2019t look right. Please check it.",
       loading: "Loading available times\u2026",
       gridErr: "We couldn\u2019t load the calendar just now. Send your details anyway and we\u2019ll call to agree a time \u2014 or call 02-030-3883.",
       noSlots: "No times are open over the next few weeks. Send your details and we\u2019ll call you.",
@@ -47,6 +51,7 @@
       slotGone: "That time is no longer available. Please choose another.",
       limited: "We\u2019ve already received several requests from this connection. Please call 02-030-3883 or message LINE @zound.",
       okBooked: "You\u2019re booked in for {s} \u2014 reference {r}. Someone will call you shortly to confirm, and a confirmation email is on its way.",
+      okBookedNoMail: "You\u2019re booked in for {s} \u2014 reference {r}. Someone will call you shortly to confirm. Please keep this reference.",
       refLine: "Your booking reference: {r}",
       unnotified: "If you haven\u2019t heard from us within a working day, call 02-030-3883 and quote {r}.",
       manage: { t: "Your booking", s: "", l: "Change the time or cancel below." },
@@ -67,19 +72,23 @@
       sales:    { t: "ปรึกษาฝ่ายขาย", s: "สอบถามฝ่ายขาย",
                   l: "เล่าเรื่องพื้นที่ของคุณให้เราฟัง แล้วเราจะติดต่อกลับไป" },
       viewing:  { t: "นัดชมโชว์รูม", s: "ขอนัดชมโชว์รูม",
-                  l: "เลือกเวลาที่คุณสะดวก เราจะโทรยืนยันและส่งอีเมลยืนยันพร้อมแผนที่ให้" },
+                  l: "เลือกเวลาที่คุณสะดวก เราจะโทรยืนยัน และถ้าคุณกรอกอีเมล เราจะส่งอีเมลยืนยันพร้อมแผนที่ให้ด้วย" },
       question: { t: "สอบถามข้อมูล", s: "คำถาม",
                   l: "ถามได้ทุกเรื่อง ทั้งขนาด ค่าอะคูสติก ระยะเวลาผลิต และการติดตั้ง" },
       quote:    { t: "ขอคำปรึกษาฟรี", s: "ขอคำปรึกษา",
                   l: "เล่าเรื่องพื้นที่ของคุณให้เราฟัง แล้วเราจะออกแบบความเงียบให้พอดี" },
       name: "ชื่อของคุณ", email: "อีเมล", phone: "เบอร์โทร", msg: "ให้เราช่วยเรื่องอะไรดี?",
+      emailOpt: "อีเมล (ไม่บังคับ)", emailReq: "อีเมล (จำเป็น)", phoneReq: "เบอร์โทร (จำเป็น)",
+      seats: "จำนวนที่นั่งที่สนใจ (ไม่บังคับ)", heard: "รู้จัก ZOUND จากที่ไหน (ไม่บังคับ)",
       send: "ส่ง", sending: "กำลังส่ง…", close: "ปิด",
       ok: "ขอบคุณครับ ทีมงานได้รับข้อความแล้ว และจะติดต่อกลับโดยเร็วที่สุด",
       err: "ขออภัย ส่งไม่สำเร็จ กรุณาโทร 02-030-3883 หรือทักไลน์ @zound แล้วเราจะดูแลให้ทันที",
       req: "กรุณากรอกชื่อ และอีเมลหรือเบอร์โทรอย่างน้อยหนึ่งอย่าง",
       pickDay: "เลือกวัน", pickTime: "เลือกเวลา", tz: "เวลาโชว์รูม (กรุงเทพฯ)",
       needSlot: "กรุณาเลือกวันและเวลาที่สะดวกเข้าชม",
-      needBoth: "สำหรับนัดชมโชว์รูม กรุณากรอกทั้งเบอร์โทรและอีเมล เพราะเราจะโทรยืนยันและส่งอีเมลยืนยันให้",
+      needPhone: "สำหรับนัดชมโชว์รูม กรุณากรอกเบอร์โทร เพราะเราจะโทรยืนยันนัดกับคุณ",
+      needEmail: "สำหรับนัดชมโชว์รูม กรุณากรอกอีเมลด้วย เพราะเราจะส่งอีเมลยืนยันให้",
+      badEmail: "อีเมลดูไม่ถูกต้อง กรุณาตรวจสอบอีกครั้ง",
       loading: "กำลังโหลดเวลาที่ว่าง\u2026",
       gridErr: "ขออภัย ตอนนี้โหลดปฏิทินไม่ได้ ฝากรายละเอียดไว้ได้เลย แล้วเราจะโทรนัดเวลากับคุณ หรือโทร 02-030-3883",
       noSlots: "ช่วงไม่กี่สัปดาห์ข้างหน้ายังไม่มีเวลาว่าง ฝากรายละเอียดไว้ แล้วเราจะโทรหาคุณ",
@@ -88,6 +97,7 @@
       slotGone: "เวลานี้ไม่ว่างแล้ว กรุณาเลือกเวลาอื่น",
       limited: "เราได้รับคำขอจากการเชื่อมต่อนี้หลายครั้งแล้ว กรุณาโทร 02-030-3883 หรือทักไลน์ @zound",
       okBooked: "จองเรียบร้อยแล้วสำหรับ {s} รหัสการจอง {r} เจ้าหน้าที่จะโทรยืนยันกับคุณเร็ว ๆ นี้ พร้อมส่งอีเมลยืนยันตามไปด้วย",
+      okBookedNoMail: "จองเรียบร้อยแล้วสำหรับ {s} รหัสการจอง {r} เจ้าหน้าที่จะโทรยืนยันกับคุณเร็ว ๆ นี้ กรุณาจดรหัสนี้ไว้",
       refLine: "รหัสการจองของคุณ: {r}",
       unnotified: "หากยังไม่ได้รับการติดต่อภายในหนึ่งวันทำการ กรุณาโทร 02-030-3883 แล้วแจ้งรหัส {r}",
       manage: { t: "การจองของคุณ", s: "", l: "เปลี่ยนเวลาหรือยกเลิกได้ด้านล่าง" },
@@ -106,6 +116,18 @@
     }
   };
   function L() { return document.documentElement.lang === "th" ? T.th : T.en; }
+
+  /* Two optional questions on a viewing request. The value is what the team reads in the
+     booking note, so it is the same Thai wording whichever language the visitor used. */
+  var OPT = {
+    seats: [["1 คน", "1 คน", "1 person"], ["2-4 คน", "2-4 คน", "2\u20134 people"],
+            ["5-6 คน", "5-6 คน", "5\u20136 people"], ["ยังไม่แน่ใจ", "ยังไม่แน่ใจ", "Not sure yet"]],
+    heard: [["Google", "Google", "Google"], ["Facebook", "Facebook", "Facebook"], ["Instagram", "Instagram", "Instagram"],
+            ["TikTok", "TikTok", "TikTok"], ["YouTube", "YouTube", "YouTube"], ["LINE", "LINE", "LINE"],
+            ["เพื่อนหรือคนรู้จัก", "เพื่อนหรือคนรู้จัก", "A friend or colleague"],
+            ["นักออกแบบหรือผู้รับเหมา", "นักออกแบบหรือผู้รับเหมา", "A designer or contractor"],
+            ["อื่น ๆ", "อื่น ๆ", "Other"]]
+  };
 
   /* ---------- modal ---------- */
   var modal, form, status, intent = "sales";
@@ -128,6 +150,11 @@
       ".cc-f>*{min-width:0}.cc-cal,.cc-days,.cc-slots{min-width:0;max-width:100%}" +
       ".cc-f input,.cc-f textarea{font:inherit;font-size:.95rem;color:#1C1813;background:#fff;border:1px solid rgba(28,24,19,.16);" +
       "border-radius:10px;padding:12px 14px;width:100%}" +
+      ".cc-f select{font:inherit;font-size:.95rem;color:#6F6559;width:100%;border:1px solid rgba(28,24,19,.16);border-radius:10px;" +
+      "padding:12px 38px 12px 14px;-webkit-appearance:none;appearance:none;" +
+      "background:#fff url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236F6559' stroke-width='1.6'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E\") no-repeat right 14px center}" +
+      ".cc-f select.on,.cc-f select option{color:#1C1813}" +
+      ".cc-f select:focus{outline:2px solid #B5613F;outline-offset:1px}" +
       ".cc-f textarea{min-height:104px;resize:vertical}" +
       ".cc-f input:focus,.cc-f textarea:focus{outline:2px solid #B5613F;outline-offset:1px}" +
       ".cc-row{display:flex;gap:10px;align-items:center;margin-top:6px}" +
@@ -162,7 +189,7 @@
       ".cc-tz{color:#6F6559;font-size:.76rem;margin:0 0 10px}" +
       ".cc-none{color:#6F6559;font-size:.85rem;margin:0 0 8px}" +
       /* manage view: the booking card and its actions replace the contact fields */
-      ".cc-ov.managing .cc-f>input,.cc-ov.managing .cc-f>textarea,.cc-ov.managing .cc-f>.cc-row{display:none}" +
+      ".cc-ov.managing .cc-f>input,.cc-ov.managing .cc-f>select,.cc-ov.managing .cc-f>textarea,.cc-ov.managing .cc-f>.cc-row{display:none}" +
       ".cc-sum{background:#fff;border:1px solid rgba(28,24,19,.12);border-radius:12px;padding:14px 16px;margin:0 0 14px;" +
       "display:grid;gap:3px;font-size:.92rem;line-height:1.5}" +
       ".cc-sum b{font-weight:600}.cc-sum span{color:#6F6559}" +
@@ -191,6 +218,8 @@
           '<input name="name" autocomplete="name" required />' +
           '<input name="email" type="email" autocomplete="email" />' +
           '<input name="phone" type="tel" autocomplete="tel" />' +
+          '<select name="seats" class="cc-opt"></select>' +
+          '<select name="heard" class="cc-opt"></select>' +
           '<textarea name="message"></textarea>' +
           '<div class="cc-row"><button class="cc-send" type="submit"></button>' +
           '<button class="cc-x" type="button"></button></div>' +
@@ -323,6 +352,7 @@
 
   function renderCal() {
     if (!modal) return;
+    paintContact();
     var cal = modal.querySelector(".cc-cal"), d = L();
     if (!calType()) { cal.classList.remove("on"); return; }
     cal.classList.add("on");
@@ -359,13 +389,47 @@
     renderSlots();
   }
 
+  /* What a booking needs comes from the booking type in the contact center (cc_booking_types:
+     require_phone / require_email), so the form asks for exactly what cc_book will accept. Until
+     the grid has loaded, or if it cannot: a phone number, and an email is optional. */
+  function needs() {
+    var t = grid && grid.type;
+    return { phone: t ? !!t.require_phone : true, email: t ? !!t.require_email : false };
+  }
+
+  function fillOptions(sel, label, opts) {
+    var th = document.documentElement.lang === "th";
+    sel.innerHTML = "";
+    var o = document.createElement("option");
+    o.value = ""; o.textContent = label;
+    sel.appendChild(o);
+    opts.forEach(function (x) {
+      var op = document.createElement("option");
+      op.value = x[0]; op.textContent = th ? x[1] : x[2];
+      sel.appendChild(op);
+    });
+    sel.setAttribute("aria-label", label);
+    sel.classList.remove("on");                   // the empty first option reads as a placeholder
+    sel.onchange = function () { sel.classList.toggle("on", !!sel.value); };
+  }
+
+  function paintContact() {
+    if (!modal) return;
+    var d = L(), booking = !!BOOKING_TYPE[intent], n = needs();
+    form.email.placeholder = booking ? (n.email ? d.emailReq : d.emailOpt) : d.email;
+    form.phone.placeholder = booking && n.phone ? d.phoneReq : d.phone;
+  }
+
   function paint() {
     var d = L(), k = d[intent] || d.sales;
     modal.querySelector("[data-cc-title]").textContent = k.t;
     modal.querySelector("[data-cc-lead]").textContent = k.l || d.msg;
     form.name.placeholder = d.name;
-    form.email.placeholder = d.email;
-    form.phone.placeholder = d.phone;
+    paintContact();
+    var booking = !!BOOKING_TYPE[intent];
+    [].slice.call(modal.querySelectorAll(".cc-opt")).forEach(function (el) { el.style.display = booking ? "" : "none"; });
+    fillOptions(form.seats, d.seats, OPT.seats);
+    fillOptions(form.heard, d.heard, OPT.heard);
     form.message.placeholder = d.msg;
     modal.querySelector(".cc-send").textContent = d.send;
     modal.querySelector(".cc-x").textContent = d.close;
@@ -441,19 +505,31 @@
       message: form.message.value.trim(),
       language: document.documentElement.lang === "th" ? "th" : "en"
     };
-    if (!body.name || (!body.email && !body.phone)) { setStatus(d.req, "err"); return; }
+    var type = BOOKING_TYPE[intent];
+    if (!body.name || (!type && !body.email && !body.phone)) { setStatus(d.req, "err"); return; }
     /* where this visitor came from (consent.js); shown to the team as "Lead source" */
     if (window.ZoundTrack && window.ZoundTrack.source) body.source = window.ZoundTrack.source();
 
-    var type = BOOKING_TYPE[intent];
     var booking = !!type && gridState === "ready";
     if (type) {
-      var need = (grid && grid.type) || { require_phone: true, require_email: true };
-      if ((need.require_phone && !body.phone) || (need.require_email && !body.email)) {
-        setStatus(d.needBoth, "err"); return;
-      }
+      var need = needs();
+      if (need.phone && !body.phone) { setStatus(d.needPhone, "err"); return; }
+      if (need.email && !body.email) { setStatus(d.needEmail, "err"); return; }
+      if (!body.phone && !body.email) { setStatus(d.needPhone, "err"); return; }
     }
+    /* an email is optional on a viewing, so a mistyped one would only fail later, after the slot is held */
+    if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) { setStatus(d.badEmail, "err"); return; }
     if (booking && !pickedSlot) { setStatus(d.needSlot, "err"); return; }
+
+    /* the two optional answers go in front of the visitor's own words, so the team sees them in the
+       booking note and in the message that reaches the inbox */
+    var sentEmail = !!body.email;
+    if (type) {
+      var extra = [];
+      if (form.seats.value) extra.push("ที่นั่ง / Seats: " + form.seats.value);
+      if (form.heard.value) extra.push("รู้จัก ZOUND จาก / Heard of us via: " + form.heard.value);
+      if (extra.length) body.message = extra.join("\n") + (body.message ? "\n\n" + body.message : "");
+    }
 
     var slot = booking ? slotText() : "";
     btn.disabled = true; btn.textContent = d.sending;
@@ -484,7 +560,9 @@
       if (bk) {
         body.subject = body.subject + " — " + slot + " — " + ref;
         body.message = "Booking " + ref + " — slot held: " + slot + " (" + grid.type.tz + ")\n" +
-                       "Customer was told: we will call to confirm and send an email confirmation." +
+                       (sentEmail
+                         ? "Customer was told: we will call to confirm and send an email confirmation."
+                         : "Customer was told: we will call to confirm. No email was given, so no email confirmation is sent.") +
                        (body.message ? "\n\n" + body.message : "");
       } else if (type) {
         body.message = "Live calendar unavailable — no slot was held. Please call to agree a time." +
@@ -501,7 +579,7 @@
       if (res.ref) {
         msg = res.reply
           ? res.reply + "\n\n" + d.refLine.replace("{r}", res.ref)
-          : d.okBooked.replace("{s}", slot).replace("{r}", res.ref);
+          : (sentEmail ? d.okBooked : d.okBookedNoMail).replace("{s}", slot).replace("{r}", res.ref);
         if (res.unnotified) msg += "\n\n" + d.unnotified.replace("{r}", res.ref);
       } else {
         msg = res.reply || d.ok;
@@ -524,7 +602,7 @@
       } else if (r === "rate_limited") {
         setStatus(d.limited, "err");
       } else if (r === "contact_required") {
-        setStatus(d.needBoth, "err");
+        setStatus(needs().email && !body.email ? d.needEmail : d.needPhone, "err");
       } else if (r) {
         setStatus(d.slotGone, "err"); pickedSlot = null; loadGrid();
       } else {
