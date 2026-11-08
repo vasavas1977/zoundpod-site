@@ -1,6 +1,6 @@
 # ZOUND
 
-> ZOUND makes soundproof pods (acoustic booths) for offices and homes in Thailand, sold and installed by 1-TO-ALL Co., Ltd. in Bangkok. There are three series: VOGUE (the flagship), SR (the professional original) and Life (for the home). Every ZOUND pod is built without screws, glue or any wood-based material, and stands freestanding with no building work.
+> ZOUND makes soundproof pods (acoustic booths) for offices and homes in Thailand, sold and installed by 1-TO-ALL Co., Ltd. in Bangkok. There are three indoor series: VOGUE (the flagship), SR (the professional original) and Life (for the home), plus the Outdoor Series and a Smoking Pod, both new in 2026. Every ZOUND pod is built without screws, glue or any wood-based material, and stands freestanding with no building work.
 
 Website: https://zoundpod.com (the only official ZOUND website)
 Phone: 02-030-3883 (+66 2 030 3883) · Email: contact@zoundpod.com · LINE: @zound
@@ -9,9 +9,10 @@ Showroom: 359, 361, 363 Pracha Uthit Rd. (Pracha Uthit Soi 5), Huai Khwang, Bang
 ## Key pages
 
 - [VOGUE Series (home page)](https://zoundpod.com/): the flagship, five sizes, specification and smart features
-- [SR Series](https://zoundpod.com/sr): four sizes for offices, five finishes
+- [SR Series](https://zoundpod.com/sr): five sizes for offices, five finishes
 - [Life Series](https://zoundpod.com/life): three sizes for the home, six fabrics
 - [Compare VOGUE, SR and Life](https://zoundpod.com/showroom#compare): who each series is for, side by side, every model
+- [Outdoor Series and Smoking Pod](https://zoundpod.com/showroom#more-pods): the two newest pods in the 2026 range
 - [VOGUE air-conditioning](https://zoundpod.com/#cooling): how the no-drain-pipe cooling works, and its specification
 - [Showroom and booking](https://zoundpod.com/showroom): book a private viewing
 - [About ZOUND](https://zoundpod.com/about): the company story and the CEO, Vasavas Nonsopa
@@ -35,12 +36,12 @@ If ZOUND pods were airline seats: SR is a great economy seat on a full-service a
 - Seven colours. Starting price from ฿36x,xxx.
 
 ### SR (professional, the original)
-- Best for: offices — focus booths up to six-person meeting rooms.
-- Models: S, M, L, XL — 1 to 6 people (an 8-person 2XL is made to order).
-- Footprint 1.00 × 0.94 m to 2.20 × 2.14 m; height 2.30 m; weight 235–721 kg.
-- Sound reduction 30 dB ±5 on Model S; not stated in the catalogue for M, L and XL.
-- Fresh air 78–300 m³/h (1–3 fans); power draw 17–39 W.
-- USB 3.0 and 100–240 V sockets (USB-C on L and XL); motion sensor.
+- Best for: offices — focus booths up to eight-person meeting rooms.
+- Models: S, M, L, XL, 2XL — 1 to 8 people.
+- Footprint 1.00 × 0.94 m to 3.00 × 4.29 m; height 2.30 m; weight 235–1,442 kg.
+- Sound reduction 30 dB ±5, every size.
+- Fresh air 78–435 m³/h (1–3 fans); power draw 17–227 W.
+- USB 3.0, USB-C and 100–240 V sockets on every size; motion sensor.
 - Options: smart lock, conference set. No air-conditioning.
 - Five colours: White, Grey, Orange, Green, Black. Starting price from ฿2xx,xxx.
 
@@ -52,7 +53,19 @@ If ZOUND pods were airline seats: SR is a great economy seat on a full-service a
 - Walls clad in acoustic fabric; on wheels; about three hours to assemble. No air-conditioning.
 - Six fabrics: Cloud, Hazel, Storm, Taffy, Mint, Southsea. Promotion from ฿12x,xxx until 31 December 2026.
 
-Prices are starting prices; a quote depends on the size, finish and site.
+### Outdoor Series (new in 2026)
+- Best for: terraces, rooftops and gardens.
+- Models: L, XL, 2XL — 4, 6 and 8 people.
+- Footprint 2.20 × 1.59 m to 3.00 × 4.29 m; height 2.30 m; weight 642–1,460 kg.
+- Sound reduction 30 dB ±5. Waterproof carbon-plastic composite and aluminium structure with thermal insulation.
+- Built-in top-mounted air-conditioning with eco-friendly refrigerant (a split unit on the 2XL); power draw 1,100–1,410 W. Smart lock included.
+
+### Smoking Pod (new in 2026)
+- A smoking room for one person: Model S, 1.00 × 0.99 × 2.25 m, 260 kg.
+- Sound reduction 30 dB ±5. Turbo fan and filter, 250 m³/h; power draw 75 W.
+- Self-extinguishing ashtray, backrest, built-in display and wireless charger.
+
+Prices are starting prices for VOGUE, SR and Life; a quote depends on the size, finish and site.
 
 ## VOGUE air-conditioning
 
@@ -76,7 +89,7 @@ These certifications cover the company's management systems and services. Pod ma
 
 ## ภาษาไทย (Thai)
 
-> ZOUND คือตู้เก็บเสียงและห้องเก็บเสียงสำเร็จรูปสำหรับออฟฟิศและบ้านในประเทศไทย จำหน่ายและติดตั้งโดยบริษัท วัน-ทู-ออล จำกัด กรุงเทพฯ มี 3 ซีรีส์ คือ VOGUE (รุ่นเรือธง) SR (รุ่นต้นฉบับสำหรับออฟฟิศ) และ Life (สำหรับบ้าน) ทุกรุ่นไม่ใช้ไม้ ไม่ใช้กาว ไม่ใช้สกรู ตั้งอิสระ ไม่ต้องทุบ ไม่ต้องต่อเติม
+> ZOUND คือตู้เก็บเสียงและห้องเก็บเสียงสำเร็จรูปสำหรับออฟฟิศและบ้านในประเทศไทย จำหน่ายและติดตั้งโดยบริษัท วัน-ทู-ออล จำกัด กรุงเทพฯ มี 3 ซีรีส์สำหรับใช้ในอาคาร คือ VOGUE (รุ่นเรือธง) SR (รุ่นต้นฉบับสำหรับออฟฟิศ) และ Life (สำหรับบ้าน) และมีรุ่นใหม่ปี 2026 คือซีรีส์ Outdoor และ Smoking Pod ทุกรุ่นไม่ใช้ไม้ ไม่ใช้กาว ไม่ใช้สกรู ตั้งอิสระ ไม่ต้องทุบ ไม่ต้องต่อเติม
 
 คำที่ลูกค้าคนไทยใช้ค้นหา: ตู้เก็บเสียง, ห้องเก็บเสียงสำเร็จรูป, ตู้เก็บเสียงออฟฟิศ, ห้องเก็บเสียงสำหรับบ้าน, ห้องประชุมเล็กสำเร็จรูป, phone booth ออฟฟิศ, บูธเก็บเสียง, พ็อดเก็บเสียง
 
@@ -85,8 +98,10 @@ These certifications cover the company's management systems and services. Pod ma
 ### สามซีรีส์
 
 - VOGUE (รุ่นเรือธง): ขนาด S, S Plus, M, L, L Plus นั่งได้ 1–4 คน ลดเสียงรบกวนสูงสุด 32 dB ทุกขนาด มีพัดลมระบายอากาศ ติดตั้งราว 45 นาที มี 7 สี ระบบทำความเย็นแถมให้เฉพาะรุ่น M, L และ L Plus (ไม่ใช่แอร์แบบที่ใช้ในออฟฟิศหรือบ้าน)
-- SR (รุ่นต้นฉบับสำหรับออฟฟิศ): ขนาด S, M, L, XL นั่งได้ 1–6 คน (รุ่น 2XL สำหรับ 8 คน ผลิตตามสั่ง) รุ่น S ลดเสียง 30 dB ±5 รุ่น M, L, XL แคตตาล็อกยังไม่ระบุตัวเลข มี 5 สี ไม่มีระบบทำความเย็น
+- SR (รุ่นต้นฉบับสำหรับออฟฟิศ): ขนาด S, M, L, XL, 2XL นั่งได้ 1–8 คน ลดเสียง 30 dB ±5 ทุกขนาด มี 5 สี ไม่มีระบบทำความเย็น
 - Life (สำหรับบ้านและออฟฟิศขนาดเล็ก): ขนาด Home, Pro S, Pro L นั่งได้ 1–4 คน ลดเสียง 30 dB ±5 ติดล้อเลื่อนย้ายได้ ผนังหุ้มผ้า 6 สี ประกอบเสร็จราว 3 ชั่วโมง ไม่มีระบบทำความเย็น
+- Outdoor (ใหม่ปี 2026): ขนาด L, XL, 2XL นั่งได้ 4, 6 และ 8 คน ลดเสียง 30 dB ±5 กันน้ำ มีฉนวนกันความร้อน แอร์ในตัวติดตั้งด้านบน และ Smart Lock สำหรับระเบียง ดาดฟ้า และสวน
+- Smoking Pod (ใหม่ปี 2026): ห้องสูบบุหรี่สำหรับ 1 คน รุ่น S ลดเสียง 30 dB ±5 พัดลม Turbo พร้อมไส้กรอง 250 ม³/ชม. ที่เขี่ยบุหรี่ดับไฟอัตโนมัติ หน้าจอแสดงผล และแท่นชาร์จไร้สาย
 
 ราคาขึ้นกับขนาด สี และหน้างาน ขอใบเสนอราคาจากทีมงาน
 
