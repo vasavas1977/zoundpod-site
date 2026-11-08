@@ -16,7 +16,7 @@ Showroom: 359, 361, 363 Pracha Uthit Rd. (Pracha Uthit Soi 5), Huai Khwang, Bang
 - [Showroom and booking](https://zoundpod.com/showroom): book a private viewing
 - [About ZOUND](https://zoundpod.com/about): the company story and the CEO, Vasavas Nonsopa
 - [Sustainability](https://zoundpod.com/sustainable): materials and emissions
-- [2026 catalogue (PDF, 18 MB)](https://zoundpod.com/assets/docs/ZOUND-Catalogue-2026.pdf): full specification tables
+- [2026 catalogue (PDF, 21 MB)](https://zoundpod.com/assets/docs/ZOUND-Catalogue-2026.pdf): full specification tables
 - [Thai home page](https://zoundpod.com/th)
 - [Thai questions and answers](https://zoundpod.com/th/faq): ventilation, noise reduction, installation, moving, warranty, materials, sizes, power and viewings
 
