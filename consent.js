@@ -6,7 +6,10 @@
    enquiries and booked viewings. Each of those four is also pushed to the
    dataLayer as zp_line / zp_call / zp_enquiry / zp_viewing for GTM triggers.
    Google Ads, Meta and TikTok are already fired here, so do NOT add the same
-   tags inside GTM as well, or every conversion is counted twice.
+   tags inside GTM as well, or every conversion is counted twice. GTM carries
+   Google Analytics 4 (G-V1MRC2ZN2J): page views plus the four zp_* events.
+   CFG.version 2 (Nov 2026) added analytics to the consent text, so visitors
+   who accepted version 1 are asked again.
    Declining loads none of them. The choice is kept in localStorage
    ("zp_consent") and can be changed from "Cookie settings" in the footer.
    A platform whose ID below is empty is simply skipped.
@@ -15,7 +18,7 @@
   "use strict";
 
   var CFG = {
-    version: 1,
+    version: 2,
     googleAds: {
       id: "AW-11363342054",                     /* "ZOUNDPOD | …" actions */
       labels: { viewing: "bEp9CLn716MdEOatu6oq", enquiry: "oAa0CN_N2KMdEOatu6oq",
@@ -31,7 +34,7 @@
 
   var T = th ? {
     title: "เว็บไซต์นี้ใช้คุกกี้",
-    body: "เราใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงาน และขอความยินยอมจากคุณก่อนใช้คุกกี้ด้านการตลาดของ Google, Meta และ TikTok เพื่อดูว่าโฆษณาใดพาคุณมาพบเรา และแสดงโฆษณาที่ตรงกับคุณมากขึ้น",
+    body: "เราใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงาน และขอความยินยอมจากคุณก่อนใช้คุกกี้ด้านการวิเคราะห์และการตลาดของ Google, Meta และ TikTok เพื่อดูว่าผู้คนใช้เว็บไซต์อย่างไร โฆษณาใดพาคุณมาพบเรา และแสดงโฆษณาที่ตรงกับคุณมากขึ้น",
     policy: "นโยบายความเป็นส่วนตัว",
     accept: "ยอมรับ",
     decline: "ปฏิเสธ",
@@ -39,7 +42,7 @@
     href: "/th/privacy"
   } : {
     title: "This site uses cookies",
-    body: "We use essential cookies to make the site work. With your consent we also use marketing cookies from Google, Meta and TikTok, to see which ads bring you to us and to show you more relevant ones.",
+    body: "We use essential cookies to make the site work. With your consent we also use analytics and marketing cookies from Google, Meta and TikTok, to see how the site is used, which ads bring you to us, and to show you more relevant ones.",
     policy: "Privacy policy",
     accept: "Accept",
     decline: "Decline",
@@ -116,7 +119,7 @@
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
       window.gtag("consent", "default", {
-        ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted", analytics_storage: "denied"
+        ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted", analytics_storage: "granted"
       });
       window.gtag("js", new Date());
       window.gtag("config", CFG.googleAds.id);
