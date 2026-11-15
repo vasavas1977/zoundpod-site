@@ -1,8 +1,12 @@
 /* ============================================================
    ZOUND — cookie consent (PDPA) + ad measurement
    Nothing in here sends data anywhere until the visitor accepts.
-   Accepting loads the Google Ads tag, the Meta Pixel and the TikTok Pixel
-   and counts LINE taps, call taps, sent enquiries and booked viewings.
+   Accepting loads the Google Ads tag, the Meta Pixel, the TikTok Pixel and
+   the Google Tag Manager container, and counts LINE taps, call taps, sent
+   enquiries and booked viewings. Each of those four is also pushed to the
+   dataLayer as zp_line / zp_call / zp_enquiry / zp_viewing for GTM triggers.
+   Google Ads, Meta and TikTok are already fired here, so do NOT add the same
+   tags inside GTM as well, or every conversion is counted twice.
    Declining loads none of them. The choice is kept in localStorage
    ("zp_consent") and can be changed from "Cookie settings" in the footer.
    A platform whose ID below is empty is simply skipped.
@@ -18,7 +22,8 @@
                 line: "d-QdCOLN2KMdEOatu6oq", call: "uwlICOXN2KMdEOatu6oq" }
     },
     metaPixel: "393803552640034",               /* "Zoundme's Pixel", Zound ad account */
-    tiktokPixel: "DBBR2NRC77U6FGK2JG8G"         /* "ZOUNDPOD website", _adv ad account */
+    tiktokPixel: "DBBR2NRC77U6FGK2JG8G",        /* "ZOUNDPOD website", _adv ad account */
+    gtm: "GTM-W7PTWKQ4"                         /* GTM account "ZOUND", container "zoundpod.com" */
   };
 
   var KEY = "zp_consent", SRC_KEY = "zp_src";
@@ -157,6 +162,13 @@
       ttq.load(CFG.tiktokPixel);
       ttq.page();
     }
+
+    if (CFG.gtm) {
+      /* Google Tag Manager, standard snippet; shares the dataLayer with gtag above */
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      addScript("https://www.googletagmanager.com/gtm.js?id=" + encodeURIComponent(CFG.gtm));
+    }
   }
 
   /* ---------- the events we count ---------- */
@@ -172,6 +184,7 @@
     }
     if (window.fbq && CFG.metaPixel) window.fbq("track", META_EVENT[kind], { content_name: kind });
     if (window.ttq && CFG.tiktokPixel) window.ttq.track(TT_EVENT[kind], { content_name: kind });
+    if (CFG.gtm && window.dataLayer) window.dataLayer.push({ event: "zp_" + kind });
   }
 
   /* Taps on LINE and phone links. Buttons that open the booking form also carry
