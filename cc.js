@@ -26,7 +26,8 @@
       sales:    { t: "Talk to sales", s: "Sales enquiry",
                   l: "Tell us about your floor and we\u2019ll come back to you." },
       viewing:  { t: "Book a viewing", s: "Showroom viewing request",
-                  l: "Pick a time that suits you. We\u2019ll call to confirm it, and if you leave an email we\u2019ll send the confirmation and directions there too." },
+                  l: "Pick a time that suits you. We\u2019ll call to confirm it, and if you leave an email we\u2019ll send the confirmation and directions there too.",
+                  lReq: "Pick a time that suits you. We\u2019ll call to confirm it and email you the confirmation and directions." },
       question: { t: "Ask a question", s: "Question",
                   l: "Ask us anything \u2014 sizes, acoustics, lead time, installation." },
       quote:    { t: "Get a free consultation", s: "Consultation request",
@@ -34,7 +35,7 @@
       name: "Your name", email: "Email", phone: "Phone", msg: "How can we help?",
       emailOpt: "Email (optional)", emailReq: "Email (required)", phoneReq: "Phone (required)",
       seats: "Seats you need (optional)", heard: "How did you hear about us? (optional)",
-      send: "Send", sending: "Sending…", close: "Close",
+      send: "Send", sending: "Sending…", close: "Close", more: "+ Add details (optional)",
       ok: "Thank you — our team has your message and will come back to you shortly.",
       err: "Sorry, that didn’t send. Please call 02-030-3883 or message LINE @zound and we’ll pick it up right away.",
       req: "Please add your name and either an email or a phone number.",
@@ -72,7 +73,8 @@
       sales:    { t: "ปรึกษาฝ่ายขาย", s: "สอบถามฝ่ายขาย",
                   l: "เล่าเรื่องพื้นที่ของคุณให้เราฟัง แล้วเราจะติดต่อกลับไป" },
       viewing:  { t: "นัดชมโชว์รูม", s: "ขอนัดชมโชว์รูม",
-                  l: "เลือกเวลาที่คุณสะดวก เราจะโทรยืนยัน และถ้าคุณกรอกอีเมล เราจะส่งอีเมลยืนยันพร้อมแผนที่ให้ด้วย" },
+                  l: "เลือกเวลาที่คุณสะดวก เราจะโทรยืนยัน และถ้าคุณกรอกอีเมล เราจะส่งอีเมลยืนยันพร้อมแผนที่ให้ด้วย",
+                  lReq: "เลือกเวลาที่คุณสะดวก เราจะโทรยืนยัน และส่งอีเมลยืนยันพร้อมแผนที่ให้คุณ" },
       question: { t: "สอบถามข้อมูล", s: "คำถาม",
                   l: "ถามได้ทุกเรื่อง ทั้งขนาด ค่าอะคูสติก ระยะเวลาผลิต และการติดตั้ง" },
       quote:    { t: "ขอคำปรึกษาฟรี", s: "ขอคำปรึกษา",
@@ -80,7 +82,7 @@
       name: "ชื่อของคุณ", email: "อีเมล", phone: "เบอร์โทร", msg: "ให้เราช่วยเรื่องอะไรดี?",
       emailOpt: "อีเมล (ไม่บังคับ)", emailReq: "อีเมล (จำเป็น)", phoneReq: "เบอร์โทร (จำเป็น)",
       seats: "จำนวนที่นั่งที่สนใจ (ไม่บังคับ)", heard: "รู้จัก ZOUND จากที่ไหน (ไม่บังคับ)",
-      send: "ส่ง", sending: "กำลังส่ง…", close: "ปิด",
+      send: "ส่ง", sending: "กำลังส่ง…", close: "ปิด", more: "+ เพิ่มรายละเอียด (ไม่บังคับ)",
       ok: "ขอบคุณครับ ทีมงานได้รับข้อความแล้ว และจะติดต่อกลับโดยเร็วที่สุด",
       err: "ขออภัย ส่งไม่สำเร็จ กรุณาโทร 02-030-3883 หรือทักไลน์ @zound แล้วเราจะดูแลให้ทันที",
       req: "กรุณากรอกชื่อ และอีเมลหรือเบอร์โทรอย่างน้อยหนึ่งอย่าง",
@@ -186,10 +188,14 @@
       ".cc-slot[disabled]{opacity:.38;cursor:not-allowed;text-decoration:line-through}" +
       ".cc-slot[disabled]:hover{border-color:rgba(28,24,19,.16)}" +
       ".cc-day.full{opacity:.45}" +
+      ".cc-f [aria-invalid=true]{border-color:#9C3B2E;box-shadow:0 0 0 1px #9C3B2E}" +
+      ".cc-cal.need{outline:2px solid #9C3B2E;outline-offset:6px;border-radius:12px}" +
+      ".cc-more{justify-self:start;background:none;border:0;padding:4px 0;font:inherit;font-size:.88rem;color:#B5613F;cursor:pointer}" +
+      ".cc-f .cc-st{margin-top:2px}" +
       ".cc-tz{color:#6F6559;font-size:.76rem;margin:0 0 10px}" +
       ".cc-none{color:#6F6559;font-size:.85rem;margin:0 0 8px}" +
       /* manage view: the booking card and its actions replace the contact fields */
-      ".cc-ov.managing .cc-f>input,.cc-ov.managing .cc-f>select,.cc-ov.managing .cc-f>textarea,.cc-ov.managing .cc-f>.cc-row{display:none}" +
+      ".cc-ov.managing .cc-f>input,.cc-ov.managing .cc-f>select,.cc-ov.managing .cc-f>textarea,.cc-ov.managing .cc-f>.cc-row,.cc-ov.managing .cc-f>.cc-more{display:none}" +
       ".cc-sum{background:#fff;border:1px solid rgba(28,24,19,.12);border-radius:12px;padding:14px 16px;margin:0 0 14px;" +
       "display:grid;gap:3px;font-size:.92rem;line-height:1.5}" +
       ".cc-sum b{font-weight:600}.cc-sum span{color:#6F6559}" +
@@ -216,15 +222,16 @@
             '<p class="cc-tz" data-cc-tz></p>' +
           '</div>' +
           '<input name="name" autocomplete="name" required />' +
-          '<input name="email" type="email" autocomplete="email" />' +
-          '<input name="phone" type="tel" autocomplete="tel" />' +
+          '<input name="phone" type="tel" autocomplete="tel" inputmode="tel" />' +
+          '<input name="email" type="email" autocomplete="email" inputmode="email" />' +
           '<select name="seats" class="cc-opt"></select>' +
-          '<select name="heard" class="cc-opt"></select>' +
-          '<textarea name="message"></textarea>' +
+          '<button class="cc-more" type="button" aria-expanded="false"></button>' +
+          '<select name="heard" class="cc-opt cc-extra"></select>' +
+          '<textarea name="message" class="cc-extra"></textarea>' +
+          '<p class="cc-st" role="status" aria-live="polite"></p>' +
           '<div class="cc-row"><button class="cc-send" type="submit"></button>' +
           '<button class="cc-x" type="button"></button></div>' +
         '</form>' +
-        '<p class="cc-st" role="status" aria-live="polite"></p>' +
         '<div class="cc-alt"></div>' +
       '</div>';
     document.body.appendChild(modal);
@@ -237,6 +244,32 @@
       if (e.key === "Escape" && modal.classList.contains("open")) close();
     });
     form.addEventListener("submit", submit);
+    modal.querySelector(".cc-more").addEventListener("click", function () { showExtra(true); });
+    /* a field the visitor fixes stops being flagged */
+    form.addEventListener("input", function (e) { if (e.target.removeAttribute) e.target.removeAttribute("aria-invalid"); });
+  }
+
+  /* On a booking the optional "how did you hear" and message sit behind a link,
+     so a visitor on a phone sees only what a viewing needs. */
+  function showExtra(on) {
+    var booking = !!BOOKING_TYPE[intent];
+    var show = !booking || on;
+    [].slice.call(modal.querySelectorAll(".cc-extra")).forEach(function (el) {
+      el.style.display = show && !(el.name === "heard" && !booking) ? "" : "none";
+    });
+    var more = modal.querySelector(".cc-more");
+    more.style.display = booking && !on ? "" : "none";
+    more.setAttribute("aria-expanded", on ? "true" : "false");
+  }
+
+  /* Shows a problem right above the Send button and takes the visitor to it. */
+  function flag(text, el) {
+    setStatus(text, "err");
+    var field = el && /^(INPUT|SELECT|TEXTAREA)$/.test(el.tagName);
+    if (field) el.setAttribute("aria-invalid", "true");
+    if (el && el.classList && el.classList.contains("cc-cal")) el.classList.add("need");
+    try { (el || status).scrollIntoView({ block: "center", behavior: "smooth" }); } catch (x) {}
+    if (field) { try { el.focus({ preventScroll: true }); } catch (x) {} }
   }
 
 
@@ -344,6 +377,7 @@
           [].slice.call(wrap.children).forEach(function (o) { o.classList.remove("on"); });
           b.classList.add("on");
           status.textContent = ""; status.className = "cc-st";
+          modal.querySelector(".cc-cal").classList.remove("need");
         });
       }
       wrap.appendChild(b);
@@ -418,6 +452,8 @@
     var d = L(), booking = !!BOOKING_TYPE[intent], n = needs();
     form.email.placeholder = booking ? (n.email ? d.emailReq : d.emailOpt) : d.email;
     form.phone.placeholder = booking && n.phone ? d.phoneReq : d.phone;
+    var k = d[intent];
+    if (booking && k && k.lReq && !manage) modal.querySelector("[data-cc-lead]").textContent = n.email ? k.lReq : k.l;
   }
 
   function paint() {
@@ -431,6 +467,8 @@
     fillOptions(form.seats, d.seats, OPT.seats);
     fillOptions(form.heard, d.heard, OPT.heard);
     form.message.placeholder = d.msg;
+    modal.querySelector(".cc-more").textContent = d.more;
+    showExtra(false);
     modal.querySelector(".cc-send").textContent = d.send;
     modal.querySelector(".cc-x").textContent = d.close;
     modal.querySelector(".cc-alt").innerHTML =
@@ -458,7 +496,10 @@
     modal.classList.add("open");
     modal.querySelector(".cc-box").scrollTop = 0;
     lenis(false);
-    setTimeout(function () { try { form.name.focus(); } catch (e) {} }, 40);
+    var touch = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    setTimeout(function () {
+      try { touch ? modal.querySelector(".cc-box").focus({ preventScroll: true }) : form.name.focus(); } catch (e) {}
+    }, 40);
   }
 
   function close() {
@@ -506,20 +547,20 @@
       language: document.documentElement.lang === "th" ? "th" : "en"
     };
     var type = BOOKING_TYPE[intent];
-    if (!body.name || (!type && !body.email && !body.phone)) { setStatus(d.req, "err"); return; }
+    if (!body.name || (!type && !body.email && !body.phone)) { flag(d.req, body.name ? form.phone : form.name); return; }
     /* where this visitor came from (consent.js); shown to the team as "Lead source" */
     if (window.ZoundTrack && window.ZoundTrack.source) body.source = window.ZoundTrack.source();
 
     var booking = !!type && gridState === "ready";
     if (type) {
       var need = needs();
-      if (need.phone && !body.phone) { setStatus(d.needPhone, "err"); return; }
-      if (need.email && !body.email) { setStatus(d.needEmail, "err"); return; }
-      if (!body.phone && !body.email) { setStatus(d.needPhone, "err"); return; }
+      if (need.phone && !body.phone) { flag(d.needPhone, form.phone); return; }
+      if (need.email && !body.email) { flag(d.needEmail, form.email); return; }
+      if (!body.phone && !body.email) { flag(d.needPhone, form.phone); return; }
     }
     /* an email is optional on a viewing, so a mistyped one would only fail later, after the slot is held */
-    if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) { setStatus(d.badEmail, "err"); return; }
-    if (booking && !pickedSlot) { setStatus(d.needSlot, "err"); return; }
+    if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) { flag(d.badEmail, form.email); return; }
+    if (booking && !pickedSlot) { flag(d.needSlot, modal.querySelector(".cc-cal")); return; }
 
     /* the two optional answers go in front of the visitor's own words, so the team sees them in the
        booking note and in the message that reaches the inbox */
